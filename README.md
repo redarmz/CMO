@@ -11,7 +11,7 @@
 [![SonarCloud Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=fr.parisnanterre.pascalpoizat%3Atemplate-java-project&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=fr.parisnanterre.pascalpoizat%3Atemplate-java-project)
 [![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=fr.parisnanterre.pascalpoizat%3Atemplate-java-project&metric=coverage)](https://sonarcloud.io/summary/new_code?id=fr.parisnanterre.pascalpoizat%3Atemplate-java-project)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=fr.parisnanterre.pascalpoizat%3Atemplate-java-project&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=fr.parisnanterre.pascalpoizat%3Atemplate-java-project)
-<!--
+
 <br/>
 
 ## Besoin :
