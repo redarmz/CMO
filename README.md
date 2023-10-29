@@ -1,5 +1,5 @@
 # CMO
-
+![Build Status](https://app.travis-ci.com/redarmz/CMO.svg?branch=main)
 
 ## Besoin :
 
