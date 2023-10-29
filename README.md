@@ -6,6 +6,13 @@
 [![Release](https://img.shields.io/github/release/redarmz/CMO.svg?style=flat-square)](build.gradle)
 [![(Pre-)Release](https://img.shields.io/github/release/redarmz/CMO/all.svg?label=(pre-)release&style=flat-square)](build.gradle)
 <br/>
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/redarmz/CMO?style=flat-square)](https://codeclimate.com/github/redarmz/CMO)
+[![Codacy Project Certification](https://img.shields.io/codacy/grade/9b4c36635f044db0a56f8ee5beddd167.svg?style=flat-square)](https://app.codacy.com/gh/redarmz/CMO/dashboard)
+[![SonarCloud Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=fr.parisnanterre.pascalpoizat%3Atemplate-java-project&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=fr.parisnanterre.pascalpoizat%3Atemplate-java-project)
+[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=fr.parisnanterre.pascalpoizat%3Atemplate-java-project&metric=coverage)](https://sonarcloud.io/summary/new_code?id=fr.parisnanterre.pascalpoizat%3Atemplate-java-project)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=fr.parisnanterre.pascalpoizat%3Atemplate-java-project&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=fr.parisnanterre.pascalpoizat%3Atemplate-java-project)
+<!--
+<br/>
 
 ## Besoin :
 
