@@ -2,7 +2,10 @@
 ![Build Status](https://app.travis-ci.com/redarmz/CMO.svg?branch=main)
 ![Code Coverage with Coveralls](https://coveralls.io/repos/github/redarmz/CMO/badge.svg?branch=main)
 [![License](https://img.shields.io/github/license/redarmz/CMO.svg?style=flat-square)](LICENSE)
-
+[![Tag](https://img.shields.io/github/tag/redarmz/CMO.svg?label=tag&style=flat-square)](build.gradle)
+[![Release](https://img.shields.io/github/release/redarmz/CMO.svg?style=flat-square)](build.gradle)
+[![(Pre-)Release](https://img.shields.io/github/release/redarmz/CMO/all.svg?label=(pre-)release&style=flat-square)](build.gradle)
+<br/>
 
 ## Besoin :
 
