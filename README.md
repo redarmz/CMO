@@ -53,7 +53,7 @@ Pour pouvoir lancer le Front-end assurez-vous d'avoir :
 La partie Back-end du projet est réalisé à l'aide de Node.js et de différents frameworks tels que Express.js.
 Pour pouvoir lancer le Back-end assurez-vous d'avoir : 
 - Installer le runtime Node si ce n'est pas déja fait.
-- Installer l'outil nodemon avec la commande "npm install -g nodemon"
+- Installer l'outil nodemon avec la commande "npm install -g nodemon" (Assurez-vous que le port 3000 soit libre)
 - Enfin vous pouvez lancer le server back-end avec la commande "nodemon server"
 
 ### Infos : 
