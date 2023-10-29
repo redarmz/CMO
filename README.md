@@ -32,19 +32,19 @@ Application Web
 ## Lancement du projet : 
 
 ### Pour le Front-end : 
-La partie Front-end du projet est réaliser à l'aide du framework Angular.
-Pour pouvoir lancer le Front-end assuré vous d'avoir :
+La partie Front-end du projet est réalisé à l'aide du framework Angular.
+Pour pouvoir lancer le Front-end assurez-vous d'avoir :
 - Installer le runtime Node, que vous pouvez installer sur "nodejs.org". Fourni avec Node vous avez le package manager "npm" qui vous permettra d'installe le CLI d'Angular. (Si vous êtes sur Mac consulter cette documentation "https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally" pour résoudre les éventuels erreurs de permission)
 - Installer le CLI d'Angular avec la commande "npm i -g @angular/cli" (pour vérifier la version d'Angular taper la commande "ng v")
-- Enfin vous pouvez lancer le Front-end en tapant la commande "ng serve", un lien vous sera donner (http://localhost:4200) ouvrer ce lien sur votre navigateur (!! Asurez-vous d'avoir le port 4200 de libre, sans cela vous ne pourez pas accèder au donées du back-end).
+- Enfin vous pouvez lancer le Front-end en tapant la commande "ng serve", un lien vous sera donner (http://localhost:4200) ouvrer ce lien sur votre navigateur (!! Assurez-vous d'avoir le port 4200 de libre, sans cela vous ne pourez pas accèder au données du back-end).
 
 ### Pour le Back-end :
-La partie Back-end du projet est réaliser à l'aide de Node.js et de différent framework tels que Express.js.
-Pour pouvoir lancer le Back-end assuré vous d'avoir : 
+La partie Back-end du projet est réalisé à l'aide de Node.js et de différents frameworks tels que Express.js.
+Pour pouvoir lancer le Back-end assurez-vous d'avoir : 
 - Installer le runtime Node si ce n'est pas déja fait.
 - Installer l'outil nodemon avec la commande "npm install -g nodemon"
 - Enfin vous pouvez lancer le server back-end avec la commande "nodemon server"
 
 ### Infos : 
-!!! Lancer le serveur back-end avant de lancer le front-end pour que les données soit charger en avant !!!
+!!! Lancez le serveur back-end avant de lancer le front-end pour que les données soit charger en avant !!!
 
