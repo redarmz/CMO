@@ -39,5 +39,6 @@ Pour pouvoir lancer le Back-end assuré vous d'avoir :
 - Installer l'outil nodemon avec la commande "npm install -g nodemon"
 - Enfin vous pouvez lancer le server back-end avec la commande "nodemon server"
 
+### Infos : 
 !!! Lancer le serveur back-end avant de lancer le front-end pour que les données soit charger en avant !!!
 
