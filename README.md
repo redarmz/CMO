@@ -8,10 +8,14 @@
 <br/>
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/redarmz/CMO?style=flat-square)](https://codeclimate.com/github/redarmz/CMO)
 [![Codacy Project Certification](https://img.shields.io/codacy/grade/9b4c36635f044db0a56f8ee5beddd167.svg?style=flat-square)](https://app.codacy.com/gh/redarmz/CMO/dashboard)
-[![SonarCloud Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=fr.parisnanterre.pascalpoizat%3Atemplate-java-project&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=fr.parisnanterre.pascalpoizat%3Atemplate-java-project)
-[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=fr.parisnanterre.pascalpoizat%3Atemplate-java-project&metric=coverage)](https://sonarcloud.io/summary/new_code?id=fr.parisnanterre.pascalpoizat%3Atemplate-java-project)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=fr.parisnanterre.pascalpoizat%3Atemplate-java-project&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=fr.parisnanterre.pascalpoizat%3Atemplate-java-project)
-
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=redarmz_CMO&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=redarmz_CMO)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=redarmz_CMO&metric=coverage)](https://sonarcloud.io/summary/new_code?id=redarmz_CMO)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=redarmz_CMO&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=redarmz_CMO)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=redarmz_CMO&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=redarmz_CMO)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=redarmz_CMO&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=redarmz_CMO)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=redarmz_CMO&metric=bugs)](https://sonarcloud.io/summary/new_code?id=redarmz_CMO)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=redarmz_CMO&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=redarmz_CMO)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=redarmz_CMO&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=redarmz_CMO)
 <br/>
 
 ## Besoin :
