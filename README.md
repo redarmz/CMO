@@ -1,5 +1,7 @@
 # CMO
 ![Build Status](https://app.travis-ci.com/redarmz/CMO.svg?branch=main)
+![Code Coverage with Coveralls](https://coveralls.io/repos/github/redarmz/CMO/badge.svg?branch=main)
+
 
 ## Besoin :
 
