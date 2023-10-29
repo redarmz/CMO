@@ -47,6 +47,7 @@ La partie Front-end du projet est réalisé à l'aide du framework Angular.
 Pour pouvoir lancer le Front-end assurez-vous d'avoir :
 - Installer le runtime Node, que vous pouvez installer sur "nodejs.org". Fourni avec Node vous avez le package manager "npm" qui vous permettra d'installe le CLI d'Angular. (Si vous êtes sur Mac consulter cette documentation "https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally" pour résoudre les éventuels erreurs de permission)
 - Installer le CLI d'Angular avec la commande "npm i -g @angular/cli" (pour vérifier la version d'Angular taper la commande "ng v")
+- Tapez la commande "npm install" avant de lancer le serveur
 - Enfin vous pouvez lancer le Front-end en tapant la commande "ng serve", un lien vous sera donner (http://localhost:4200) ouvrer ce lien sur votre navigateur (!! Assurez-vous d'avoir le port 4200 de libre, sans cela vous ne pourez pas accèder au données du back-end).
 
 ### Pour le Back-end :
