@@ -20,7 +20,7 @@
 
 ## Besoin :
 
-Nous allons manger manger à la pause mais nous ne savons pas où, notre temps et budget sont limitées …
+Nous allons manger à la pause mais nous ne savons pas où, notre temps et budget sont limitées …
 
 ## Solution :
 
