@@ -17,6 +17,11 @@ jobs:
         run: |
           gem install asciidoctor
 
+      - name: Get README content
+        run: |
+          README_CONTENT=$(cat README.md)
+          echo "${README_CONTENT}" >> documentation.adoc
+
       - name: Build Documentation
         run: |
           asciidoctor documentation.adoc -o output.html
