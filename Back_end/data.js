@@ -1,15 +1,5 @@
 //Fichier servant de base de données en attendant l'ajout d'une BD
 
-/*const fakeRestaurants = [
-    { id: 1, name: 'Restaurant A' },
-    { id: 2, name: 'Restaurant B' },
-    //Ajoutez d'autres restaurants fictifs ici
-  ];
-  
-  module.exports = {
-    fakeRestaurants,
-  };*/
-
 const restaurantsData = [
   { id: 1, name: "Fast Food :  Pitaya" },
   { id: 2, name: "Fast Food :  Point B" },

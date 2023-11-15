@@ -1,0 +1,19 @@
+= Titre de la Documentation
+Auteur: Votre Nom
+:docdate: 2023-11-15
+:doctype: book
+:icons: font
+:source-highlighter: rouge
+:toc: left
+:toclevels: 2
+:sectnums:
+:sectnumlevels: 3
+= Ca mange ou
+
+== Section 1
+
+Ceci est un paragraphe dans la première section.
+
+== Section 2
+
+Ceci est un autre paragraphe dans la deuxième section
