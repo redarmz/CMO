@@ -1,0 +1,30 @@
+name: Build Documentation
+
+on:
+  push:
+    branches:
+      - main  # Modifier si vous utilisez une autre branche principale
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Asciidoctor
+        run: |
+          gem install asciidoctor
+
+      - name: Build Documentation
+        run: |
+          asciidoctor documentation.adoc -o output.html  # Adapter le nom 
+du fichier adoc
+          
+      - name: Upload Documentation
+        uses: actions/upload-artifact@v2
+        with:
+          name: generated-docs
+          path: output.html  # Adapter le nom du fichier de sortie
+
