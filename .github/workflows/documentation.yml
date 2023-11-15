@@ -3,7 +3,7 @@ name: Build Documentation
 on:
   push:
     branches:
-      - main  # Modifier si vous utilisez une autre branche principale
+      - main
 
 jobs:
   build:
@@ -19,12 +19,5 @@ jobs:
 
       - name: Build Documentation
         run: |
-          asciidoctor documentation.adoc -o output.html  # Adapter le nom 
-du fichier adoc
-          
-      - name: Upload Documentation
-        uses: actions/upload-artifact@v2
-        with:
-          name: generated-docs
-          path: output.html  # Adapter le nom du fichier de sortie
+          asciidoctor documentation.adoc -o output.html
 
