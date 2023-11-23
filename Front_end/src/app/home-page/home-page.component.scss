@@ -1,0 +1,75 @@
+// Variables for reuse of colors and box shadow
+$primary-color: #007bff;
+$success-color: #4caf50;
+$neutral-color: #888;
+$background-color: #f9f9f9;
+$border-color: #ddd;
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+
+// Container styles
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff; // Added background color for better visibility
+  border-radius: 10px; // Rounded corners
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Subtle box shadow
+}
+
+// Heading styles
+h2 {
+  font-size: 24px;
+  color: $primary-color;
+  margin-bottom: 10px;
+  text-decoration: underline; // Underline for emphasis
+}
+
+h3 {
+  font-size: 20px;
+  color: $success-color;
+  margin-bottom: 15px;
+}
+
+// Paragraph styles
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #333; // Darker text color for better readability
+}
+
+// Image styles
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px $box-shadow-color;
+}
+
+// Created date styles
+.created-date {
+  color: $neutral-color;
+  font-style: italic;
+  font-size: 14px; // Smaller font size for date
+}
+
+// Restaurant list styles
+.restaurant-list {
+  margin-top: 20px;
+
+  // Nested styles for better organization
+  .restaurant-item {
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    padding: 15px; // Increased padding for better spacing
+    margin-bottom: 15px;
+    border-radius: 10px; // Rounded corners
+    box-shadow: 0 2px 4px $box-shadow-color;
+
+    // Hover effect
+    &:hover {
+      background-color: lighten($background-color, 5%); // Lighten the background on hover
+    }
+  }
+}
