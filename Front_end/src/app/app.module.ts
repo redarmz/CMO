@@ -11,7 +11,7 @@ import { EventInvitationComponent } from './event-invitation/event-invitation.co
   declarations: [
     AppComponent,
     HomePageComponent,
-    EventInvitationComponent
+    EventInvitationComponent,
   ],
   imports: [
     BrowserModule,
