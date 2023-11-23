@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module'; // Importez le module d
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { EventInvitComponent } from './event-invit/event-invit.component';
+import { CreatEventComponent } from './creat-event/creat-event.component';
+import { JoinEventComponent } from './join-event/join-event.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     EventInvitComponent,
+    CreatEventComponent,
+    JoinEventComponent,
   ],
   imports: [
     BrowserModule,

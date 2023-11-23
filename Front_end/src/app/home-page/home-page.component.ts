@@ -31,8 +31,8 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  // Fonction pour rediriger vers la page "Event"
+  // Fonction pour rediriger vers la page "event-invit"
   redirectToEventPage() {
-    this.router.navigate(['/event']);
+    this.router.navigate(['/event-invit']);
   }
 }
