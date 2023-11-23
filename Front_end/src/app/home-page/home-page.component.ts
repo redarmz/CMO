@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'; // Importez le service Router
 import { RestaurantService } from '../restaurant.service';
 
 @Component({
@@ -14,8 +15,8 @@ export class HomePageComponent implements OnInit {
   imageUrl!: string;
   restaurants: any[] = []; // Propriété pour stocker les données fictives
 
-  constructor(private restaurantService: RestaurantService) {
-    // Injection du service RestaurantService
+  constructor(private router: Router, private restaurantService: RestaurantService) {
+    // Injection du service Router et RestaurantService
   }
 
   ngOnInit() {
@@ -29,5 +30,9 @@ export class HomePageComponent implements OnInit {
       this.restaurants = data;
     });
   }
-  
+
+  // Fonction pour rediriger vers la page "Event"
+  redirectToEventPage() {
+    this.router.navigate(['/event']);
+  }
 }
