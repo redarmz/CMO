@@ -4,12 +4,14 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { EventInvitComponent } from './event-invit/event-invit.component'; 
 import { CreatEventComponent } from './creat-event/creat-event.component';
 import { JoinEventComponent } from './join-event/join-event.component';
+import { InvitationPageComponent } from './invitation-page/invitation-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'event-invit', component: EventInvitComponent },
   { path: 'creat-event', component: CreatEventComponent },
   { path: 'join-event', component: JoinEventComponent },
+  { path: 'invitation/:eventCode', component: InvitationPageComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirection par défaut vers la page Home
 ];
 
