@@ -32,3 +32,7 @@ import { TirelireComponent } from './tirelire/tirelire.component';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+
+
+
