@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; // Importez le service Router
 import { RestaurantService } from '../restaurant.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -14,10 +15,16 @@ export class HomePageComponent implements OnInit {
   createdDate!: Date;
   imageUrl!: string;
   restaurants: any[] = []; // Propriété pour stocker les données fictives
+  router: any;
 
   constructor(private router: Router, private restaurantService: RestaurantService) {
     // Injection du service Router et RestaurantService
   }
+
+  allerVersPageEvent(){
+    this.router.navigate(['/eventinvitation'])
+  }
+
 
   ngOnInit() {
     this.title = 'ça mange oùuuu';
