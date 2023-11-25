@@ -35,4 +35,9 @@ export class HomePageComponent implements OnInit {
   redirectToEventPage() {
     this.router.navigate(['/event-invit']);
   }
+
+  // Fonction pour rediriger vers la page tirelire
+  redirectToTirelirePage() {
+    this.router.navigate(['/tirelire']);
+  }
 }
