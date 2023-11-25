@@ -1,27 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomePageComponent } from './home-page/home-page.component'; 
+import { EventInvitComponent } from './event-invit/event-invit.component'; 
+import { CreatEventComponent } from './creat-event/creat-event.component';
+import { JoinEventComponent } from './join-event/join-event.component';
+import { InvitationPageComponent } from './invitation-page/invitation-page.component';
+import { TirelireComponent } from './tirelire/tirelire.component';
 
-/*Importer le chemin vers le component */
-import { EventInvitationComponent } from './event-invitation/event-invitation.component'; 
-import { HomePageComponent } from './home-page/home-page.component';
-import { EVENT_MANAGER_PLUGINS } from '@angular/platform-browser';
 
 const routes: Routes = [
-  /* Lien vers un autre component destination
-  /* path = nom de l'URL qui sera affichÃ© dans la barre de recherche | Component = component source*/
-
-  /* AU CHARGEMENT DU SITE RENVOI DIRECTEMENT A LA PAGE D ACCUEIL */
-  {path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  /* PAGE D'ACCUEIL */
-  {path: 'accueil', component: HomePageComponent},
-  /* PAGE DES INVTATITON EVENEMENT */
-  {path: 'eventinvit', component: EventInvitationComponent}
-  
+  { path: 'home', component: HomePageComponent },
+  { path: 'event-invit', component: EventInvitComponent },
+  { path: 'creat-event', component: CreatEventComponent },
+  { path: 'join-event', component: JoinEventComponent },
+  { path: 'invitation/:eventCode', component: InvitationPageComponent },
+  { path: 'tirelire', component: TirelireComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirection par défaut vers la page Home
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

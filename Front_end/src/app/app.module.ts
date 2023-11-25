@@ -1,26 +1,37 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module'; // Importez le module de routage
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { EventInvitationComponent } from './event-invitation/event-invitation.component';
+import { EventInvitComponent } from './event-invit/event-invit.component';
+import { CreatEventComponent } from './creat-event/creat-event.component';
+import { JoinEventComponent } from './join-event/join-event.component';
+import { InvitationPageComponent } from './invitation-page/invitation-page.component';
+import { TirelireComponent } from './tirelire/tirelire.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    EventInvitationComponent
+    EventInvitComponent,
+    CreatEventComponent,
+    JoinEventComponent,
+    InvitationPageComponent,
+    TirelireComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRoutingModule, // Ajoutez le module de routage ici
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 
 
 
