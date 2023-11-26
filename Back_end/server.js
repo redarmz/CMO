@@ -37,23 +37,34 @@ app.post('/create-event', (req, res) => {
 });
 
 app.post('/join-event', (req, res) => {
-    const { nom, numeroEvent } = req.body;
-    // Accédez à la liste des événements depuis data.js
-    const events = require('./data').events;
-  
-    // Recherchez l'événement avec le numéro donné
-    const event = events.find((e) => e.numeroEvent === numeroEvent);
-  
-    if (event) {
+  const { nom, numeroEvent } = req.body;
+  // Accédez à la liste des événements depuis data.js
+  const eventData = require('./data');
+  const events = eventData.events;
+
+  // Recherchez l'événement avec le numéro donné
+  const event = events.find((e) => e.numeroEvent === numeroEvent);
+
+  if (event) {
       // Ajoutez le nom à la guestList
       event.guestList.push(nom);
-      res.status(200).send('Bienvenue à l\'événement!');
-      //res.status(200).json({ success: true });
-    } else {
-      res.status(404).send('Événement inexistant.');
-    }
-  });
 
+      // Mettez à jour la liste des invités dans data.js
+      const updatedDataFile = `module.exports = ${JSON.stringify(eventData, null, 2)};`;
+
+      fs.writeFile('data.js', updatedDataFile, (err) => {
+          if (err) {
+              console.error('Erreur lors de la mise à jour du fichier data.js :', err);
+              res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
+          } else {
+              console.log(`Ajout de ${nom} à la guestList de l'événement ${numeroEvent} dans data.js`);
+              res.status(200).send(`Bienvenue à l'événement, ${nom}!`);
+          }
+      });
+  } else {
+      res.status(404).send('Événement inexistant.');
+  }
+});
 const port = process.env.PORT || 3000;
 
 const server = http.createServer(app);

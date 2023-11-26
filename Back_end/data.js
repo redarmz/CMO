@@ -26,7 +26,9 @@ module.exports = {
       "id": 1,
       "userName": "Wassim",
       "eventName": "test",
-      "guestList": [],
+      "guestList": [
+        "wassim"
+      ],
       "description": "event 123467",
       "numeroEvent": 123467
     },
@@ -58,7 +60,11 @@ module.exports = {
       "id": 5,
       "userName": "Paul",
       "eventName": "Anniversaire ",
-      "guestList": [],
+      "guestList": [
+        "laure",
+        "phil",
+        "amir"
+      ],
       "description": "Un anniv",
       "numeroEvent": 1310
     },
@@ -85,6 +91,16 @@ module.exports = {
       "guestList": "a",
       "description": "a",
       "numeroEvent": 5678
+    },
+    {
+      "id": 9,
+      "userName": "Toto",
+      "eventName": "fete des totos",
+      "guestList": [
+        "Reda"
+      ],
+      "description": "tooootttttooo",
+      "numeroEvent": 8899
     }
   ]
 };

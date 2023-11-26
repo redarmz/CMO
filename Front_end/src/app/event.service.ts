@@ -15,6 +15,7 @@ export class EventService {
   }
 
   rejoindreEvenement(nom: string, numeroEvent: number): Observable<any> {
+    console.log("Entre dans rejoindreEvenement")
     return this.http.post(`${this.backendURL}/join-event`, { nom, numeroEvent }, { responseType: 'text' });
   }
 

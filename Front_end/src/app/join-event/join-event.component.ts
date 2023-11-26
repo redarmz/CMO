@@ -40,5 +40,3 @@ export class JoinEventComponent {
     this.router.navigate(['/event-invit']);
   }
 }
-
-
