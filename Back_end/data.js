@@ -27,10 +27,21 @@ module.exports = {
       "userName": "Patrick",
       "eventName": "Saint Patrick",
       "guestList": [
-        "Reda"
+        "Reda",
+        "Sonia"
       ],
       "description": "Avec modération",
       "numeroEvent": 9093
+    },
+    {
+      "id": 2,
+      "userName": "Patricia",
+      "eventName": "Pot de départ",
+      "guestList": [
+        "Amir"
+      ],
+      "description": "Pot de départ pour théo",
+      "numeroEvent": 3356
     }
   ]
 };
