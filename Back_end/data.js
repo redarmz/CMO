@@ -43,5 +43,23 @@ module.exports = {
       "description": "Pot de départ pour théo",
       "numeroEvent": 3356
     }
+  ],
+  "tirelire": [
+    {
+      "id": 1,
+      "eventId": 1,
+      "participantId": ["Reda", 
+        "Amir"],
+      "amount": 20,
+      "type": "credit"
+    },
+    {
+      "id": 2,
+      "eventId": 1,
+      "participantId": ["Wassim", 
+        "Sara"],
+      "amount": 10,
+      "type": "debit"
+    }
   ]
 };

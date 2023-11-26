@@ -5,6 +5,8 @@ const cors = require('cors');
 const app = express();
 const eventData = require('./data'); // Importez les données d'événement depuis data.js
 
+const TirelireData = require('./data');
+
 app.use(cors({ origin: 'http://localhost:4200' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -35,6 +37,31 @@ app.post('/create-event', (req, res) => {
     }
   });
 });
+
+
+app.post('/tirelire', (req, res) => {
+  const newTirelireData = req.body;
+
+  // Générez un nouvel ID pour le nouvel événement
+  const newTirelireId = TirelireData.events.length + 1;
+
+  // Ajoutez le nouvel événement à la liste des événements dans TirelireData
+  TirelireData.events.push({ id: newTirelireId, ...newTirelireData });
+
+  // Mettez à jour le fichier data.js avec les nouvelles données
+  const updatedDataFile = `module.exports = ${JSON.stringify(TirelireData, null, 2)};`;
+
+  fs.writeFile('data.js', updatedDataFile, (err) => {
+    if (err) {
+      console.error('Erreur lors de l\'écriture du fichier:', err);
+      res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
+    } else {
+      console.log('Données mises à jour avec succès dans data.js');
+      res.status(200).json({ message: 'Événement créé avec succès!', event: { id: newTirelireId, ...newTirelireData } });
+    }
+  });
+});
+
 
 app.post('/join-event', (req, res) => {
   const { nom, numeroEvent } = req.body;
