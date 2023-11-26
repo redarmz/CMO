@@ -1,10 +1,22 @@
-<h2>Voici la page d'evenement</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'événement</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Événement !</h1>
+        <p>Profitez d'événement. Créer ou rejoigner un groupe !!</p>
+        <button (click)="redirectToEventCreatPage()">Créer un Event</button>
+        <button (click)="redirectToEventJoinPage()">Rejoindre un Event</button>
 
-<p>à faire le zin</p>
-<button (click)="redirectToEventCreatPage()">Créer un Event</button>
-<button (click)="redirectToEventJoinPage()">Rejoindre un Event</button>
+        <div>
+            <h3>Retour à l'accueil</h3>
+            <button (click)="redirectToHomePage()">Retour</button>
+        </div>
+    </div>
+</body>
+</html>
 
-<div>
-    <h3>Retour à l'acceuil</h3>
-    <button (click)="redirectToHomePage()">Retour</button>
-</div>

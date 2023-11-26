@@ -36,6 +36,39 @@ app.post('/create-event', (req, res) => {
   });
 });
 
+/*
+app.post('/join-event', (req, res) => {
+  const { nom, numeroEvent } = req.body;
+
+  const eventIndex = eventsData.findIndex((event) => event.numeroEvent === numeroEvent);
+
+  if (eventIndex !== -1) {
+    // L'événement existe, ajout du nom à la liste des invités
+    eventsData[eventIndex].guestList.push(nom);
+
+    res.json({ success: true });
+  } else {
+    // L'événement n'existe pas
+    res.json({ success: false });
+  }
+});*/
+app.post('/join-event', (req, res) => {
+  const { nom, numeroEvent } = req.body;
+  // Accédez à la liste des événements depuis data.js
+  const events = require('./data').events;
+
+  // Recherchez l'événement avec le numéro donné
+  const event = events.find((e) => e.numeroEvent === numeroEvent);
+
+  if (event) {
+    // Ajoutez le nom à la guestList
+    event.guestList.push(nom);
+    res.status(200).send('Bienvenue à l\'événement!');
+  } else {
+    res.status(404).send('Événement inexistant.');
+  }
+});
+
 const port = process.env.PORT || 3000;
 
 const server = http.createServer(app);

@@ -13,4 +13,8 @@ export class EventService {
   createEvent(eventData: any): Observable<any> {
     return this.http.post<any>(`${this.backendURL}/create-event`, eventData);
   }
+
+  rejoindreEvenement(nom: string, numeroEvent: number): Observable<any> {
+    return this.http.post(`${this.backendURL}/join-event`, { nom, numeroEvent });
+  }
 }

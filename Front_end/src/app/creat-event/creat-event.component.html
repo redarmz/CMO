@@ -1,24 +1,20 @@
 <h1>Page de création d'evenement</h1>
 
-<div>
-    <h3>Retour à la page d'acceuil evenement</h3>
-    <button (click)="redirectToEventPage()">Retour</button>
-</div>
+
 
 <!-- creat-event.component.html -->
 <div>
-    <h2>Create Event</h2>
     <form (ngSubmit)="createEvent()">
       <div>
-        <label for="userName">Your Name:*</label>
+        <label for="userName">Votre nom:*</label>
         <input type="text" id="userName" [(ngModel)]="eventData.userName" name="userName" required>
       </div>
       <div>
-        <label for="eventName">Event Name:*</label>
+        <label for="eventName">Nom de l'événement:*</label>
         <input type="text" id="eventName" [(ngModel)]="eventData.eventName" name="eventName" required>
       </div>
       <div>
-        <label for="guestList">Guest List (comma-separated):</label>
+        <label for="guestList">Liste d'invités :</label>
         <input type="text" id="guestList" [(ngModel)]="eventData.guestList" name="guestList" required>
       </div>
       <div>
@@ -30,12 +26,17 @@
   <input type="number" id="numeroEvent" name="numeroEvent" [(ngModel)]="eventData.numeroEvent" min="1000" max="9999" required>
 </div>
       <!-- Bouton de création d'événement conditionnel -->
-      <button type="submit" *ngIf="eventData.userName && eventData.eventName && eventData.description">Create Event</button>
+      <button type="submit" *ngIf="eventData.userName && eventData.eventName && eventData.description && eventData.numeroEvent">Create Event</button>
       
       <!-- Message d'erreur si le formulaire n'est pas valide -->
-      <p *ngIf="!(eventData.userName && eventData.eventName && eventData.description)">Saisir les informations marqué * pour pouvoir créer un lien d'invitation</p>
+      <p *ngIf="!(eventData.userName && eventData.eventName && eventData.description && eventData.numeroEvent)">Saisir les informations marqué * pour pouvoir créer un lien d'invitation</p>
     </form>
   </div>
+
+<div>
+    <h3>Retour à la page d'acceuil evenement</h3>
+    <button (click)="redirectToEventPage()">Retour</button>
+</div>
   
   
   
