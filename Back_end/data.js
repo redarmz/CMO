@@ -38,26 +38,41 @@ module.exports = {
       "userName": "Patricia",
       "eventName": "Pot de départ",
       "guestList": [
-        "Amir"
+        "Amir",
+        "Pascal"
       ],
       "description": "Pot de départ pour théo",
       "numeroEvent": 3356
+    },
+    {
+      "id": 3,
+      "userName": "Laura",
+      "eventName": "Fete des pere",
+      "guestList": [
+        "Reda"
+      ],
+      "description": "on aime nos pères",
+      "numeroEvent": 4549
     }
   ],
   "tirelire": [
     {
       "id": 1,
       "eventId": 1,
-      "participantId": ["Reda", 
-        "Amir"],
+      "participantId": [
+        "Reda",
+        "Amir"
+      ],
       "amount": 20,
       "type": "credit"
     },
     {
       "id": 2,
       "eventId": 1,
-      "participantId": ["Wassim", 
-        "Sara"],
+      "participantId": [
+        "Wassim",
+        "Sarah"
+      ],
       "amount": 10,
       "type": "debit"
     }
