@@ -1,24 +1,116 @@
 module.exports = {
   "restaurants": [
     {
+      "id": 0,
+      "name": "Fast Food :  Pitaya",
+      "capacity": 50,
+      "reservations": [
+        {
+          "numberOfPeople": 35,
+          "day": "Dimanche"
+        },
+        {
+          "numberOfPeople": 3,
+          "day": "Lundi"
+        },
+        {
+          "numberOfPeople": 3,
+          "day": "Mardi"
+        }
+      ],
+      "days": [
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi",
+        "Samedi",
+        "Dimanche"
+      ]
+    },
+    {
       "id": 1,
-      "name": "Fast Food :  Pitaya"
+      "name": "Fast Food :  Point B",
+      "capacity": 20,
+      "reservations": [
+        {
+          "numberOfPeople": 1,
+          "day": "Jeudi"
+        }
+      ],
+      "days": [
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi",
+        "Samedi",
+        "Dimanche"
+      ]
     },
     {
       "id": 2,
-      "name": "Fast Food :  Point B"
+      "name": "Fast Food : BurgerKing",
+      "capacity": 10,
+      "reservations": [
+        {
+          "numberOfPeople": 1,
+          "day": "Mardi"
+        },
+        {
+          "numberOfPeople": 5,
+          "day": "Jeudi"
+        }
+      ],
+      "days": [
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi",
+        "Samedi",
+        "Dimanche"
+      ]
     },
     {
       "id": 3,
-      "name": "Fast Food : BurgerKing"
+      "name": "Restaurant : Le Fouquet's",
+      "capacity": 30,
+      "reservations": [
+        {
+          "numberOfPeople": 5,
+          "day": "Mardi"
+        }
+      ],
+      "days": [
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi",
+        "Samedi",
+        "Dimanche"
+      ]
     },
     {
       "id": 4,
-      "name": "Restaurant : Le Fouquet's"
-    },
-    {
-      "id": 5,
-      "name": "Restaurant : Ciel de Paris"
+      "name": "Restaurant : Ciel de Paris",
+      "capacity": 20,
+      "reservations": [
+        {
+          "numberOfPeople": 10,
+          "day": "Mardi"
+        }
+      ],
+      "days": [
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi",
+        "Samedi",
+        "Dimanche"
+      ]
     }
   ],
   "events": [

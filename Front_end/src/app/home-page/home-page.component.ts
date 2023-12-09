@@ -40,4 +40,9 @@ export class HomePageComponent implements OnInit {
   redirectToTirelirePage() {
     this.router.navigate(['/tirelire']);
   }
+
+  // Fonction pour rediriger vers la page de reservation
+  redirectToReservation() {
+    this.router.navigate(['/reserve-resto']);
+  }
 }

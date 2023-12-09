@@ -7,6 +7,7 @@ import { JoinEventComponent } from './join-event/join-event.component';
 import { InvitationPageComponent } from './invitation-page/invitation-page.component';
 import { TirelireComponent } from './tirelire/tirelire.component';
 import { EventListComponent } from './event-list/event-list.component';
+import { ReserveRestoComponent } from './reserve-resto/reserve-resto.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'tirelire', component: TirelireComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirection par défaut vers la page Home
   { path: 'list-event', component: EventListComponent },
+  { path: 'reserve-resto', component: ReserveRestoComponent },
 ];
 
 @NgModule({

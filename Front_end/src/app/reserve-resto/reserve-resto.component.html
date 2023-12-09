@@ -1,0 +1,40 @@
+<h2>Liste des Restaurants</h2>
+
+<div *ngFor="let restaurant of restaurants">
+  <div>
+    <h4>{{ restaurant.name }}</h4>
+    <p>Capacité: {{ restaurant.capacity }}</p>
+    <p>Jours disponibles: {{ restaurant.days.join(', ') }}</p>
+    <button (click)="selectRestaurant(restaurant)">Sélectionner</button>
+  </div>
+</div>
+
+<div *ngIf="selectedRestaurant">
+  <h3>Réservation pour {{ selectedRestaurant.name }}</h3>
+
+  <label for="numberOfPeople">Nombre de personnes:</label>
+  <input type="number" id="numberOfPeople" name="numberOfPeople" [(ngModel)]="numberOfPeople" required>
+
+  <label for="selectedDay">Jour de la réservation:</label>
+  <input type="text" id="selectedDay" name="selectedDay" [(ngModel)]="selectedDay" required>
+
+  <button (click)="reserve()">Réserver</button>
+</div>
+
+
+<!--<div *ngFor="let restaurant of restaurants">
+    <h4>Restaurant: {{ restaurant.name }}</h4>
+    <p>{{ restaurant.description }}</p>
+    <button (click)="selectRestaurant(restaurant)">Sélectionner</button>
+  </div>
+  
+  <div *ngIf="selectedRestaurant">
+    <h2>Réservation pour {{ selectedRestaurant.name }}</h2>
+    <p>Sélectionné : {{ selectedRestaurant.name }}</p>
+    <label for="numberOfPeople">Nombre de personnes :</label>
+    <input type="number" id="numberOfPeople" [(ngModel)]="numberOfPeople" required>
+    <label for="selectedDay">Jour :</label>
+    <input type="text" id="selectedDay" [(ngModel)]="selectedDay" required>
+    <button (click)="reserve()">Réserver</button>
+  </div>
+-->

@@ -12,6 +12,7 @@ import { JoinEventComponent } from './join-event/join-event.component';
 import { InvitationPageComponent } from './invitation-page/invitation-page.component';
 import { TirelireComponent } from './tirelire/tirelire.component';
 import { EventListComponent } from './event-list/event-list.component';
+import { ReserveRestoComponent } from './reserve-resto/reserve-resto.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { EventListComponent } from './event-list/event-list.component';
     InvitationPageComponent,
     TirelireComponent,
     EventListComponent,
+    ReserveRestoComponent,
   ],
   imports: [
     BrowserModule,
