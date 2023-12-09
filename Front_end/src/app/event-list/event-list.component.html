@@ -1,0 +1,13 @@
+<div class="events-container">
+    <h2 class="events-heading">Liste des événements proposés par nos utilisateurs de la plateforme :</h2>
+    <div *ngFor="let event of events" class="event-card">
+      <h4 class="event-name">Evenement : {{ event.eventName }}</h4>
+      <p class="host-info">L'hôte de cet événement est <strong>{{ event.userName }}</strong></p>
+    </div>
+    <h3>N'hésitez pas à demander à l'hôte pour pouvoir participer !!</h3>
+    <div>
+      <h4>Retour à la page d'accueil événement</h4>
+      <button class="back-button" (click)="redirectToCodeInvit()">Retour</button>
+    </div>
+  </div>
+  

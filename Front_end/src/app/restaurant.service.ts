@@ -1,13 +1,3 @@
-/*import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class RestaurantService {
-
-  constructor() { }
-}*/
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 

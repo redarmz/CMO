@@ -19,4 +19,9 @@ export class EventService {
     return this.http.post(`${this.backendURL}/join-event`, { nom, numeroEvent }, { responseType: 'text' });
   }
 
+  getEvents(): Observable<any> {
+    return this.http.get(`${this.backendURL}/events`);
+  }
+
+
 }

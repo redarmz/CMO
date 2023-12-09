@@ -15,6 +15,10 @@ app.get('/restaurants', (req, res) => {
   res.json(eventData.restaurants);
 });
 
+app.get('/events', (req, res) => {
+  res.json(eventData.events);
+});
+
 app.post('/create-event', (req, res) => {
   const newEventData = req.body;
 

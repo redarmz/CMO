@@ -6,6 +6,7 @@ import { CreatEventComponent } from './creat-event/creat-event.component';
 import { JoinEventComponent } from './join-event/join-event.component';
 import { InvitationPageComponent } from './invitation-page/invitation-page.component';
 import { TirelireComponent } from './tirelire/tirelire.component';
+import { EventListComponent } from './event-list/event-list.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'invitation/:eventCode', component: InvitationPageComponent },
   { path: 'tirelire', component: TirelireComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirection par défaut vers la page Home
+  { path: 'list-event', component: EventListComponent },
 ];
 
 @NgModule({

@@ -20,6 +20,11 @@ export class EventInvitComponent {
     this.router.navigate(['/join-event']);
   }
 
+  // Fonction pour rediriger vers la page "list-event"
+  redirectToEventList() {
+    this.router.navigate(['/list-event']);
+  }
+
   // Fonction pour rediriger vers la page "home"
   redirectToHomePage() {
     this.router.navigate(['/home']);
