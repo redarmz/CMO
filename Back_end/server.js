@@ -43,10 +43,10 @@ app.post('/tirelire', (req, res) => {
   const newTirelireData = req.body;
 
   // Générez un nouvel ID pour le nouvel événement
-  const newTirelireId = TirelireData.events.length + 1;
+  const newTirelireId = TirelireData.tirelire.length + 1;
 
   // Ajoutez le nouvel événement à la liste des événements dans TirelireData
-  TirelireData.events.push({ id: newTirelireId, ...newTirelireData });
+  TirelireData.tirelire.push({ id: newTirelireId, ...newTirelireData });
 
   // Mettez à jour le fichier data.js avec les nouvelles données
   const updatedDataFile = `module.exports = ${JSON.stringify(TirelireData, null, 2)};`;

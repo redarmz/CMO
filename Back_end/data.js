@@ -75,6 +75,13 @@ module.exports = {
       ],
       "amount": 10,
       "type": "debit"
+    },
+    {
+      "id": 3,
+      "participants": "Wassim , AMir",
+      "type": "CREDIT",
+      "eventId": "12345",
+      "amount": 999
     }
   ]
 };
