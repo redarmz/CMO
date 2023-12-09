@@ -36,6 +36,14 @@ module.exports = {
         {
           "numberOfPeople": 1,
           "day": "Jeudi"
+        },
+        {
+          "numberOfPeople": 1,
+          "day": "Mardi"
+        },
+        {
+          "numberOfPeople": 4,
+          "day": "Mardi"
         }
       ],
       "days": [
@@ -60,6 +68,10 @@ module.exports = {
         {
           "numberOfPeople": 5,
           "day": "Jeudi"
+        },
+        {
+          "numberOfPeople": 3,
+          "day": "Dimanche"
         }
       ],
       "days": [
@@ -100,6 +112,10 @@ module.exports = {
         {
           "numberOfPeople": 10,
           "day": "Mardi"
+        },
+        {
+          "numberOfPeople": 2,
+          "day": "Lundi"
         }
       ],
       "days": [
