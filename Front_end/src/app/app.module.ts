@@ -11,6 +11,8 @@ import { CreatEventComponent } from './creat-event/creat-event.component';
 import { JoinEventComponent } from './join-event/join-event.component';
 import { InvitationPageComponent } from './invitation-page/invitation-page.component';
 import { TirelireComponent } from './tirelire/tirelire.component';
+import { SalonDiscussionComponent } from './salon-discussion/salon-discussion.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { TirelireComponent } from './tirelire/tirelire.component';
     JoinEventComponent,
     InvitationPageComponent,
     TirelireComponent,
+    SalonDiscussionComponent,
   ],
   imports: [
     BrowserModule,

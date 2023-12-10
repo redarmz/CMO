@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './home-page/home-page.component'; 
-import { EventInvitComponent } from './event-invit/event-invit.component'; 
+import { HomePageComponent } from './home-page/home-page.component';
+import { EventInvitComponent } from './event-invit/event-invit.component';
 import { CreatEventComponent } from './creat-event/creat-event.component';
 import { JoinEventComponent } from './join-event/join-event.component';
 import { InvitationPageComponent } from './invitation-page/invitation-page.component';
 import { TirelireComponent } from './tirelire/tirelire.component';
+import { SalonDiscussionComponent} from './salon-discussion/salon-discussion.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,8 @@ const routes: Routes = [
   { path: 'join-event', component: JoinEventComponent },
   { path: 'invitation/:eventCode', component: InvitationPageComponent },
   { path: 'tirelire', component: TirelireComponent },
+  { path: 'salon-discussion', component: SalonDiscussionComponent },
+  { path: 'salon-discussion/:id', component: SalonDiscussionComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirection par défaut vers la page Home
 ];
 

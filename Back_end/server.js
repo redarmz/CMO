@@ -2,12 +2,25 @@ const fs = require('fs');
 const http = require('http');
 const express = require('express');
 const cors = require('cors');
-const app = express();
+//const app = express();
 const eventData = require('./data'); // Importez les données d'événement depuis data.js
-
+//const socketIO = require('socket.io');
 const TirelireData = require('./data');
+//const server = http.createServer(app);
 
-app.use(cors({ origin: 'http://localhost:4200' }));
+//const io = socketIO(server);
+/*const eventSalons = {}; 
+app.use(cors());
+
+const io = socketIO(server, {
+  cors: {
+    origin: "http://localhost:4200", // L'URL de votre application Angular
+    methods: ["GET", "POST"]
+  }
+});
+*/
+
+//app.use(cors({ origin: 'http://localhost:4200' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -92,10 +105,123 @@ app.post('/join-event', (req, res) => {
       res.status(404).send('Événement inexistant.');
   }
 });
+/*
+io.on('connection', (socket) => {
+  console.log('Nouvelle connexion WebSocket');
+
+  socket.on('join', (data) => {
+    const { eventId, userName } = data;
+
+    // Vérifier si le salon existe
+    if (!eventSalons[eventId]) {
+      eventSalons[eventId] = [];
+    }
+
+    // Rejoindre le salon
+    socket.join(eventId);
+
+    // Informer les autres participants du nouveau membre
+    io.to(eventId).emit('message', { userName, text: `${userName} a rejoint le salon.` });
+  });
+
+  socket.on('sendMessage', (data) => {
+    const { eventId, userName, text } = data;
+
+    // Stocker le message dans le salon
+    eventSalons[eventId].push({ userName, text });
+
+    // Diffuser le message à tous les participants du salon
+    io.to(eventId).emit('message', { userName, text });
+  });
+});*/
+
+
+// server.js
+
+/*
+app.use(bodyParser.json());
+
+const conversationDir = path.join(__dirname, 'conversations');
+
+function getConversationFilePath(eventId) {
+  return path.join(conversationDir, `${eventId}.json`);
+}
+
+function createConversationFile(eventId) {
+  const filePath = getConversationFilePath(eventId);
+  fs.writeFileSync(filePath, '[]');
+}
+
+function getConversation(eventId) {
+  const filePath = getConversationFilePath(eventId);
+  try {
+    const content = fs.readFileSync(filePath, 'utf8');
+    return JSON.parse(content);
+  } catch (error) {
+    return [];
+  }
+}
+
+function addMessage(eventId, message) {
+  const filePath = getConversationFilePath(eventId);
+  const messages = getConversation(eventId);
+  messages.push(message);
+  fs.writeFileSync(filePath, JSON.stringify(messages));
+}
+
+// Endpoint pour récupérer les messages d'une conversation
+app.get('/conversation/:eventId', (req, res) => {
+  const eventId = req.params.eventId;
+  const conversation = getConversation(eventId);
+  res.json(conversation);
+});
+
+// Endpoint pour ajouter un message à une conversation
+app.post('/conversation/:eventId/message', (req, res) => {
+  const eventId = req.params.eventId;
+  const message = req.body.message;
+  const username = req.body.username;
+
+  if (!eventId || !message || !username) {
+    return res.status(400).send('Bad Request');
+  }
+
+  addMessage(eventId, { username, message });
+  res.sendStatus(200);
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+*/
 const port = process.env.PORT || 3000;
+var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
-const server = http.createServer(app);
+server.listen(3000, function() {
+ console.log('Server is running on port 3000');
+});
 
+io.on('connection', function(socket) {
+ console.log('User connected');
+ socket.on('disconnect', function() {
+    console.log('User disconnected');
+ });
+});
+
+io.on('connection', function(socket) {
+  console.log('User connected');
+ 
+  socket.on('chat message', function(msg) {
+     io.emit('chat message', msg);
+  });
+ 
+  socket.on('disconnect', function() {
+     console.log('User disconnected');
+  });
+ });
 server.listen(port, () => {
   console.log(`Serveur Node.js écoutant sur le port ${port}`);
 });
