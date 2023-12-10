@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RestaurantService } from '../restaurant.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class ReserveRestoComponent implements OnInit{
   numberOfPeople: number = 1;
   selectedDay: string = '';
 
-  constructor(private restaurantService: RestaurantService) {}
+  constructor(private router: Router, private restaurantService: RestaurantService) {}
 
   ngOnInit(): void {
     this.loadRestaurants();
@@ -54,5 +55,10 @@ export class ReserveRestoComponent implements OnInit{
 
   selectRestaurant(restaurant: any) {
     this.selectedRestaurant = restaurant;
+  }
+
+  // Fonction pour rediriger vers la page "d'acceuil"
+  redirectToEventPage() {
+    this.router.navigate(['/home']);
   }
 }
