@@ -152,6 +152,13 @@ module.exports = {
       "preteur": "Wassim",
       "numeroEvent": 12,
       "amount": 6
+    },
+    {
+      "id": 7,
+      "emprunteur": "Reda",
+      "preteur": "Mohamed",
+      "numeroEvent": 56,
+      "amount": 69
     }
   ]
 };

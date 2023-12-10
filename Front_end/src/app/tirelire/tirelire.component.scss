@@ -13,6 +13,19 @@ body {
   background-color: #f2f2f2; // Couleur de fond
 }
 
+.retour {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 30%;
+}
+
+.bretour{
+  width: 25%;
+}
+
+
 h2 {
   text-align: center;
   font-size: 28px;
@@ -51,6 +64,7 @@ input {
   font-size: 16px;
 }
 
+
 button {
   display: block;
   width: 100%;
@@ -67,6 +81,14 @@ button {
   &:hover {
     background-color: #27ae60; // Couleur du bouton au survol
   }
+}
+
+p{
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #2c3e50; // Couleur du texte du label
+  text-align: center;
 }
 
 div {

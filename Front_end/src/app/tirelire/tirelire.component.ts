@@ -21,6 +21,8 @@ export class TirelireComponent {
   searchResults: any[] = [];
   searchPersonInput: string = '';
 
+  
+
   constructor(private router: Router, private tirelireService: TirelireService ) {}
 
   // Fonction pour rediriger vers la page "d'acceuil"

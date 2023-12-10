@@ -30,13 +30,13 @@
     <h3>Résultats de la recherche</h3>
     <ul>
       <li *ngFor="let result of searchResults">
-        {{ result.preteur }} doit recevoir {{ result.amount }} de {{ result.emprunteur }}
+        {{ result.preteur }} doit recevoir {{ result.amount }}€ de {{ result.emprunteur }}
       </li>
     </ul>
   </div>
 </div>
 
-<div>
+<div class="retour">
   <h3>Retour à la page d'accueil événement</h3>
-  <button (click)="redirectToEventPage()">Retour</button>
+  <button (click)="redirectToEventPage()" class="bretour">Retour</button>
 </div>
