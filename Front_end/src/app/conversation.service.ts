@@ -8,15 +8,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ConversationService {
-  private apiUrl = 'http://localhost:3000';
+  private backendURL = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
-  getConversation(eventId: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/conversation/${eventId}`);
+  createSalon(SalonData: any): Observable<any> {
+    return this.http.post<any>(`${this.backendURL}/salon`, SalonData);
   }
 
-  addMessage(eventId: string, username: string, message: string): Observable<void> {
-    return this.http.post<void>(`${this.apiUrl}/conversation/${eventId}/message`, { username, message });
+
+  ecrireMessageSalon(message: string, EventId: number): Observable<any> {
+    console.log("Entre dans service de rejoindresalon",message,EventId)
+    return this.http.post(`${this.backendURL}/salon-discussion`, { message, EventId }, { responseType: 'text' });
   }
+
 }

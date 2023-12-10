@@ -45,7 +45,7 @@
   <button type="submit">Send</button>
  </form>-->
 
- <!-- src/app/salon-discussion/salon-discussion.component.html -->
+ <!-- src/app/salon-discussion/salon-discussion.component.html
 
 <div>
   <h2>Bienvenue au salon de l'evenement , {{ EventId }}!</h2>
@@ -58,8 +58,53 @@
     <button (click)="envoyerMessage()">Envoyer</button>
   </div>
 </div>
+-->
+<!--
+<form>
+
+  <br>
+  <label for="message">message:</label>
+  <input type="string" id="message" [(ngModel)]="message" name="message" required>
+  <br>
+  <button type="button" (click)="ecrireMessageSalon()">envoyer message</button>
+</form>
+
+-->
+
+
+<!-- salon-discussion.component.html -->
 
 <div>
-  <h3>Retour à la page rejoindre un événement</h3>
-  <button (click)="redirectToEventJoinPage()">Retour</button>
+  <h1>Discussion du Salon</h1>
+
+  <div>
+    <label for="pseudonyme">Pseudonyme:</label>
+    <input type="text" id="pseudonyme" [(ngModel)]="pseudonyme" readonly>
+  </div>
+
+  <div>
+    <label for="EventId">ID de l'événement:</label>
+    <input type="text" id="EventId" [(ngModel)]="EventId" readonly>
+  </div>
+
+  <div>
+    <label for="message">Message:</label>
+    <textarea id="message" [(ngModel)]="message"></textarea>
+  </div>
+
+  <button (click)="ecrireMessageSalon()">Envoyer Message</button>
+
+  <!-- Ajoutez ici une liste pour afficher les messages du salon -->
+  <div *ngIf="salonData.messages.length > 0">
+    <h2>Historique des messages:</h2>
+    <ul>
+      <li *ngFor="let msg of salonData.messages">{{ msg }}</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Retour à la page rejoindre un événement</h3>
+    <button (click)="redirectToEventJoinPage()">Retour</button>
+  </div>
 </div>
+
