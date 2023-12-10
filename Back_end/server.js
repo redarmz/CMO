@@ -6,6 +6,7 @@ const cors = require('cors');
 const eventData = require('./data'); // Importez les données d'événement depuis data.js
 //const socketIO = require('socket.io');
 const TirelireData = require('./data');
+const fs = require('fs').promises;
 //const server = http.createServer(app);
 
 //const io = socketIO(server);
@@ -195,33 +196,104 @@ app.listen(port, () => {
 });
 
 */
-const port = process.env.PORT || 3000;
-var app = require('express')();
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
+//const port = process.env.PORT || 3000;
+const express = require('express');
+const fs = require('fs').promises;
+const app = express();
+const port = 3000;
 
-server.listen(3000, function() {
- console.log('Server is running on port 3000');
+app.use(express.json());
+
+// Endpoint pour récupérer l'historique d'un salon
+app.get('/salon/:id/historique', async (req, res) => {
+  const salonId = req.params.id;
+  try {
+    const historique = await lireHistoriqueSalon(salonId);
+    res.json({ historique });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erreur lors de la lecture de l\'historique du salon.' });
+  }
 });
 
-io.on('connection', function(socket) {
- console.log('User connected');
- socket.on('disconnect', function() {
-    console.log('User disconnected');
- });
+// Endpoint pour envoyer un message dans un salon
+app.post('/salon/:id/message', async (req, res) => {
+  const salonId = req.params.id;
+  const message = req.body.message;
+  try {
+    // Ajouter le message à l'historique du salon
+    await ajouterMessageSalon(salonId, message);
+    res.json({ success: true });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erreur lors de l\'ajout du message au salon.' });
+  }
 });
 
-io.on('connection', function(socket) {
-  console.log('User connected');
- 
-  socket.on('chat message', function(msg) {
-     io.emit('chat message', msg);
-  });
- 
-  socket.on('disconnect', function() {
-     console.log('User disconnected');
-  });
- });
+// Fonction pour lire l'historique d'un salon depuis le fichier
+/*async function lireHistoriqueSalon(salonId) {
+  const cheminFichier = `./salons/${salonId}.json`;
+  try {
+    const contenuFichier = await fs.readFile(cheminFichier, 'utf-8');
+    return JSON.parse(contenuFichier);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      // Le fichier n'existe pas encore (pas d'historique)
+      return [];
+    }
+    throw error;
+  }
+}*/
+async function lireHistoriqueSalon(salonId) {
+  const cheminFichier = `./salons/${salonId}.json`;
+  try {
+    const contenuFichier = await fs.readFile(cheminFichier, 'utf-8');
+    return JSON.parse(contenuFichier);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      // Le fichier n'existe pas encore (pas d'historique)
+      // Créez le fichier avec un tableau vide comme historique initial
+      await fs.writeFile(cheminFichier, '[]', 'utf-8');
+      return [];
+    }
+    throw error;
+  }
+}
+
+async function ajouterMessageSalon(salonId, message) {
+  const cheminFichier = `./salons/${salonId}.json`;
+
+  try {
+    // Lire l'historique actuel du salon
+    const historique = await lireHistoriqueSalon(salonId);
+
+    // Ajouter le nouveau message à l'historique
+    historique.push(message);
+
+    // Écrire le nouvel historique dans le fichier
+    await fs.writeFile(cheminFichier, JSON.stringify(historique, null, 2), 'utf-8');
+  } catch (error) {
+    // Si le fichier n'existe pas, créez-le avec le nouveau message
+    if (error.code === 'ENOENT') {
+      await fs.writeFile(cheminFichier, JSON.stringify([message], null, 2), 'utf-8');
+    } else {
+      throw error; // Gérer les autres erreurs
+    }
+  }
+}
+
+// Fonction pour ajouter un message à l'historique d'un salon
+/*async function ajouterMessageSalon(salonId, message) {
+  const cheminFichier = `./salons/${salonId}.json`;
+  const historique = await lireHistoriqueSalon(salonId);
+  historique.push(message);
+  await fs.writeFile(cheminFichier, JSON.stringify(historique, null, 2), 'utf-8');
+}*/
+
+app.listen(port, () => {
+  console.log(`Serveur démarré sur le port ${port}`);
+});
+
 server.listen(port, () => {
   console.log(`Serveur Node.js écoutant sur le port ${port}`);
 });

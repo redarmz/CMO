@@ -56,7 +56,7 @@ export class SalonDiscussionComponent implements OnInit {
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-salon-discussion',
   templateUrl: './salon-discussion.component.html',
@@ -68,10 +68,9 @@ export class SalonDiscussionComponent implements OnInit {
   messages: string[] = [];
   messageInput: string = '';
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router,private http: HttpClient) { }
   ngOnInit(): void {
-    // Demander le pseudonyme à l'utilisateur lorsque le composant est initialisé
-    //this.pseudonyme = prompt('Entrez votre pseudonyme :');
+
     const userInput = prompt('Entrez votre pseudonyme :');
     if (userInput !== null) {
       this.pseudonyme = userInput;}
@@ -79,13 +78,39 @@ export class SalonDiscussionComponent implements OnInit {
      this.route.params.subscribe(params => {
        this.EventId = params['id'];
      });
+
+     const salonId = this.route.snapshot.params['id'];
+    this.http.get<any>(`http://localhost:3000/salon/${salonId}/historique`)
+      .subscribe(response => {
+        this.messages = response.historique;
+      }, error => {
+        console.error(error);
+        // Gérer les erreurs de récupération de l'historique
+      });
     }
 
 
-  envoyerMessage() {
+  /*envoyerMessage() {
     if (this.messageInput.trim() !== '') {
       this.messages.push(`${this.pseudonyme}: ${this.messageInput}`);
       this.messageInput = '';
+    }
+  }*/
+  envoyerMessage() {
+    if (this.messageInput.trim() !== '') {
+      const salonId = this.route.snapshot.params['id'];
+      const message = `${this.pseudonyme}: ${this.messageInput}`;
+
+      // Envoyer le message au backend
+      this.http.post<any>(`http://localhost:3000/salon/${salonId}/message`, { message })
+        .subscribe(response => {
+          // Ajouter le message à l'historique côté client
+          this.messages.push(message);
+          this.messageInput = '';
+        }, error => {
+          console.error(error);
+          // Gérer les erreurs d'envoi de message
+        });
     }
   }
   redirectToEventJoinPage() {
