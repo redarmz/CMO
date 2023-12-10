@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { TirelireService } from '../tirelire.service';
 
 class TirelireData {
-  eventId: number | undefined;
+  numeroEvent: number | undefined;
   participants: string = '';
   amount: number | undefined;
   type: string = '';
@@ -27,7 +27,7 @@ export class TirelireComponent {
 
 
   createTransaction() {
-    if (this.tirelireData.eventId && this.tirelireData.participants && this.tirelireData.amount) {
+    if (this.tirelireData.numeroEvent && this.tirelireData.participants && this.tirelireData.amount) {
         this.tirelireService.createTransaction(this.tirelireData).subscribe(
           (response) => {
             console.log('Transaction créé avec succès!', response);

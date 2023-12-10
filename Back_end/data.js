@@ -4,9 +4,7 @@ module.exports = {
       "id": 0,
       "name": "Fast Food :  Pitaya",
       "capacity": 50,
-      "reservations": [
-        
-      ],
+      "reservations": [],
       "days": [
         "Lundi",
         "Mardi",
@@ -115,30 +113,10 @@ module.exports = {
   "tirelire": [
     {
       "id": 1,
-      "eventId": 1,
-      "participantId": [
-        "Reda",
-        "Amir"
-      ],
-      "amount": 20,
-      "type": "credit"
-    },
-    {
-      "id": 2,
-      "eventId": 1,
-      "participantId": [
-        "Wassim",
-        "Sarah"
-      ],
-      "amount": 10,
-      "type": "debit"
-    },
-    {
-      "id": 3,
-      "participants": "Wassim , AMir",
-      "type": "CREDIT",
-      "eventId": "12345",
-      "amount": 999
+      "participants": "Toto, Titi",
+      "type": "debit",
+      "numeroEvent": 3356,
+      "amount": 29
     }
   ]
 };
