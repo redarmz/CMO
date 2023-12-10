@@ -4,17 +4,37 @@
   <label for="numeroEvent">Numéro de l'événement:</label>
   <input type="number" id="numeroEvent" name="numeroEvent" [(ngModel)]="tirelireData.numeroEvent" required>
 
-  <label for="participants">Participants:</label>
-  <input type="text" id="participants" name="participants" [(ngModel)]="tirelireData.participants" required>
+  <label for="emprunteur">Emprunteur:</label>
+  <input type="text" id="emprunteur" name="emprunteur" [(ngModel)]="tirelireData.emprunteur" required>
+  <p>Doit de l'argent à :</p>
+  <label for="preteur">Prêteur:</label>
+  <input type="text" id="preteur" name="preteur" [(ngModel)]="tirelireData.preteur" required>
 
+  <p>Combien ? : </p>
   <label for="amount">Amount:</label>
   <input type="number" id="amount" name="amount" [(ngModel)]="tirelireData.amount" required>
 
-  <label for="type">Type (credit/debit):</label>
-  <input type="text" id="type" name="type" [(ngModel)]="tirelireData.type" required>
-
   <button type="submit" [disabled]="transactionForm.invalid">Create Transaction</button>
 </form>
+
+<!-- Ajoutez ceci à votre fichier tirelire.component.html -->
+<div class="label-container">
+  <h2>Recherche de Transactions</h2>
+  
+  <label for="searchPerson">Rechercher une personne:</label>
+  <input type="text" id="searchPerson" name="searchPerson" [(ngModel)]="searchPersonInput" required>
+  <button (click)="searchPerson()">Rechercher</button>
+
+  <!-- Affichage des résultats de recherche -->
+  <div *ngIf="searchResults.length > 0">
+    <h3>Résultats de la recherche</h3>
+    <ul>
+      <li *ngFor="let result of searchResults">
+        {{ result.preteur }} doit recevoir {{ result.amount }} de {{ result.emprunteur }}
+      </li>
+    </ul>
+  </div>
+</div>
 
 <div>
   <h3>Retour à la page d'accueil événement</h3>

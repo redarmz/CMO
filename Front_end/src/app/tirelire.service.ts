@@ -10,8 +10,12 @@ export class TirelireService {
 
   constructor(private http: HttpClient) { }
 
-  createTransaction(TirelireData: any): Observable<any> {
-    return this.http.post<any>(`${this.backendURL}/tirelire`, TirelireData);
+  createTransaction(tirelireData: any): Observable<any> {
+    return this.http.post<any>(`${this.backendURL}/tirelire`, tirelireData);
   }
 
+  // Nouvelle méthode pour rechercher les transactions d'une personne
+  searchTransactions(person: string): Observable<any> {
+    return this.http.get(`${this.backendURL}/tirelire/search?person=${person}`);
+  }
 }

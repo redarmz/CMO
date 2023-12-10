@@ -117,6 +117,41 @@ module.exports = {
       "type": "debit",
       "numeroEvent": 3356,
       "amount": 29
+    },
+    {
+      "id": 2,
+      "emprunteur": "Wassim",
+      "preteur": "Amir",
+      "numeroEvent": 4549,
+      "amount": 65
+    },
+    {
+      "id": 3,
+      "emprunteur": "Paul",
+      "preteur": "Sara",
+      "numeroEvent": 45,
+      "amount": 125
+    },
+    {
+      "id": 4,
+      "emprunteur": "Reda",
+      "preteur": "Wassim",
+      "numeroEvent": 78,
+      "amount": 70
+    },
+    {
+      "id": 5,
+      "emprunteur": "Mohamed",
+      "preteur": "Wassim",
+      "numeroEvent": 93,
+      "amount": 120
+    },
+    {
+      "id": 6,
+      "emprunteur": "Charles",
+      "preteur": "Wassim",
+      "numeroEvent": 12,
+      "amount": 6
     }
   ]
 };

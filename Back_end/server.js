@@ -94,6 +94,28 @@ app.post('/tirelire', (req, res) => {
   });
 });
 
+
+
+// Endpoint pour rechercher les transactions par personne
+app.get('/tirelire/search', (req, res) => {
+  const { person } = req.query;
+
+  if (!person) {
+    return res.status(400).json({ message: 'Le paramètre "person" est requis dans la requête.' });
+  }
+
+  const transactions = data.tirelire;
+
+  // Filtrer les transactions où la personne est emprunteur ou preteur
+  const filteredTransactions = transactions.filter(
+    transaction => transaction.emprunteur === person || transaction.preteur === person
+  );
+
+  res.status(200).json(filteredTransactions);
+});
+
+
+
 app.post('/join-event', (req, res) => {
   const { nom, numeroEvent } = req.body;
   const events = data.events;
