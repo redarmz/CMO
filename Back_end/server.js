@@ -25,7 +25,7 @@ app.post('/reservations/create', (req, res) => {
   // Vérifiez la capacité disponible pour la réservation
   const totalReserved = restaurant.reservations.reduce((total, res) => total + res.numberOfPeople, 0);
   if (totalReserved + numberOfPeople > restaurant.capacity) {
-    return res.status(400).json({ message: 'Le restaurant est plein ce jour-là.' });
+    return res.status(400).json({ message: 'Le restaurant est plein pour la semaine.' });
   }
 
   // Vérifiez si le jour est accepté pour les réservations
