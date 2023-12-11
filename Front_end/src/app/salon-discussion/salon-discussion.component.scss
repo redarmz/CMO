@@ -1,0 +1,109 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5; /* Couleur de fond principale */
+  color: #333; /* Couleur du texte */
+}
+
+div {
+  max-width: 800px;
+  margin: 20px auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #e0e0e0; /* Couleur de fond de la boîte principale (gris) */
+  border-radius: 12px; /* Bords arrondis */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #3498db; /* Couleur du titre */
+}
+
+.info-box {
+  margin-bottom: 15px;
+  background-color: #4CAF50; /* Couleur de fond de la boîte d'information (vert) */
+  color: #fff; /* Couleur du texte de la boîte d'information */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc; /* Couleur de la bordure */
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: #fff; /* Couleur de fond des champs de texte */
+  color: #333; /* Couleur du texte */
+}
+
+button {
+  background-color: #3498db; /* Couleur du bouton (bleu) */
+  color: #fff; /* Couleur du texte du bouton */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9; /* Couleur du bouton au survol */
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #4CAF50; /* Couleur du sous-titre (vert) */
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+  div {
+    padding: 10px;
+  }
+}
+
+.message-section {
+  max-height: 370px;
+  overflow-y: auto;
+  border: 1px solid #ccc; /* Couleur de la bordure de la section des messages */
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fceded; /* Couleur de fond de la section des messages (bleu clair) */
+  transition: background-color 0.5s ease;
+}
+
+.message-section.new-messages {
+  background-color: #d6eaf8; /* Couleur de fond de la section des messages avec de nouveaux messages (bleu clair plus clair) */
+}
+.test{
+  background-color: #b9d3b4;
+  padding: 10px;
+  margin : 0;
+
+  font-weight: bold;
+
+}

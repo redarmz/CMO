@@ -17,7 +17,9 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/restaurants', (req, res) => {
   res.json(eventData.restaurants);
 });
-
+app.get('/messages', (req, res) => {
+  res.json(eventData.salon);
+});
 app.post('/create-event', (req, res) => {
   const newEventData = req.body;
 
@@ -35,7 +37,7 @@ app.post('/create-event', (req, res) => {
       console.error('Erreur lors de l\'écriture du fichier:', err);
       res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
     } else {
-      console.log('Données mises à jour avec succès dans data.js');
+      
       res.status(200).json({ message: 'Événement créé avec succès!', event: { id: newEventId, ...newEventData } });
     }
   });
@@ -59,7 +61,7 @@ app.post('/tirelire', (req, res) => {
       console.error('Erreur lors de l\'écriture du fichier:', err);
       res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
     } else {
-      console.log('Données mises à jour avec succès dans data.js');
+      
       res.status(200).json({ message: 'Événement créé avec succès!', event: { id: newTirelireId, ...newTirelireData } });
     }
   });
@@ -119,7 +121,7 @@ app.post('/join-event', (req, res) => {
 
 app.post('/salon-discussion', (req, res) => {
   const { message, EventId } = req.body;
-  console.log('Données reçues dans le backend :', req.body);
+  
 
   // Accédez à la liste des événements depuis data.js
   const salonData = require('./data');
@@ -139,10 +141,7 @@ app.post('/salon-discussion', (req, res) => {
           if (err) {
               console.error('Erreur lors de la mise à jour du fichier data.js :', err);
               res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
-          } else {
-              console.log(`Ajout de ${message} au salon ${EventId} dans data.js`);
-              res.status(200).send(`message envoyé !, ${message}!`);
-          }
+          } 
       });
   } else {
       res.status(404).send('Événement inexistant.');

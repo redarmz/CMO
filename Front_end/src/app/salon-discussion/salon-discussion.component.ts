@@ -20,6 +20,9 @@ export class SalonDiscussionComponent  {
   EventId: number=0;
   message: string='';
   salonData: SalonData=new SalonData();
+  salons: any[] = [];
+  messagesAffiches: string[] = [];
+
   constructor(private route: ActivatedRoute, private router: Router,private conversationService: ConversationService) { }
 
   redirectToEventJoinPage() {
@@ -36,6 +39,10 @@ export class SalonDiscussionComponent  {
        this.EventId = params['id'];
      });
 
+     this.conversationService.getMessages().subscribe((data: any) => {
+      this.salons = data;
+
+    });
 
     }
     createSalon() {
@@ -66,7 +73,7 @@ export class SalonDiscussionComponent  {
       if (!this.EventId) {
         console.log('ID de l\'événement invalide. Veuillez spécifier un ID d\'événement valide.',this.EventId);
         return;
-      }console.log('IID d\'événement valide.',this.EventId);
+      }
 
 
       if (!this.salonExiste()) {
@@ -74,8 +81,8 @@ export class SalonDiscussionComponent  {
         this.createSalon();
       }
       const messageToSend = `${this.pseudonyme}: ${this.message}`;
-      console.log('kkkkkkkkkkkkkkkkk.',messageToSend)
-      // Maintenant, nous pouvons écrire le message dans le salon existant
+
+
       this.conversationService.ecrireMessageSalon(messageToSend, this.EventId).subscribe(
         (response) => {
           console.log('Réponse du service:', response);
@@ -86,14 +93,17 @@ export class SalonDiscussionComponent  {
           console.error('Erreur détaillée :', error.error);
         }
       );
+      const nouveauMessage = `${this.pseudonyme}: ${this.message}`;
+    this.messagesAffiches.push(nouveauMessage);
+
+
+    this.message = '';
 
       console.log('Fin de la méthode ecrireMessageSalon');
     }
 
-    // Fonction pour vérifier si le salon existe déjà
     salonExiste() {
-      console.log('ID nizzan ',this.salonData.EventId);
-      console.log('ID nizzan ',this.salonData.messages);
+
       return this.salonData && this.salonData.EventId === this.EventId;
     }
 
@@ -103,59 +113,4 @@ export class SalonDiscussionComponent  {
 
 
   }
-
-
-
-
- /* pseudonyme: string='';
-  EventId: number=0;
-  messages: string[] = [];
-  messageInput: string = '';
-
-  constructor(private route: ActivatedRoute, private router: Router,private http: HttpClient) { }
-  ngOnInit(): void {
-
-    const userInput = prompt('Entrez votre pseudonyme :');
-    if (userInput !== null) {
-      this.pseudonyme = userInput;}
-    // Récupérer le numéro du salon (si nécessaire)
-     this.route.params.subscribe(params => {
-       this.EventId = params['id'];
-     });
-
-     const salonId = this.route.snapshot.params['id'];
-    this.http.get<any>(`http://localhost:3000/salon/${salonId}/historique`)
-      .subscribe(response => {
-        this.messages = response.historique;
-      }, error => {
-        console.error(error);
-        // Gérer les erreurs de récupération de l'historique
-      });
-    }
-*/
-
-  /*envoyerMessage() {
-    if (this.messageInput.trim() !== '') {
-      this.messages.push(`${this.pseudonyme}: ${this.messageInput}`);
-      this.messageInput = '';
-    }/*envoyerMessage() {
-    if (this.messageInput.trim() !== '') {
-      const salonId = this.route.snapshot.params['id'];
-      const message = `${this.pseudonyme}: ${this.messageInput}`;
-
-      // Envoyer le message au backend
-      this.http.post<any>(`http://localhost:3000/salon/${salonId}/message`, { message })
-        .subscribe(response => {
-          // Ajouter le message à l'historique côté client
-          this.messages.push(message);
-          this.messageInput = '';
-        }, error => {
-          console.error(error);
-          // Gérer les erreurs d'envoi de message
-        });
-    }
-  }*/
-
-
-
 

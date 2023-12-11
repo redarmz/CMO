@@ -1,110 +1,47 @@
-<p>salon-discussion works!</p>
-
-
-
-<!--
-<div *ngFor="let message of messages">
-  <p>{{ message.userName }}: {{ message.text }}</p>
-</div>
 
 <div>
-  <input type="text" [(ngModel)]="nouveauMessage" placeholder="Saisissez votre message...">
-  <button (click)="envoyerMessage()">Envoyer</button>
-</div>-->
+  <h1>Discussion du Salon de l'evenement n°{{ EventId }}</h1>
 
+  <div class="info-box">
 
-<!-- conversation.component.html -->
-
-
-
-<!-- salon-discussion.component.html-->
-<!--
-<div *ngFor="let message of messages">
-  <strong>{{ message.username }}</strong>: {{ message.message }}
-</div>
-
-<form (ngSubmit)="sendMessage()">
-  <label for="username">Your Username:</label>
-  <input id="username" [(ngModel)]="username" name="username" placeholder="Enter your username" required />
-
-  <textarea [(ngModel)]="newMessage" name="newMessage" placeholder="Type your message" required></textarea>
-  <button type="submit">Send</button>
-</form>
-
--->
-
-
-
-
-<!-- salon-discussion.component.html
-<div *ngFor="let message of messages">
-  {{message}}
- </div>
- <form (submit)="sendMessage(message.value); message.reset()">
-  <input #message placeholder="Type your message" autofocus>
-  <button type="submit">Send</button>
- </form>-->
-
- <!-- src/app/salon-discussion/salon-discussion.component.html
-
-<div>
-  <h2>Bienvenue au salon de l'evenement , {{ EventId }}!</h2>
-  <h3>Bienvenue, {{ pseudonyme }}!</h3>
-  <div *ngFor="let message of messages">
-    {{ message }}
-  </div>
-  <div>
-    <input [(ngModel)]="messageInput" placeholder="Écrire un message..." />
-    <button (click)="envoyerMessage()">Envoyer</button>
-  </div>
-</div>
--->
-<!--
-<form>
-
-  <br>
-  <label for="message">message:</label>
-  <input type="string" id="message" [(ngModel)]="message" name="message" required>
-  <br>
-  <button type="button" (click)="ecrireMessageSalon()">envoyer message</button>
-</form>
-
--->
-
-
-<!-- salon-discussion.component.html -->
-
-<div>
-  <h1>Discussion du Salon</h1>
-
-  <div>
     <label for="pseudonyme">Pseudonyme:</label>
     <input type="text" id="pseudonyme" [(ngModel)]="pseudonyme" readonly>
   </div>
 
-  <div>
+  <div class="info-box">
     <label for="EventId">ID de l'événement:</label>
     <input type="text" id="EventId" [(ngModel)]="EventId" readonly>
   </div>
 
-  <div>
-    <label for="message">Message:</label>
-    <textarea id="message" [(ngModel)]="message"></textarea>
-  </div>
 
-  <button (click)="ecrireMessageSalon()">Envoyer Message</button>
 
-  <!-- Ajoutez ici une liste pour afficher les messages du salon -->
-  <div *ngIf="salonData.messages.length > 0">
-    <h2>Historique des messages:</h2>
-    <ul>
-      <li *ngFor="let msg of salonData.messages">{{ msg }}</li>
-    </ul>
+  <div *ngIf="salons.length > 0" class="message-section">
+    <h3>Anciens messages de la discussion</h3>
+    <div *ngFor="let salon of salons">
+      <ng-container *ngIf="salon.EventId === EventId ">
+        <p *ngFor="let message of salon.messages">
+          <strong>{{ message.split(':')[0] }}:</strong> {{ message.split(':')[1] }}<br>
+        </p>
+      </ng-container>
+    </div>
   </div>
+<h3>Nouveaux messages :</h3>
+<div *ngFor="let message of messagesAffiches" class="message-section">
+  <p class="test">{{ message }}</p>
+</div>
+
+<div>
+  <label for="message">Message:</label>
+  <textarea id="message" [(ngModel)]="message"></textarea>
+</div>
+
+<button (click)="ecrireMessageSalon()">Envoyer Message</button>
+
 
   <div>
     <h3>Retour à la page rejoindre un événement</h3>
     <button (click)="redirectToEventJoinPage()">Retour</button>
   </div>
+
 </div>
 

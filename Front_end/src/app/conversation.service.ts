@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ConversationService {
   private backendURL = 'http://localhost:3000';
+  private apiUrl = 'http://localhost:3000/messages';
 
   constructor(private http: HttpClient) {}
 
@@ -21,5 +22,10 @@ export class ConversationService {
     console.log("Entre dans service de rejoindresalon",message,EventId)
     return this.http.post(`${this.backendURL}/salon-discussion`, { message, EventId }, { responseType: 'text' });
   }
+
+  getMessages() {
+    return this.http.get(this.apiUrl);
+  }
+
 
 }
