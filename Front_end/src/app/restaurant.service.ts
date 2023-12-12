@@ -14,9 +14,9 @@ export class RestaurantService {
     return this.http.get<any[]>(`${this.apiUrl}/restaurants`);
   }
 
-  reserveRestaurant(restaurantId: number, numberOfPeople: number, day: string): Observable<any> {
+  reserveRestaurant(restaurantId: number, numberOfPeople: number, day: string,nom: string): Observable<any> {
     console.log('Reserving restaurant with ID:', restaurantId);
-    return this.http.post(`${this.apiUrl}/reservations/create`, { restaurantId, numberOfPeople, day });
+    return this.http.post(`${this.apiUrl}/reservations/create`, { restaurantId, numberOfPeople, day,nom });
   }
 }
 

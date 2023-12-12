@@ -19,7 +19,7 @@ app.get('/restaurants', (req, res) => {
   res.json(data.restaurants);
 });
 app.post('/reservations/create', (req, res) => {
-  const { restaurantId, numberOfPeople, day } = req.body;
+  const { restaurantId, numberOfPeople, day, nom} = req.body;
 
   const restaurant = data.restaurants.find((r, index) => index  === restaurantId);
 
@@ -39,7 +39,7 @@ app.post('/reservations/create', (req, res) => {
   }
 
   // Ajoutez la réservation au restaurant
-  restaurant.reservations.push({ numberOfPeople, day });
+  restaurant.reservations.push({ numberOfPeople, day, nom });
 
   // Mettez à jour le fichier data.js avec les nouvelles données
   const updatedDataFile = `module.exports = ${JSON.stringify(data, null, 2)};`;
@@ -49,7 +49,7 @@ app.post('/reservations/create', (req, res) => {
       console.error('Erreur lors de l\'écriture du fichier data.js:', err);
       res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
     } else {
-      console.log('Données mises à jour avec succès dans data.js');
+     
       res.json({ message: 'Réservation réussie.' });
     }
   });
@@ -143,7 +143,7 @@ app.post('/salon', (req, res) => {
       console.error('Erreur lors de l\'écriture du fichier:', err);
       res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
     } else {
-      console.log('Données mises à jour avec succès dans data.js');
+      
       res.status(200).json({ message: 'Événement créé avec succès!', event: { id: newSalonId, ...newSalonData } });
     }
   });
@@ -165,7 +165,7 @@ app.post('/salon', (req, res) => {
       console.error('Erreur lors de l\'écriture du fichier:', err);
       res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
     } else {
-      console.log('Données mises à jour avec succès dans data.js');
+      
       res.status(200).json({ message: 'Événement créé avec succès!', event: { id: newSalonId, ...newSalonData } });
     }
   });

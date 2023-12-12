@@ -12,7 +12,7 @@ export class ReserveRestoComponent implements OnInit{
   selectedRestaurant: any;
   numberOfPeople: number = 1;
   selectedDay: string = '';
-
+  nom: string='';
   constructor(private router: Router, private restaurantService: RestaurantService) {}
 
   ngOnInit(): void {
@@ -34,10 +34,10 @@ export class ReserveRestoComponent implements OnInit{
     if (this.selectedRestaurant && this.numberOfPeople && this.selectedDay) {
       // Vérifier la capacité maximale avant de réserver
       if (this.numberOfPeople <= this.selectedRestaurant.capacity) {
-        this.restaurantService.reserveRestaurant(this.selectedRestaurant.id, this.numberOfPeople, this.selectedDay).subscribe(
+        this.restaurantService.reserveRestaurant(this.selectedRestaurant.id, this.numberOfPeople, this.selectedDay, this.nom).subscribe(
           (response) => {
             console.log('Réservation réussie!', response);
-            // Mettez à jour la liste des restaurants après la réservation
+            window.alert('Réservation enregistrée!');
             this.loadRestaurants();
           },
           (error) => {
@@ -51,14 +51,20 @@ export class ReserveRestoComponent implements OnInit{
       console.log('Formulaire de réservation invalide. Veuillez remplir tous les champs.');
     }
   }
-  
+
 
   selectRestaurant(restaurant: any) {
     this.selectedRestaurant = restaurant;
   }
 
-  // Fonction pour rediriger vers la page "d'acceuil"
+
   redirectToEventPage() {
     this.router.navigate(['/home']);
   }
+  joursSemaine: string[] = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+
+
+
+  selectDay(day: string): void {
+    this.selectedDay = day;}
 }
