@@ -160,7 +160,7 @@ module.exports = {
       "numeroEvent": 56,
       "amount": 69
     }
-  ]
+  ],
   "salon": [
     {
       "id": 1,
@@ -283,7 +283,8 @@ module.exports = {
         "fg: fgd",
         "vbfd: vxfc",
         "sss: dfds",
-        "dfsd: fdsf"
+        "dfsd: fdsf",
+        ": gf"
       ],
       "EventId": "0"
     },
@@ -411,6 +412,11 @@ module.exports = {
       "id": 34,
       "messages": [],
       "EventId": "41"
+    },
+    {
+      "id": 35,
+      "messages": [],
+      "EventId": "0"
     }
   ]
 };
