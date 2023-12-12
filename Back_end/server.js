@@ -3,16 +3,21 @@ const http = require('http');
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const eventData = require('./data'); 
+const port = 3000;
+
+const TirelireData = require('./data');
+const SalonData = require('./data');
+
 const data = require('./data');
 
-app.use(cors({ origin: 'http://localhost:4200' }));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/restaurants', (req, res) => {
   res.json(data.restaurants);
 });
-
 app.post('/reservations/create', (req, res) => {
   const { restaurantId, numberOfPeople, day } = req.body;
 
@@ -53,7 +58,35 @@ app.post('/reservations/create', (req, res) => {
 app.get('/events', (req, res) => {
   res.json(data.events);
 });
+app.get('/messages', (req, res) => {
+  res.json(eventData.salon);
+});
+app.post('/create-event', (req, res) => {
+  const newEventData = req.body;
 
+  const newEventId = data.events.length + 1;
+
+  data.events.push({ id: newEventId, ...newEventData });
+
+  
+  const updatedDataFile = `module.exports = ${JSON.stringify(data, null, 2)};`;
+
+  fs.writeFile('data.js', updatedDataFile, (err) => {
+    if (err) {
+      console.error('Erreur lors de l\'écriture du fichier data.js:', err);
+      res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
+    } else {
+      res.json({ message: 'Réservation réussie.' });
+    }
+  });
+});
+
+app.get('/events', (req, res) => {
+  res.json(data.events);
+});
+app.get('/messages', (req, res) => {
+  res.json(eventData.salon);
+});
 app.post('/create-event', (req, res) => {
   const newEventData = req.body;
 
@@ -68,7 +101,7 @@ app.post('/create-event', (req, res) => {
       console.error('Erreur lors de l\'écriture du fichier data.js:', err);
       res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
     } else {
-      console.log('Données mises à jour avec succès dans data.js');
+      
       res.status(200).json({ message: 'Événement créé avec succès!', event: { id: newEventId, ...newEventData } });
     }
   });
@@ -88,12 +121,55 @@ app.post('/tirelire', (req, res) => {
       console.error('Erreur lors de l\'écriture du fichier data.js:', err);
       res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
     } else {
-      console.log('Données mises à jour avec succès dans data.js');
+      
       res.status(200).json({ message: 'Événement créé avec succès!', event: { id: newTirelireId, ...newTirelireData } });
     }
   });
 });
+app.post('/salon', (req, res) => {
+  const newSalonData = req.body;
 
+  
+  const newSalonId= SalonData.salon.length + 1;
+
+  // Ajoutez le nouvel événement à la liste des événements dans TirelireData
+  SalonData.salon.push({ id: newSalonId, ...newSalonData });
+
+  // Mettez à jour le fichier data.js avec les nouvelles données
+  const updatedDataFile = `module.exports = ${JSON.stringify(SalonData, null, 2)};`;
+
+  fs.writeFile('data.js', updatedDataFile, (err) => {
+    if (err) {
+      console.error('Erreur lors de l\'écriture du fichier:', err);
+      res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
+    } else {
+      console.log('Données mises à jour avec succès dans data.js');
+      res.status(200).json({ message: 'Événement créé avec succès!', event: { id: newSalonId, ...newSalonData } });
+    }
+  });
+});
+app.post('/salon', (req, res) => {
+  const newSalonData = req.body;
+
+  
+  const newSalonId= SalonData.salon.length + 1;
+
+  // Ajoutez le nouvel événement à la liste des événements dans TirelireData
+  SalonData.salon.push({ id: newSalonId, ...newSalonData });
+
+  // Mettez à jour le fichier data.js avec les nouvelles données
+  const updatedDataFile = `module.exports = ${JSON.stringify(SalonData, null, 2)};`;
+
+  fs.writeFile('data.js', updatedDataFile, (err) => {
+    if (err) {
+      console.error('Erreur lors de l\'écriture du fichier:', err);
+      res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
+    } else {
+      console.log('Données mises à jour avec succès dans data.js');
+      res.status(200).json({ message: 'Événement créé avec succès!', event: { id: newSalonId, ...newSalonData } });
+    }
+  });
+});
 
 
 // Endpoint pour rechercher les transactions par personne
@@ -141,10 +217,43 @@ app.post('/join-event', (req, res) => {
   }
 });
 
-const port = process.env.PORT || 3000;
+app.post('/salon-discussion', (req, res) => {
+  const { message, EventId } = req.body;
+  
+
+  // Accédez à la liste des événements depuis data.js
+  const salonData = require('./data');
+  const salons = salonData.salon;
+
+ 
+  const salon = salons.find((e) => e.EventId === EventId);
+
+  if (salon) {
+      
+      salon.messages.push(message);
+
+      // Mettez à jour la liste des invités dans data.js
+      const updatedDataFile = `module.exports = ${JSON.stringify(salonData, null, 2)};`;
+
+      fs.writeFile('data.js', updatedDataFile, (err) => {
+          if (err) {
+              console.error('Erreur lors de la mise à jour du fichier data.js :', err);
+              res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
+          } 
+      });
+  } else {
+      res.status(404).send('Événement inexistant.');
+  }
+});
+
+
+app.listen(port, () => {
+  console.log(`Serveur démarré sur le port ${port}`);
+
+/*const port = process.env.PORT || 3000;
 
 const server = http.createServer(app);
 
 server.listen(port, () => {
-  console.log(`Serveur Node.js écoutant sur le port ${port}`);
+  console.log(`Serveur Node.js écoutant sur le port ${port}`);*/
 });

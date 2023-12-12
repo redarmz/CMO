@@ -18,10 +18,11 @@ export class JoinEventComponent {
   bienvenuMessage: string = '';
 
   rejoindreEvenement() {
+
     console.log('Début de la méthode rejoindreEvenement');
     console.log('Nom:', this.nom);
     console.log('Numéro d\'événement:', this.numeroEvent);
-  
+
     this.eventService.rejoindreEvenement(this.nom, this.numeroEvent).subscribe(
       (response) => {
         console.log('Réponse du service:', response);
@@ -32,9 +33,15 @@ export class JoinEventComponent {
         // Gérer l'erreur ici
       }
     );
-    
+
     console.log('Fin de la méthode rejoindreEvenement');
   }
+
+  rejoindreSalon() {
+    // this.router.navigate(['/salon-discussion']);
+   this.router.navigate(['/salon-discussion', this.numeroEvent]);
+  }
+
   // Fonction pour rediriger vers la page "d'acceuil"
   redirectToEventPage() {
     this.router.navigate(['/event-invit']);

@@ -11,6 +11,8 @@ import { CreatEventComponent } from './creat-event/creat-event.component';
 import { JoinEventComponent } from './join-event/join-event.component';
 import { InvitationPageComponent } from './invitation-page/invitation-page.component';
 import { TirelireComponent } from './tirelire/tirelire.component';
+import { SalonDiscussionComponent } from './salon-discussion/salon-discussion.component';
+
 import { EventListComponent } from './event-list/event-list.component';
 import { ReserveRestoComponent } from './reserve-resto/reserve-resto.component';
 
@@ -23,6 +25,7 @@ import { ReserveRestoComponent } from './reserve-resto/reserve-resto.component';
     JoinEventComponent,
     InvitationPageComponent,
     TirelireComponent,
+    SalonDiscussionComponent,
     EventListComponent,
     ReserveRestoComponent,
   ],

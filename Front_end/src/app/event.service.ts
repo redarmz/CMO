@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EventService {
-  private backendURL = 'http://localhost:3000'; // Remplacez ceci par l'URL de votre backend
+  private backendURL = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
