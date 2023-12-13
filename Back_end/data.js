@@ -137,6 +137,11 @@ module.exports = {
         {
           "numberOfPeople": 3,
           "day": "Lundi"
+        },
+        {
+          "numberOfPeople": 3,
+          "day": "Lundi",
+          "nom": "mel"
         }
       ],
       "days": [
