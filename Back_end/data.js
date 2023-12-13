@@ -51,6 +51,11 @@ module.exports = {
           "numberOfPeople": 3,
           "day": "Samedi",
           "nom": "yacine"
+        },
+        {
+          "numberOfPeople": 5,
+          "day": "Mercredi",
+          "nom": "mamok"
         }
       ],
       "days": [
@@ -197,6 +202,16 @@ module.exports = {
       ],
       "description": "c'est pas drôle mais un peu quand meme",
       "numeroEvent": 1234
+    },
+    {
+      "id": 6,
+      "userName": "amir",
+      "eventName": "fete de",
+      "guestList": [
+        "mamok"
+      ],
+      "description": "on est la ",
+      "numeroEvent": 547576
     }
   ],
   "tirelire": [
@@ -248,6 +263,13 @@ module.exports = {
       "preteur": "Mohamed",
       "numeroEvent": 56,
       "amount": 69
+    },
+    {
+      "id": 8,
+      "emprunteur": "mamok",
+      "preteur": "amir",
+      "numeroEvent": 3356,
+      "amount": 9999
     }
   ],
   "salon": [
@@ -545,6 +567,13 @@ module.exports = {
       "id": 41,
       "messages": [],
       "EventId": "0"
+    },
+    {
+      "id": 42,
+      "messages": [
+        "mamok: hiiiii"
+      ],
+      "EventId": "547576"
     }
   ]
 };
