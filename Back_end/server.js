@@ -1,6 +1,6 @@
 const fs = require('fs');
 const http = require('http');
-const express = require('express');
+let express = require('express');
 const cors = require('cors');
 const app = express();
 const eventData = require('./data'); 
