@@ -172,7 +172,7 @@ app.post('/salon', (req, res) => {
 });
 
 
-// Endpoint pour rechercher les transactions par personne
+// Endpoint pour rechercher les transactions par persone
 app.get('/tirelire/search', (req, res) => {
   const { person } = req.query;
 
