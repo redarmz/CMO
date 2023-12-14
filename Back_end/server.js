@@ -2,7 +2,7 @@ const fs = require('fs');
 const http = require('http');
 let express = require('express');
 const cors = require('cors');
-const app = express();
+const appex = express();
 const eventData = require('./data'); 
 const port = 3000;
 
@@ -11,14 +11,14 @@ const SalonData = require('./data');
 
 const data = require('./data');
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+appex.use(cors());
+appex.use(express.json());
+appex.use(express.urlencoded({ extended: true }));
 
-app.get('/restaurants', (req, res) => {
+appex.get('/restaurants', (req, res) => {
   res.json(data.restaurants);
 });
-app.post('/reservations/create', (req, res) => {
+appex.post('/reservations/create', (req, res) => {
   const { restaurantId, numberOfPeople, day, nom} = req.body;
 
   const restaurant = data.restaurants.find((r, index) => index  === restaurantId);
@@ -55,13 +55,13 @@ app.post('/reservations/create', (req, res) => {
   });
 });
 
-app.get('/events', (req, res) => {
+appex.get('/events', (req, res) => {
   res.json(data.events);
 });
-app.get('/messages', (req, res) => {
+appex.get('/messages', (req, res) => {
   res.json(eventData.salon);
 });
-app.post('/create-event', (req, res) => {
+appex.post('/create-event', (req, res) => {
   const newEventData = req.body;
 
   const newEventId = data.events.length + 1;
@@ -81,13 +81,13 @@ app.post('/create-event', (req, res) => {
   });
 });
 
-app.get('/events', (req, res) => {
+appex.get('/events', (req, res) => {
   res.json(data.events);
 });
-app.get('/messages', (req, res) => {
+appex.get('/messages', (req, res) => {
   res.json(eventData.salon);
 });
-app.post('/create-event', (req, res) => {
+appex.post('/create-event', (req, res) => {
   const newEventData = req.body;
 
   const newEventId = data.events.length + 1;
@@ -107,7 +107,7 @@ app.post('/create-event', (req, res) => {
   });
 });
 
-app.post('/tirelire', (req, res) => {
+appex.post('/tirelire', (req, res) => {
   const newTirelireData = req.body;
 
   const newTirelireId = data.tirelire.length + 1;
@@ -126,7 +126,7 @@ app.post('/tirelire', (req, res) => {
     }
   });
 });
-app.post('/salon', (req, res) => {
+appex.post('/salon', (req, res) => {
   const newSalonData = req.body;
 
   
@@ -148,7 +148,7 @@ app.post('/salon', (req, res) => {
     }
   });
 });
-app.post('/salon', (req, res) => {
+appex.post('/salon', (req, res) => {
   const newSalonData = req.body;
 
   
@@ -173,7 +173,7 @@ app.post('/salon', (req, res) => {
 
 
 // Endpoint pour rechercher les transactions par persone
-app.get('/tirelire/search', (req, res) => {
+appex.get('/tirelire/search', (req, res) => {
   const { person } = req.query;
 
   if (!person) {
@@ -192,7 +192,7 @@ app.get('/tirelire/search', (req, res) => {
 
 
 
-app.post('/join-event', (req, res) => {
+appex.post('/join-event', (req, res) => {
   const { nom, numeroEvent } = req.body;
   const events = data.events;
 
@@ -217,7 +217,7 @@ app.post('/join-event', (req, res) => {
   }
 });
 
-app.post('/salon-discussion', (req, res) => {
+appex.post('/salon-discussion', (req, res) => {
   const { message, EventId } = req.body;
   
 
@@ -247,7 +247,7 @@ app.post('/salon-discussion', (req, res) => {
 });
 
 
-app.listen(port, () => {
+appex.listen(port, () => {
   console.log(`Serveur démarré sur le port ${port}`);
 
 /*const port = process.env.PORT || 3000;
