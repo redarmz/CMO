@@ -1,14 +1,30 @@
-<h2>{{ title }}</h2>
+<!--<h2>{{ title }}</h2>
 <p>{{ description }}</p>
 <img [src]="imageUrl" [alt]="title">
-<p>Mise en ligne le {{ createdDate }}</p>
-
-<h3>Données récuperer depuis le back-end : </h3>
-<div *ngFor="let restaurant of restaurants">
-    <p>{{ restaurant.name }}</p>
-</div>
 
   
 <button (click)="redirectToEventPage()">Evénement</button>
 <button (click)="redirectToTirelirePage()">Tirelire</button>
-<button (click)="redirectToReservation()">Réserver</button>
+<button (click)="redirectToReservation()">Réserver</button>-->
+<div class="header">
+    <h1>Ça mange où ?</h1>
+  </div>
+  
+  <div class="content">
+    <img src="https://static.750g.com/images/600-600/f3cb23d0e2e9319c4e698badffb18c89/10-plats-quon-mange-avec-les-doigts.jpg" alt="Plats" class="interactive-image">
+    <h2>{{ title }}</h2>
+    <p>{{ description }}</p>
+    
+    <div class="button-container">
+        <button (click)="redirectToEventPage()">Événement</button>
+        <button (click)="redirectToTirelirePage()">Tirelire</button>
+        <button (click)="redirectToReservation()">Réserver</button>
+      </div>
+      
+  </div>
+  
+  <div class="footer">
+    <p>&copy; 2023 CMO. Tous droits réservés.</p>
+  </div>
+  
+  
