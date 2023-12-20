@@ -22,6 +22,11 @@ module.exports = {
           "numberOfPeople": 5,
           "day": "Vendredi",
           "nom": "Ramzi"
+        },
+        {
+          "numberOfPeople": 3,
+          "day": "Jeudi",
+          "nom": "Reda"
         }
       ],
       "days": [
@@ -232,6 +237,16 @@ module.exports = {
       ],
       "description": "on est la ",
       "numeroEvent": 547576
+    },
+    {
+      "id": 7,
+      "userName": "Reda",
+      "eventName": "Devops",
+      "guestList": [
+        "Amir"
+      ],
+      "description": "On code ",
+      "numeroEvent": 8087
     }
   ],
   "tirelire": [
@@ -290,6 +305,13 @@ module.exports = {
       "preteur": "amir",
       "numeroEvent": 3356,
       "amount": 9999
+    },
+    {
+      "id": 9,
+      "emprunteur": "Reda",
+      "preteur": "Wassim",
+      "numeroEvent": 8087,
+      "amount": 45
     }
   ],
   "salon": [
@@ -607,6 +629,13 @@ module.exports = {
       "id": 44,
       "messages": [],
       "EventId": "4549"
+    },
+    {
+      "id": 45,
+      "messages": [
+        "Amir: Salut"
+      ],
+      "EventId": "8087"
     }
   ]
 };
