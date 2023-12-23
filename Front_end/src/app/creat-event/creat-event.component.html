@@ -19,8 +19,17 @@
         <textarea id="description" [(ngModel)]="eventData.description" name="description" required></textarea>
       </div>
       <div>
-      <label for="numeroEvent">Numéro d'événement (4 chiffres minimum)</label>
-  <input type="number" id="numeroEvent" name="numeroEvent" [(ngModel)]="eventData.numeroEvent" min="1000" max="9999" required>
+      
+
+        <div>
+          <label for="numeroEvent">Numéro d'événement</label>
+          <input type="number" id="numeroEvent" name="numeroEvent" [(ngModel)]="eventData.numeroEvent" min="1000" max="9999" readonly>
+        </div>        
+        <button type="button" (click)="generateEventCode()">Générer un numéro d'événement</button>
+
+      
+
+      
 </div>
       <!-- Bouton de création d'événement conditionnel -->
       <button type="submit" *ngIf="eventData.userName && eventData.eventName && eventData.description && eventData.numeroEvent">Create Event</button>

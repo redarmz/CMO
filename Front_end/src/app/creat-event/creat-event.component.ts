@@ -28,24 +28,36 @@ export class CreatEventComponent {
 
   createEvent() {
     if (this.eventData.userName && this.eventData.eventName && this.eventData.description) {
-      if (this.eventData.numeroEvent && this.eventData.numeroEvent.toString().length >= 4) {
-        this.eventService.createEvent(this.eventData).subscribe(
-          (response) => {
-            console.log('Événement créé avec succès!', response);
-          },
-          (error) => {
-            console.error('Erreur lors de la création de l\'événement', error);
-          }
-        );
-      } else {
-        console.log('Veuillez saisir un numéro d\'événement valide (4 chiffres minimum).');
+      if (!this.eventData.numeroEvent) {
+        this.generateEventCode();
       }
+  
+      this.eventService.createEvent(this.eventData).subscribe(
+        (response) => {
+          console.log('Événement créé avec succès!', response);
+          alert('Événement créé avec succès!'); // Affiche une alerte de succès
+        },
+        (error) => {
+          console.error('Erreur lors de la création de l\'événement', error);
+          alert('Erreur lors de la création de l\'événement. Veuillez réessayer.'); // Affiche une alerte d'erreur
+        }
+      );
     } else {
-      console.log('Formulaire invalide. Veuillez remplir tous les champs.');
+      alert('Formulaire invalide. Veuillez remplir tous les champs.');
     }
   }
+  
+  
+  
+  
 
   redirectToCodeInvit() {
     this.router.navigate(['/event-creer']);
   }
+
+  generateEventCode() {
+    const randomCode = Math.floor(1000 + Math.random() * 9000); // Génère un numéro entre 1000 et 9999
+    this.eventData.numeroEvent = randomCode;
+  }
+  
 }
