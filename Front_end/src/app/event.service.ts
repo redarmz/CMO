@@ -23,5 +23,10 @@ export class EventService {
     return this.http.get(`${this.backendURL}/events`);
   }
 
+  searchEvents(term: string): Observable<any> {
+    return this.http.get(`${this.backendURL}/events/search?term=${term}`);
+  }
+  
+
 
 }
