@@ -1,6 +1,6 @@
 <div class="events-container">
 <input type="text" [formControl]="searchControl" placeholder="Rechercher un événement..." (keydown.enter)="searchEvent()">
-<button (click)="showAllEvents()">Afficher tout les événements</button>
+<button (click)="showAllEvents()" class="toutAff">Afficher tout les événements</button>
 <ul *ngIf="suggestions.length">
 
   <li *ngFor="let suggestion of suggestions" (click)="searchControl.setValue(suggestion)">{{ suggestion }}</li>

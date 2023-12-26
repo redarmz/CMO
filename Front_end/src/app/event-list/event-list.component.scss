@@ -71,4 +71,33 @@ body {
       background-color: #2980b9; /* Couleur du bouton de retour au survol */
     }
   }
+
+  /* Barre de recherche */
+input[type="text"] {
+  width: calc(60% - 40px); /* La largeur de la barre de recherche moins l'espace pour le bouton */
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Bouton "Tout afficher" */
+.toutAff{
+  position: absolute;
+  top: 10px;
+  right: 20px; /* Position en haut à droite */
+  padding: 15px 30px; /* Taille augmentée */
+  font-size: 18px; /* Taille du texte augmentée */
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #2980b9;
+  }
+}
   
