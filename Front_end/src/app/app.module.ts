@@ -16,6 +16,8 @@ import { SalonDiscussionComponent } from './salon-discussion/salon-discussion.co
 
 import { EventListComponent } from './event-list/event-list.component';
 import { ReserveRestoComponent } from './reserve-resto/reserve-resto.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ReserveRestoComponent } from './reserve-resto/reserve-resto.component';
     SalonDiscussionComponent,
     EventListComponent,
     ReserveRestoComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

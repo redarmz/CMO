@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; // Importez le service Router
 import { RestaurantService } from '../restaurant.service';
+import { Logreg } from '../Logreg.service';
 
 @Component({
   selector: 'app-home-page',
@@ -30,6 +31,7 @@ export class HomePageComponent implements OnInit {
     this.restaurantService.getRestaurants().subscribe((data: any) => {
       this.restaurants = data;
     });
+    
   }
 
   // Fonction pour rediriger vers la page "event-invit"
@@ -55,5 +57,10 @@ export class HomePageComponent implements OnInit {
         titleElement.style.opacity = '1'; // Augmenter l'opacité après un délai
       }, 500);
     }
+  }
+
+  // Fonction pour rediriger vers la page de login pr une déconnexion
+  redirectToLogin() {
+    this.router.navigate(['/login']);
   }
 }

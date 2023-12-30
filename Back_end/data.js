@@ -240,5 +240,27 @@ module.exports = {
       ],
       "EventId": "4549"
     }
+  ],
+  "user": [
+    {
+      "id": 0,
+      "username": "John",
+      "password": "test"
+    },
+    {
+      "id": 1,
+      "username": "Reda",
+      "password": "test"
+    },
+    {
+      "id": 2,
+      "username": "Paul",
+      "password": "123"
+    },
+    {
+      "id": 3,
+      "username": "Niro",
+      "password": "future"
+    }
   ]
 };

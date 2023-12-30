@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Page de Connexion</h2>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur:</label>
+        <input type="text" id="username" formControlName="username" class="form-control" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" formControlName="password" class="form-control" required>
+      </div>
+      
+      <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Se connecter</button>
+    </form>
+  </div>
+
+  <div>
+    <h4>Vous n'avez pas de compte ? Inscrivez-vous !!</h4>
+    <button (click)="redirectToRegisterPage()">S'inscrire</button>
+</div>
+  

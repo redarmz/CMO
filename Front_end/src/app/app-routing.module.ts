@@ -9,9 +9,11 @@ import { TirelireComponent } from './tirelire/tirelire.component';
 import { SalonDiscussionComponent} from './salon-discussion/salon-discussion.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { ReserveRestoComponent } from './reserve-resto/reserve-resto.component';
-
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirection par défaut vers la page Home
   { path: 'home', component: HomePageComponent },
   { path: 'event-invit', component: EventInvitComponent },
   { path: 'creat-event', component: CreatEventComponent },
@@ -20,9 +22,10 @@ const routes: Routes = [
   { path: 'tirelire', component: TirelireComponent },
   { path: 'salon-discussion', component: SalonDiscussionComponent },
   { path: 'salon-discussion/:id', component: SalonDiscussionComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirection par défaut vers la page Home
   { path: 'list-event', component: EventListComponent },
   { path: 'reserve-resto', component: ReserveRestoComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent }
 ];
 
 @NgModule({

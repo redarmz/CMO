@@ -2,23 +2,25 @@ const fs = require('fs');
 const http = require('http');
 let express = require('express');
 const cors = require('cors');
-const appex = express();
+const app = express();
 const eventData = require('./data'); 
 const port = 3000;
+const bodyParser = require('body-parser'); //
 
 const TirelireData = require('./data');
 const SalonData = require('./data');
 
 const data = require('./data');
 
-appex.use(cors());
-appex.use(express.json());
-appex.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());//
 
-appex.get('/restaurants', (req, res) => {
+app.get('/restaurants', (req, res) => {
   res.json(data.restaurants);
 });
-appex.post('/reservations/create', (req, res) => {
+app.post('/reservations/create', (req, res) => {
   const { restaurantId, numberOfPeople, day, nom} = req.body;
 
   const restaurant = data.restaurants.find((r, index) => index  === restaurantId);
@@ -55,13 +57,13 @@ appex.post('/reservations/create', (req, res) => {
   });
 });
 
-appex.get('/events', (req, res) => {
+app.get('/events', (req, res) => {
   res.json(data.events);
 });
-appex.get('/messages', (req, res) => {
+app.get('/messages', (req, res) => {
   res.json(eventData.salon);
 });
-appex.post('/create-event', (req, res) => {
+app.post('/create-event', (req, res) => {
   const newEventData = req.body;
 
   const newEventId = data.events.length + 1;
@@ -81,13 +83,13 @@ appex.post('/create-event', (req, res) => {
   });
 });
 
-appex.get('/events', (req, res) => {
+app.get('/events', (req, res) => {
   res.json(data.events);
 });
-appex.get('/messages', (req, res) => {
+app.get('/messages', (req, res) => {
   res.json(eventData.salon);
 });
-appex.post('/create-event', (req, res) => {
+app.post('/create-event', (req, res) => {
   const newEventData = req.body;
 
   const newEventId = data.events.length + 1;
@@ -107,7 +109,7 @@ appex.post('/create-event', (req, res) => {
   });
 });
 
-appex.post('/tirelire', (req, res) => {
+app.post('/tirelire', (req, res) => {
   const newTirelireData = req.body;
 
   const newTirelireId = data.tirelire.length + 1;
@@ -126,7 +128,7 @@ appex.post('/tirelire', (req, res) => {
     }
   });
 });
-appex.post('/salon', (req, res) => {
+app.post('/salon', (req, res) => {
   const newSalonData = req.body;
 
   
@@ -148,7 +150,7 @@ appex.post('/salon', (req, res) => {
     }
   });
 });
-appex.post('/salon', (req, res) => {
+app.post('/salon', (req, res) => {
   const newSalonData = req.body;
 
   
@@ -173,7 +175,7 @@ appex.post('/salon', (req, res) => {
 
 
 // Endpoint pour rechercher les transactions par persone
-appex.get('/tirelire/search', (req, res) => {
+app.get('/tirelire/search', (req, res) => {
   const { person } = req.query;
 
   if (!person) {
@@ -192,7 +194,7 @@ appex.get('/tirelire/search', (req, res) => {
 
 
 
-appex.post('/join-event', (req, res) => {
+app.post('/join-event', (req, res) => {
   const { nom, numeroEvent } = req.body;
   const events = data.events;
 
@@ -217,7 +219,7 @@ appex.post('/join-event', (req, res) => {
   }
 });
 
-appex.post('/salon-discussion', (req, res) => {
+app.post('/salon-discussion', (req, res) => {
   const { message, EventId } = req.body;
   
 
@@ -247,7 +249,7 @@ appex.post('/salon-discussion', (req, res) => {
 });
 
 
-appex.listen(port, () => {
+app.listen(port, () => {
   console.log(`Serveur démarré sur le port ${port}`);
 
 /*const port = process.env.PORT || 3000;
@@ -256,4 +258,89 @@ const server = http.createServer(app);
 
 server.listen(port, () => {
   console.log(`Serveur Node.js écoutant sur le port ${port}`);*/
+});
+
+/*
+// Fonction pour vérifier si un utilisateur existe
+function userExists(username) {
+  return data.user.some(user => user.username === username);
+}
+
+// Fonction pour ajouter un nouvel utilisateur
+function addUser(username, password) {
+  const newUser = {
+    id: data.user.length,
+    username,
+    password // Note: il serait préférable de stocker les mots de passe de manière sécurisée, ceci est simplifié pour l'exemple.
+  };
+  data.user.push(newUser);
+}
+
+// Endpoint pour la connexion
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  const user = data.user.find(user => user.username === username && user.password === password);
+  
+  if (user) {
+    res.status(200).send({ message: 'Connexion réussie', user });
+  } else {
+    res.status(401).send({ message: 'Nom d\'utilisateur ou mot de passe incorrect.' });
+  }
+});
+
+// Endpoint pour l'inscription
+app.post('/register', (req, res) => {
+  const { username, password } = req.body;
+
+  if (userExists(username)) {
+    res.status(400).send({ message: 'Nom d\'utilisateur déjà utilisé.' });
+  } else {
+    addUser(username, password);
+    res.status(201).send({ message: 'Inscription réussie' });
+  }
+});
+*/
+
+// Fonction pour vérifier si un utilisateur existe
+function userExists(username) {
+  return data.user.some(user => user.username === username);
+}
+
+// Fonction pour ajouter un nouvel utilisateur
+function addUser(username, password) {
+  const newUser = {
+    id: data.user.length,
+    username,
+    password // Note: Stocker les mots de passe de cette manière n'est pas sécurisé.
+  };
+  data.user.push(newUser);
+
+  // Mettre à jour le fichier data.js
+  fs.writeFileSync('./data.js', `module.exports = ${JSON.stringify(data, null, 2)};`, 'utf8');
+}
+
+// Endpoint pour la connexion
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  const user = data.user.find(user => user.username === username && user.password === password);
+  
+  if (user) {
+    res.status(200).send({ message: 'Connexion réussie', user });
+  } else {
+    res.status(401).send({ message: 'Nom d\'utilisateur ou mot de passe incorrect.' });
+  }
+});
+
+// Endpoint pour l'inscription
+app.post('/register', (req, res) => {
+  const { username, password } = req.body;
+
+  if (userExists(username)) {
+    res.status(400).send({ message: 'Nom d\'utilisateur déjà utilisé.' });
+  } else {
+    addUser(username, password);
+    res.status(201).send({ message: 'Inscription réussie' });
+  }
 });
