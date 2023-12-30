@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; // Importez le service Router
 import { RestaurantService } from '../restaurant.service';
-import { Logreg } from '../Logreg.service';
 
 @Component({
   selector: 'app-home-page',
@@ -33,6 +32,7 @@ export class HomePageComponent implements OnInit {
     });
     
   }
+
 
   // Fonction pour rediriger vers la page "event-invit"
   redirectToEventPage() {

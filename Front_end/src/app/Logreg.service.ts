@@ -17,14 +17,14 @@ export class Logreg {
     return this.isLoggedIn$.asObservable();
   }
 
-  /*loginUser(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, userData);
-  }*/
   loginUser(userData: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, userData);
+  }
+  /*loginUser(userData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, userData).pipe(
       tap(() => this.isLoggedIn$.next(true)) // Marquer comme connecté
     );
-  }
+  }*/
 
   registerUser(userData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, userData);
