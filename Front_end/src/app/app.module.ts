@@ -16,6 +16,9 @@ import { SalonDiscussionComponent } from './salon-discussion/salon-discussion.co
 
 import { EventListComponent } from './event-list/event-list.component';
 import { ReserveRestoComponent } from './reserve-resto/reserve-resto.component';
+import { CarteComponent } from './carte/carte.component';
+import { MapComponent } from './map/map.component';
+
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
@@ -33,13 +36,16 @@ import { RegisterComponent } from './register/register.component';
     ReserveRestoComponent,
     LoginComponent,
     RegisterComponent,
+    CarteComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule, // Ajoutez le module de routage ici
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

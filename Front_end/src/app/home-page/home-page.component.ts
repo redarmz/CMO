@@ -30,7 +30,7 @@ export class HomePageComponent implements OnInit {
     this.restaurantService.getRestaurants().subscribe((data: any) => {
       this.restaurants = data;
     });
-    
+
   }
 
 
@@ -47,6 +47,13 @@ export class HomePageComponent implements OnInit {
   // Fonction pour rediriger vers la page de reservation
   redirectToReservation() {
     this.router.navigate(['/reserve-resto']);
+  }
+
+  redirectToCartePage() {
+    this.router.navigate(['/carte']);
+  }
+  redirectToMap(){
+    this.router.navigate(['/map']);
   }
 
   animateTitle() {

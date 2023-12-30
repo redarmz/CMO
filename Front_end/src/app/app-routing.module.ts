@@ -10,7 +10,9 @@ import { SalonDiscussionComponent} from './salon-discussion/salon-discussion.com
 import { EventListComponent } from './event-list/event-list.component';
 import { ReserveRestoComponent } from './reserve-resto/reserve-resto.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './register/register.component';import { CarteComponent } from './carte/carte.component';
+import { MapComponent } from './map/map.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirection par défaut vers la page Home
@@ -25,7 +27,9 @@ const routes: Routes = [
   { path: 'list-event', component: EventListComponent },
   { path: 'reserve-resto', component: ReserveRestoComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'carte', component: CarteComponent },
+  { path: 'map', component: MapComponent },
 ];
 
 @NgModule({

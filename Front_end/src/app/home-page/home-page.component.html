@@ -1,26 +1,28 @@
+
 <div class="header">
     <h1>Ça mange où ?</h1>
     <div class="deconexion">
       <button (click)="redirectToLogin()">Se déconnecter</button>
     </div>
-    
+
   </div>
-  
+
   <div class="content">
     <img src="https://static.750g.com/images/600-600/f3cb23d0e2e9319c4e698badffb18c89/10-plats-quon-mange-avec-les-doigts.jpg" alt="Plats" class="interactive-image">
     <h2>{{ title }}</h2>
     <p>{{ description }}</p>
-    
+
     <div class="button-container">
         <button (click)="redirectToEventPage()">Événement</button>
         <button (click)="redirectToTirelirePage()">Tirelire</button>
         <button (click)="redirectToReservation()">Réserver</button>
+        <button (click)="redirectToCartePage()">Carte et Itinéraires </button>
+        <button (click)="redirectToMap()">Map </button>
       </div>
-      
+
   </div>
-  
+
   <div class="footer">
     <p>&copy; 2023 CMO. Tous droits réservés.</p>
   </div>
-  
-  
+
