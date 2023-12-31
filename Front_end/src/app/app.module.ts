@@ -18,6 +18,7 @@ import { EventListComponent } from './event-list/event-list.component';
 import { ReserveRestoComponent } from './reserve-resto/reserve-resto.component';
 import { CarteComponent } from './carte/carte.component';
 import { MapComponent } from './map/map.component';
+import { ToutesLesCartesComponent } from './toutes-les-cartes/toutes-les-cartes.component';
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -38,6 +39,7 @@ import { RegisterComponent } from './register/register.component';
     RegisterComponent,
     CarteComponent,
     MapComponent,
+    ToutesLesCartesComponent,
   ],
   imports: [
     BrowserModule,

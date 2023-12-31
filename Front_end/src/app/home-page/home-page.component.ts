@@ -55,6 +55,9 @@ export class HomePageComponent implements OnInit {
   redirectToMap(){
     this.router.navigate(['/map']);
   }
+  redirectToToutesLesCartes(){
+    this.router.navigate(['/Cartes']);
+  }
 
   animateTitle() {
     const titleElement = document.querySelector('.header h1') as HTMLElement;

@@ -15,6 +15,8 @@ export class MapComponent  {
     this.router.navigate(['/home']);
   }
 
-
+  redirectToToutesLesCartes(){
+    this.router.navigate(['/Cartes']);
+  }
 
 }

@@ -12,6 +12,7 @@ import { ReserveRestoComponent } from './reserve-resto/reserve-resto.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';import { CarteComponent } from './carte/carte.component';
 import { MapComponent } from './map/map.component';
+import { ToutesLesCartesComponent } from './toutes-les-cartes/toutes-les-cartes.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'carte', component: CarteComponent },
   { path: 'map', component: MapComponent },
+  { path: 'Cartes', component: ToutesLesCartesComponent },
 ];
 
 @NgModule({

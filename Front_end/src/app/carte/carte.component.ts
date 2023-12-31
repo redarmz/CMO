@@ -145,4 +145,7 @@ export class CarteComponent implements OnInit{
   redirectToEventPage() {
     this.router.navigate(['/home']);
   }
+  redirectToToutesLesCartes(){
+    this.router.navigate(['/Cartes']);
+  }
 }
