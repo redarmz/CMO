@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-//import * as L from 'leaflet';
 import * as L from 'leaflet';
 import { HttpClient } from '@angular/common/http';
+import 'leaflet-tilelayer-geojson';
 import 'leaflet-routing-machine';
 import 'leaflet-control-geocoder';
-//import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
-//import 'leaflet-routing-machine/dist/leaflet-routing-machine.js';
+
 
 
 
@@ -16,11 +15,17 @@ import 'leaflet-control-geocoder';
   styleUrls: ['./carte.component.scss']
 })
 export class CarteComponent implements OnInit{
+
   private map!: L.Map;
   private centroid: L.LatLngExpression = [48.9047, 2.2140 ];
   private lat=48.9047;
   private long=2.2140;
+
+
   private initMap(): void {
+
+
+
     this.map = L.map('map', {
       center: this.centroid,
       zoom: 15
@@ -35,27 +40,34 @@ export class CarteComponent implements OnInit{
 
   // Ajouter un fond de tuiles sombre
   const darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    maxZoom: 18,
+    maxZoom: 15,
     minZoom: 10,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   });
 
+  const positronTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  maxZoom: 15,
+  minZoom: 0,
+  attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+});
 
 
-  // Ajouter les trois fonds de tuiles à un groupe de couches
+  // Ajouter les  fonds de tuiles à un groupe de couches
   const baseMaps = {
     'Clair': lightTiles,
     'Sombre': darkTiles,
-
+    'Positron': positronTiles
   };
 
 
 
 
   lightTiles.addTo(this.map);
+
   L.control.layers(baseMaps).addTo(this.map);
+
   const geocoderControl = (L.Control as any).geocoder({
-    geocoder: (L.Control as any).Geocoder.nominatim()
+      geocoder: (L.Control as any).Geocoder.nominatim()
   }).addTo(this.map);
 
   // Ajouter le module de routage
@@ -110,20 +122,13 @@ export class CarteComponent implements OnInit{
     } else {
       console.warn('La géolocalisation n\'est pas prise en charge par ce navigateur.');
     }
-    //(L.control as any).geocoder().addTo(this.map);
-  }
-  private setupRoutingControl() {
-    const waypoints = [
-      L.latLng(57.74, 11.94),
-      L.latLng(57.6792, 11.949)
-    ];
 
-    const routingControl = (L as any).Routing.control({
-      waypoints: waypoints,
-      routeWhileDragging: true,
-      geocoder: (L.Control as any).Geocoder.nominatim()
-    }).addTo(this.map);
+
+
+
+
   }
+
 
 
 

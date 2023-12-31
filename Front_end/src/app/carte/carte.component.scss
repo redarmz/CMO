@@ -1,6 +1,5 @@
-/* carte.component.scss */
 
-@import '~leaflet/dist/leaflet.css';
+
 
 :host {
   display: flex;
@@ -10,8 +9,8 @@
 }
 
 #map {
-  height: 90vh; /* Ajustez selon vos préférences */
-  width: 70vw; /* Ajustez selon vos préférences */
+  height: 90vh;
+  width: 70vw;
   margin-bottom: 20px;
   border: solid black 1px;
 }
@@ -37,6 +36,22 @@
     background-color: #2980b9;
   }
 }
+h1 {
+  color: #3498db; /* Bleu */
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: font-size 0.3s ease; /* Ajout de la transition pour la taille de police */
+}
 
+
+
+h1:hover {
+  font-size: 32px; /* Taille de police agrandie au survol */
+  color: #2ecc71; /* Changement de couleur au survol */
+  content: ' !'; /* Ajouter un point d'exclamation à la fin */
+
+}
 
 
