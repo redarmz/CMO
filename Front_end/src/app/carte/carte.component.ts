@@ -28,7 +28,7 @@ export class CarteComponent implements OnInit{
 
     // Ajouter un fond de tuiles standard (clair)
   const lightTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
+    maxZoom: 15,
     minZoom: 0,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   });
@@ -63,6 +63,12 @@ export class CarteComponent implements OnInit{
 
     routeWhileDragging: true,
     geocoder: (L.Control as any).Geocoder.nominatim(),
+    lineOptions:{
+      styles:[{color:'green',
+              Opacity: 1,
+              weight:6
+              }],
+    },
     rooter: new (L as any).Routing.osrmv1({
       language: "fr",
     })
@@ -121,35 +127,7 @@ export class CarteComponent implements OnInit{
 
 
 
-  private loadPOIData(): void {
-    // Utilisez une API ou un service de données de cartographie pour obtenir les POI
-    // Ici, nous utilisons l'API Overpass de OpenStreetMap comme exemple
-    const overpassAPI = 'https://overpass-api.de/api/interpreter';
-    const query = `
-      [out:json];
-      (
-        node["amenity"="restaurant"](around:${this.lat},${this.long},500);
-        node["amenity"="fast_food"](around:${this.lat},${this.long},500);
-        node["amenity"="bar"](around:${this.lat},${this.long},500);
-      );
-      out;
-    `;
 
-    fetch(`${overpassAPI}?data=${encodeURIComponent(query)}`)
-      .then(response => response.json())
-      .then((data: any) => this.displayPOIOnMap(data))
-      .catch((error: any) => console.error('Error fetching POI data:', error));
-  }
-
-  private displayPOIOnMap(data: any): void {
-
-    const pois: any[] = data.elements;
-
-    pois.forEach((poi: any) => {
-      const latlng: L.LatLngExpression = [poi.lat, poi.lon];
-      L.marker(latlng).addTo(this.map);
-    });
-  }
 
   constructor(private router: Router, private httpClient: HttpClient) {}
 
