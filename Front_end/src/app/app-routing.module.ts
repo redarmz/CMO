@@ -13,25 +13,26 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';import { CarteComponent } from './carte/carte.component';
 import { MapComponent } from './map/map.component';
 import { ToutesLesCartesComponent } from './toutes-les-cartes/toutes-les-cartes.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirection par défaut vers la page Home
-  { path: 'home', component: HomePageComponent },
-  { path: 'event-invit', component: EventInvitComponent },
-  { path: 'creat-event', component: CreatEventComponent },
-  { path: 'join-event', component: JoinEventComponent },
-  { path: 'invitation/:eventCode', component: InvitationPageComponent },
-  { path: 'tirelire', component: TirelireComponent },
-  { path: 'salon-discussion', component: SalonDiscussionComponent },
-  { path: 'salon-discussion/:id', component: SalonDiscussionComponent },
-  { path: 'list-event', component: EventListComponent },
+  { path: 'home', component: HomePageComponent, canActivate: [AuthGuard] },
+  { path: 'event-invit', component: EventInvitComponent, canActivate: [AuthGuard] },
+  { path: 'creat-event', component: CreatEventComponent, canActivate: [AuthGuard] },
+  { path: 'join-event', component: JoinEventComponent, canActivate: [AuthGuard] },
+  { path: 'invitation/:eventCode', component: InvitationPageComponent, canActivate: [AuthGuard] },
+  { path: 'tirelire', component: TirelireComponent, canActivate: [AuthGuard] },
+  { path: 'salon-discussion', component: SalonDiscussionComponent, canActivate: [AuthGuard] },
+  { path: 'salon-discussion/:id', component: SalonDiscussionComponent, canActivate: [AuthGuard] },
+  { path: 'list-event', component: EventListComponent, canActivate: [AuthGuard] },
   { path: 'reserve-resto', component: ReserveRestoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'carte', component: CarteComponent },
-  { path: 'map', component: MapComponent },
-  { path: 'Cartes', component: ToutesLesCartesComponent },
+  { path: 'carte', component: CarteComponent, canActivate: [AuthGuard] },
+  { path: 'map', component: MapComponent, canActivate: [AuthGuard] },
+  { path: 'Cartes', component: ToutesLesCartesComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

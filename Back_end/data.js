@@ -151,6 +151,14 @@ module.exports = {
       "guestList": [],
       "description": "ERRRRRRRRTX",
       "numeroEvent": 9566
+    },
+    {
+      "id": 8,
+      "userName": "test",
+      "eventName": "V04",
+      "guestList": [],
+      "description": "V04 vidéo",
+      "numeroEvent": 8191
     }
   ],
   "tirelire": [
@@ -271,6 +279,11 @@ module.exports = {
       "id": 5,
       "username": "amir",
       "password": "amirm12345"
+    },
+    {
+      "id": 6,
+      "username": "Pascal",
+      "password": "miage"
     }
   ]
 };
