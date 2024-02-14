@@ -94,7 +94,10 @@ module.exports = {
       "eventName": "Saint Patrick",
       "guestList": [
         "Reda",
-        "Sonia"
+        "Sonia",
+        "Patt",
+        "Thi",
+        "TH"
       ],
       "description": "Avec modération",
       "numeroEvent": 9093
