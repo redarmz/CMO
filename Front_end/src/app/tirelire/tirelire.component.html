@@ -21,9 +21,13 @@
 <div class="label-container">
   <h2>Recherche de Transactions</h2>
   
-  <label for="searchPerson">Rechercher une personne:</label>
-  <input type="text" id="searchPerson" name="searchPerson" [(ngModel)]="searchPersonInput" required>
-  <button (click)="searchPerson()">Rechercher</button>
+  <label for="searchPerson1">Rechercher la première personne:</label>
+  <input type="text" id="searchPerson1" name="searchPerson1" [(ngModel)]="searchPersonInput1" required>
+
+  <label for="searchPerson2">Rechercher la deuxième personne:</label>
+  <input type="text" id="searchPerson2" name="searchPerson2" [(ngModel)]="searchPersonInput2" required>
+
+  <button (click)="searchTransactions()">Rechercher</button>
 
   <!-- Affichage des résultats de recherche -->
   <div *ngIf="searchResults.length > 0">
@@ -35,6 +39,8 @@
     </ul>
   </div>
 </div>
+
+
 
 <div class="retour">
   <h3>Retour à la page d'accueil événement</h3>

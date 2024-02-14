@@ -9,6 +9,8 @@
     <div *ngFor="let event of events" class="event-card">
       <h4 class="event-name">Evenement : {{ event.eventName }}</h4>
       <p class="host-info">L'hôte de cet événement est <strong>{{ event.userName }}</strong></p>
+      <p class="host-info">Les participants <strong>{{ event.guestList }}</strong></p>
+      <p class="host-info">Nombres de places restante : <strong>{{ event.numeroMax - event.guestList.length}}</strong></p>
     </div>
     <h3>N'hésitez pas à demander à l'hôte pour pouvoir participer !!</h3>
     <div>

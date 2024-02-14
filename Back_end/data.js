@@ -177,6 +177,59 @@ module.exports = {
       ],
       "description": "ee",
       "numeroEvent": 3032
+    },
+    {
+      "id": 11,
+      "userName": "Event avec max part",
+      "eventName": "avec 10 participants",
+      "guestList": [
+        "E3",
+        "dfefzeefeferfrgrvg",
+        "DDDDD"
+      ],
+      "description": "avec 10",
+      "numeroMax": 10,
+      "numeroEvent": 3827
+    },
+    {
+      "id": 12,
+      "userName": "Redaaa",
+      "eventName": "test nb max",
+      "guestList": [
+        "1",
+        "Yef",
+        "T",
+        "G"
+      ],
+      "description": "test",
+      "numeroMax": 3,
+      "numeroEvent": 1795
+    },
+    {
+      "id": 13,
+      "userName": "Zz",
+      "eventName": "zd",
+      "guestList": [
+        "rezda",
+        "as",
+        "zizou",
+        "NON",
+        "asads"
+      ],
+      "description": "dz",
+      "numeroMax": 3,
+      "numeroEvent": 2455
+    },
+    {
+      "id": 14,
+      "userName": "fef",
+      "eventName": "fe",
+      "guestList": [
+        "asa"
+      ],
+      "description": "ff",
+      "numeroMax": 3,
+      "numeroEvent": 9101
     }
   ],
   "tirelire": [
@@ -314,6 +367,11 @@ module.exports = {
       "id": 7,
       "username": "Fil",
       "password": "filo"
+    },
+    {
+      "id": 8,
+      "username": "a",
+      "password": "a"
     }
   ]
 };

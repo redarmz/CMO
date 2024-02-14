@@ -89,6 +89,7 @@ app.get('/events', (req, res) => {
 app.get('/messages', (req, res) => {
   res.json(eventData.salon);
 });
+
 app.post('/create-event', (req, res) => {
   const newEventData = req.body;
 
@@ -175,22 +176,42 @@ app.post('/salon', (req, res) => {
 
 
 // Endpoint pour rechercher les transactions par persone
+// Endpoint pour rechercher les transactions par personnes
 app.get('/tirelire/search', (req, res) => {
-  const { person } = req.query;
+  const { person, person1, person2, singlePerson } = req.query;
 
-  if (!person) {
-    return res.status(400).json({ message: 'Le paramètre "person" est requis dans la requête.' });
+  if (!person && !person1 && !person2 && !singlePerson) {
+    return res.status(400).json({ message: 'Requête invalide. Vous devez spécifier au moins une personne.' });
   }
 
   const transactions = data.tirelire;
 
-  // Filtrer les transactions où la personne est emprunteur ou preteur
+  // Si on recherche une seule personne
+  if (singlePerson) {
+    const filteredTransactions = transactions.filter(
+      transaction => transaction.emprunteur === singlePerson || transaction.preteur === singlePerson
+    );
+    return res.status(200).json(filteredTransactions);
+  }
+
+  // Si on recherche deux personnes
+  if (person1 && person2) {
+    const filteredTransactions = transactions.filter(
+      transaction => (transaction.emprunteur === person1 && transaction.preteur === person2) ||
+                     (transaction.emprunteur === person2 && transaction.preteur === person1)
+    );
+    return res.status(200).json(filteredTransactions);
+  }
+
+  // Si on recherche une personne par défaut
   const filteredTransactions = transactions.filter(
     transaction => transaction.emprunteur === person || transaction.preteur === person
   );
-
-  res.status(200).json(filteredTransactions);
+  return res.status(200).json(filteredTransactions);
 });
+
+
+
 
 
 
