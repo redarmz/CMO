@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ReserveRestoComponent } from './reserve-resto.component';
 
@@ -8,7 +9,8 @@ describe('ReserveRestoComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ReserveRestoComponent]
+      declarations: [ReserveRestoComponent],
+      imports: [HttpClientModule]
     });
     fixture = TestBed.createComponent(ReserveRestoComponent);
     component = fixture.componentInstance;

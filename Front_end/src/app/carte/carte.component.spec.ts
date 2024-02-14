@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CarteComponent } from './carte.component';
 
@@ -8,7 +9,8 @@ describe('CarteComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CarteComponent]
+      declarations: [CarteComponent],
+      imports: [HttpClientModule]
     });
     fixture = TestBed.createComponent(CarteComponent);
     component = fixture.componentInstance;
@@ -19,3 +21,4 @@ describe('CarteComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

@@ -1,17 +1,30 @@
+
 import { TestBed } from '@angular/core/testing';
-import { CanActivateFn } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Router } from '@angular/router';
+import { AuthGuard } from './auth.guard';
+import { Logreg } from './Logreg.service';
+import { BehaviorSubject } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 
-import { authGuard } from './auth.guard';
-
-describe('authGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => authGuard(...guardParameters));
+describe('AuthGuard', () => {
+  let guard: AuthGuard;
+  let router: Router;
+  let logregService: Logreg;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule, HttpClientModule],
+      providers: [AuthGuard, Logreg]
+    });
+    guard = TestBed.inject(AuthGuard);
+    router = TestBed.inject(Router);
+    logregService = TestBed.inject(Logreg);
   });
 
   it('should be created', () => {
-    expect(executeGuard).toBeTruthy();
+    expect(guard).toBeTruthy();
   });
+
+
 });

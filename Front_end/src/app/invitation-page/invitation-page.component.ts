@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,12 +13,18 @@ export class InvitationPageComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // Récupération du code de l'événement à partir des paramètres de l'URL
-    this.route.params.subscribe((params) => {
-      this.eventCode = params['eventCode'];
-    });
 
-    // Ajoutez votre logique pour utiliser le code de l'événement ici
-    
+    if (this.route && this.route.params) {
+
+      this.route.params.subscribe((params) => {
+        // Vérification si le paramètre 'eventCode' est défini dans l'URL
+        if (params && params['eventCode']) {
+          this.eventCode = +params['eventCode']; // Convertir en nombre
+        } else {
+          // Si le paramètre 'eventCode' n'est pas défini, définir une valeur par défaut
+          this.eventCode = 0;
+        }
+      });
+    }
   }
 }
