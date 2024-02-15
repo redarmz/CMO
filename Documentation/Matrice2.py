@@ -29,8 +29,7 @@ for commit in repo.iter_commits():
         contributor_stats[author]['lines_added'] += stats['insertions']
         contributor_stats[author]['lines_removed'] += stats['deletions']
 
-print("Contributeur | Commits | Lignes ajoutées | Lignes supprimées | Back-end | Front-end | Principal")
-for contributor, stats in contributor_stats.items():
-    print(f"{contributor} | {len(stats['commits'])} | {stats['lines_added']} | {stats['lines_removed']} | {stats['back_end']} | {stats['front_end']} | {stats['principal']}")
-
-
+with open("Matrice2_Python_output.txt", "w") as output_file:
+    output_file.write("Contributeur | Commits | Lignes ajoutées | Lignes supprimées | Back-end | Front-end | Principal\n")
+    for contributor, stats in contributor_stats.items():
+        output_file.write(f"{contributor} | {len(stats['commits'])} | {stats['lines_added']} | {stats['lines_removed']} | {stats['back_end']} | {stats['front_end']} | {stats['principal']}\n")

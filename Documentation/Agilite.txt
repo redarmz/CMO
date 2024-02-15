@@ -1,0 +1,100 @@
+Personas :
+1. Le Travailleur Pressé :
+• Âge : 25-40 ans
+• Profession : Employé de bureau avec un emploi du temps chargé
+• Besoin principal : Trouver rapidement un lieu pour manger, qui respecte son
+temps et son budget limités.
+• Comportement : Utilise son temps de pause de manière efficace, préfère les
+commandes à emporter ou les repas rapides mais sains.
+2. L'Étudiant :
+• Âge : 18-24 ans
+• Profession : Étudiant universitaire
+• Besoin principal : Trouver des options de repas abordables et rapides,
+adaptées à un régime alimentaire spécifique (végétarien, vegan, etc.).
+• Comportement : Cherche souvent à manger en groupe, ouvert à essayer de
+nouveaux lieux, mais limité par le budget.
+3. Le Touriste :
+• Âge : Varie
+• Profession : Touriste explorant la ville
+• Besoin principal : Découvrir des restaurants locaux avec des options de repas
+typiques de la région.
+• Comportement : Disponible pour explorer, plus flexible sur le temps et le
+budget, intéressé par l'expérience culinaire plus que la rapidité.
+
+Scenarios :
+Trouver un Repas Rapide :
+• Persona : Le Travailleur Pressé
+• Scénario : Durant une pause de midi limitée à 30 minutes, le travailleur cherche un
+restaurant qui peut servir un repas chaud en moins de 10 minutes à une courte
+distance de son bureau.
+• Critères : Temps de service, distance, options de repas chauds.
+Trouver un Café pour une Pause-Café Rapide :
+• Persona : Le Travailleur Pressé
+• Scénario : Thomas a une journée chargée au bureau et cherche un café où il peut
+rapidement acheter un café et une collation saine sans faire la queue, tout en étant à
+moins de 5 minutes à pied.
+• Critères : Temps de service rapide, distance de marche, options de collations saines.
+Planification d'un Dîner entre Étudiants :
+• Persona : L'Étudiant
+• Scénario : Un groupe d'étudiants souhaite trouver un restaurant qui peut accueillir
+six personnes, offrant des options végétariennes et dans une fourchette de prix
+abordable.
+• Critères : Capacité, options végétariennes, gamme de prix.
+Organiser une Soirée Étude de Groupe dans un Café :
+• Persona : L'Étudiant
+• Scénario : Léa et son groupe d'étude cherchent un café calme ouvert tard le soir,
+offrant des prises de courant et une connexion Wi-Fi fiable, pour préparer leur projet
+final ensemble.
+• Critères : Heures d'ouverture tardives, ambiance calme, disponibilité de prises
+électriques, connexion Wi-Fi.
+Exploration Culinaire pour Touristes :
+• Persona : Le Touriste
+• Scénario : Un couple en vacances cherche un restaurant offrant une expérience
+culinaire authentique locale, avec la possibilité de réserver à l'avance.
+• Critères : Authenticité, possibilité de réservation, recommandations.
+Découverte de Cuisine Locale pour le Dîner :
+• Persona : Le Touriste
+• Scénario : Marco et sa compagne, en visite dans une nouvelle ville, cherchent un
+restaurant local offrant une expérience culinaire authentique. Ils préfèrent un
+établissement qui sert des plats typiques de la région, recommandé par les locaux,
+avec la possibilité de réserver une table en terrasse.
+• Critères : Authenticité des plats locaux, recommandations des locaux, option de
+réservation, disponibilité d'une terrasse.
+
+Connexion au Compte Utilisateur
+• Persona : Tous les utilisateurs
+• Scénario : L'utilisateur souhaite accéder à son espace personnel sur l'application
+CMO pour consulter ou utiliser les services disponibles.
+• Critères : Interface de connexion simple, option de récupération du mot de passe,
+connexion sécurisée.
+Modifier son Profil
+• Persona : Tous les utilisateurs
+• Scénario : Après avoir expérimenté l'application, l'utilisateur souhaite mettre à jour
+ses préférences alimentaires et son budget moyen pour des recommandations plus
+précises.
+• Critères : Accès facile aux paramètres du compte, interface intuitive pour la
+modification des informations, sauvegarde instantanée des modifications.
+Changer de Mot de Passe
+• Persona : Tous les utilisateurs
+• Scénario : Pour des raisons de sécurité, l'utilisateur décide de changer son mot de
+passe.
+• Critères : Processus de changement de mot de passe sécurisé, instructions claires.
+Se Déconnecter
+• Persona : Tous les utilisateurs
+• Scénario : L'utilisateur souhaite se déconnecter de l'application pour sécuriser son
+compte lorsqu'il n'utilise pas l'appareil.
+• Critères : Option de déconnexion accessible facilement, déconnexion rapide.
+Réserver un Restaurant
+• Persona : Tous les utilisateurs
+• Scénario : L'utilisateur a trouvé un restaurant qui répond à ses critères et souhaite
+faire une réservation directement via l'application.
+• Critères : Processus de réservation simple et rapide, confirmation immédiate dans
+l'application, possibilité d'ajouter la réservation à son calendrier.
+Déclarer un Incident lors d'une Réservation
+• Persona : Tous les utilisateurs
+• Scénario : L'utilisateur rencontre un problème avec sa réservation (par exemple, le
+restaurant ne trouve pas sa réservation) et souhaite le signaler.
+• Critères : Accès rapide au service client via l'application, formulaire simple pour
+décrire l'incident, suivi du dossier en temps réel.
+
+

@@ -1,0 +1,91 @@
+Mise en
+Création Mise en relation Ajout d'un
+place du
+du
+d'événement et système de
+système
+système
+de la tirelire
+réservation
+d'événement
+de
+tirelire
+Amir
+Wassim
+Reda
+
+Amir
+Wassim
+Reda
+
+X
+X
+X
+
+X
+X
+
+Affichage
+Ajout d'un Recherche
+de tous les
+API carte
+et affichage
+événements
+pour
+des
+avec nom
+afficher les événements
+de l'hôte
+restaurants
+selon le
+et leurs
+nom
+itinéraire
+X
+X
+X
+X
+X
+
+Création de
+salon de
+discussion
+dédié à
+chaque
+événements
+X
+
+X
+X
+
+Suivi des
+dettes pour
+l'option
+tirelire
+
+Mise en place d'un
+système de log pour
+accéder au site et un
+système d'inscription
+
+X
+X
+
+Numéro
+Amélioration du
+d’événement
+design de
+créer
+l'application
+automatiquement
+pour la création
+événement
+
+X
+X
+
+X
+X
+X
+
+
