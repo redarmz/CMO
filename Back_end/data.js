@@ -289,6 +289,11 @@ module.exports = {
       "id": 7,
       "username": "Fil",
       "password": "filo"
+    },
+    {
+      "id": 8,
+      "username": "Wass",
+      "password": "Test"
     }
-  ],
+  ]
 };
