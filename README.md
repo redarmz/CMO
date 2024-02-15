@@ -1,5 +1,5 @@
 # CMO
-![Build Status](https://app.travis-ci.com/redarmz/CMO.svg?branch=main)
+[![Build Documentation](https://github.com/redarmz/CMO/actions/workflows/documentation.yml/badge.svg)](https://github.com/redarmz/CMO/actions/workflows/documentation.yml)
 ![Code Coverage with Coveralls](https://coveralls.io/repos/github/redarmz/CMO/badge.svg?branch=main)
 [![License](https://img.shields.io/github/license/redarmz/CMO.svg?style=flat-square)](LICENSE)
 [![Tag](https://img.shields.io/github/tag/redarmz/CMO.svg?label=tag&style=flat-square)](build.gradle)
