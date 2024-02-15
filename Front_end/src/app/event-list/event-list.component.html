@@ -1,4 +1,4 @@
-<!--<div class="events-container">
+<div class="events-container">
 <input type="text" [formControl]="searchControl" placeholder="Rechercher un événement..." (keydown.enter)="searchEvent()">
 <button (click)="showAllEvents()" class="toutAff">Afficher tout les événements</button>
 <ul *ngIf="suggestions.length">
@@ -10,28 +10,8 @@
       <h4 class="event-name">Evenement : {{ event.eventName }}</h4>
       <p class="host-info">L'hôte de cet événement est <strong>{{ event.userName }}</strong></p>
       <p class="host-info">Les participants <strong>{{ event.guestList }}</strong></p>
+      <p class="host-info">Reserve <strong>{{ event.restoReserver }}</strong></p>
       <p class="host-info">Nombres de places restante : <strong>{{ event.numeroMax - event.guestList.length}}</strong></p>
-    </div>
-    <h3>N'hésitez pas à demander à l'hôte pour pouvoir participer !!</h3>
-    <div>
-      <h4>Retour à la page d'accueil événement</h4>
-      <button class="back-button" (click)="redirectToCodeInvit()">Retour</button>
-    </div>
-  </div>-->
-
-  <div class="events-container">
-    <input type="text" [formControl]="searchControl" placeholder="Rechercher un événement..." (keydown.enter)="searchEvent()">
-    <button (click)="showAllEvents()" class="toutAff">Afficher tout les événements</button>
-    <ul *ngIf="suggestions.length">
-      <li *ngFor="let suggestion of suggestions" (click)="searchControl.setValue(suggestion)">{{ suggestion }}</li>
-    </ul>
-    <h2 class="events-heading">Liste des événements proposés par nos utilisateurs de la plateforme :</h2>
-    <div *ngFor="let event of events" class="event-card">
-      <h4 class="event-name">Evenement : {{ event.eventName }}</h4>
-      <p class="host-info">L'hôte de cet événement est <strong>{{ event.userName }}</strong></p>
-      <p class="host-info">Les participants <strong>{{ event.guestList }}</strong></p>
-      <p class="host-info">Nombres de places restante : <strong>{{ event.numeroMax - event.guestList.length}}</strong></p>
-      <button (click)="joinEvent(event.numeroEvent)" class="join-button">Rejoindre</button> <!-- Bouton Rejoindre ajouté -->
     </div>
     <h3>N'hésitez pas à demander à l'hôte pour pouvoir participer !!</h3>
     <div>

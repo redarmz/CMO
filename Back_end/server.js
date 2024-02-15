@@ -20,7 +20,7 @@ app.use(bodyParser.json());//
 app.get('/restaurants', (req, res) => {
   res.json(data.restaurants);
 });
-app.post('/reservations/create', (req, res) => {
+/*app.post('/reservations/create', (req, res) => {
   const { restaurantId, numberOfPeople, day, nom} = req.body;
 
   const restaurant = data.restaurants.find((r, index) => index  === restaurantId);
@@ -55,7 +55,92 @@ app.post('/reservations/create', (req, res) => {
       res.json({ message: 'Réservation réussie.' });
     }
   });
+});*/
+
+
+/*app.post('/reservations/create', (req, res) => {
+  const { restaurantId, numberOfPeople, day, nom, numEvent } = req.body; // Ajout de numEvent
+
+  const restaurant = data.restaurants.find(restaurant => restaurant.id === restaurantId);
+
+  if (!restaurant) {
+    return res.status(404).json({ message: 'Restaurant introuvable.' });
+  }
+
+  // Vérifier la capacité disponible pour la réservation
+  const totalReserved = restaurant.reservations.reduce((total, res) => total + res.numberOfPeople, 0);
+  if (totalReserved + numberOfPeople > restaurant.capacity) {
+    return res.status(400).json({ message: 'Le restaurant est plein pour la semaine.' });
+  }
+
+  // Vérifier si le jour est accepté pour les réservations
+  if (!restaurant.days.includes(day)) {
+    return res.status(400).json({ message: 'Le restaurant n\'accepte pas les réservations ce jour-là.' });
+  }
+
+  // Ajouter la réservation au restaurant
+  restaurant.reservations.push({ numberOfPeople, day, nom, numEvent }); // Ajout de numEvent dans la réservation
+
+  // Mettre à jour le fichier data.js avec les nouvelles données
+  const updatedDataFile = `module.exports = ${JSON.stringify(data, null, 2)};`;
+
+  fs.writeFile('data.js', updatedDataFile, err => {
+    if (err) {
+      console.error('Erreur lors de l\'écriture du fichier data.js:', err);
+      res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
+    } else {
+      res.json({ message: 'Réservation réussie.' });
+    }
+  });
+});*/
+app.post('/reservations/create', (req, res) => {
+  const { restaurantId, numberOfPeople, day, nom, numeroEvent } = req.body;
+
+  const restaurant = data.restaurants.find((r, index) => index === restaurantId);
+
+  if (!restaurant) {
+    return res.status(404).json({ message: 'Restaurant introuvable.' });
+  }
+
+  // Vérifiez la capacité disponible pour la réservation
+  const totalReserved = restaurant.reservations.reduce((total, res) => total + res.numberOfPeople, 0);
+  if (totalReserved + numberOfPeople > restaurant.capacity) {
+    return res.status(400).json({ message: 'Le restaurant est plein pour la semaine.' });
+  }
+
+  // Vérifiez si le jour est accepté pour les réservations
+  if (!restaurant.days.includes(day)) {
+    return res.status(400).json({ message: 'Le restaurant n\'accepte pas les réservations ce jour-là.' });
+  }
+
+  // Ajoutez la réservation au restaurant
+  restaurant.reservations.push({ numberOfPeople, day, nom });
+
+  // Mettez à jour le fichier data.js avec les nouvelles données
+  const updatedDataFile = `module.exports = ${JSON.stringify(data, null, 2)};`;
+
+  fs.writeFile('data.js', updatedDataFile, (err) => {
+    if (err) {
+      console.error('Erreur lors de la mise à jour du fichier data.js:', err);
+      res.status(500).json({ message: 'Erreur lors de la mise à jour des données.' });
+    } else {
+      console.log(`Réservation ajoutée pour ${nom} au restaurant ${restaurant.name} le ${day}.`);
+
+      // Mettre à jour l'événement sélectionné avec le restaurant réservé
+      const event = data.events.find((e) => e.numeroEvent === numeroEvent);
+      if (event) {
+        event.restoReserver = restaurant.name;
+        console.log(`Restaurant réservé pour l'événement ${numeroEvent}: ${restaurant.name}`);
+      } else {
+        console.error(`Événement introuvable avec le numéro ${numeroEvent}`);
+      }
+
+      res.status(200).send('Réservation effectuée avec succès.');
+    }
+  });
 });
+
+
 
 app.get('/events', (req, res) => {
   res.json(data.events);
@@ -82,6 +167,7 @@ app.post('/create-event', (req, res) => {
     }
   });
 });
+
 
 app.get('/events', (req, res) => {
   res.json(data.events);
