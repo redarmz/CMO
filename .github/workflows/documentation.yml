@@ -15,7 +15,7 @@ jobs:
 
       - name: Install Asciidoctor
         run: |
-          gem install asciidoctor
+         sudo apt-get install asciidoctor
 
       - name: Get README content
         run: |
