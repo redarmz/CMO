@@ -19,8 +19,7 @@ jobs:
     - name: Install dependencies
       run: npm install  # Commande pour installer les dépendances Node.js
 
-    - name: Build Angular app
-      run: npm run build -- --prod  # Commande pour construire l'application Angular
+   
 
     - name: Run tests
       run: npm test  # Commande pour exécuter les tests
