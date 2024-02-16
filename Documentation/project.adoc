@@ -1,3 +1,6 @@
+= Ca Mange Oùùù
+:doctype: book
+
 # CMO
 [![Build Documentation](https://github.com/redarmz/CMO/actions/workflows/documentation.yml/badge.svg)](https://github.com/redarmz/CMO/actions/workflows/documentation.yml)
 ![Code Coverage with Coveralls](https://coveralls.io/repos/github/redarmz/CMO/badge.svg?branch=main)
@@ -59,4 +62,47 @@ Pour pouvoir lancer le Back-end assurez-vous d'avoir :
 
 ### Infos : 
 !!! Lancez le serveur back-end avant de lancer le front-end pour que les données soit charger en avant !!!
+
+
+== Fichiers
+=== Matrice Contribution en Python
+[source,txt]
+----
+Contributeur | Commits | Lignes ajoutées | Lignes supprimées | Back-end | Front-end | Principal
+wassim.hendali2@gmail.com | 13 | 71016 | 122 | 2772 | 253 | 67869
+146457330+amiirmmr@users.noreply.github.com | 12 | 216 | 11 | 0 | 0 | 205
+reda.ramzi0104@hotmail.com | 51 | 601132 | 2904 | 569744 | 28465 | 19
+mammeriamir4@gmail.com | 20 | 508263 | 6153 | 67722 | 1568 | 432820
+119413560+redarmz@users.noreply.github.com | 8 | 231265 | 45 | 230265 | 469 | 486
+113892426+WassimH94@users.noreply.github.com | 5 | 10 | 10 | 0 | 0 | 0
+----
+
+=== Matrice Contribution en Ruby
+[source,txt]
+----
+Contributeur | Commits | Lignes ajoutées | Lignes supprimées | Back-end | Front-end | Principal
+wassim.hendali2@gmail.com | 13 | 71016 | 122 | 2772 | 253 | 67869
+146457330+amiirmmr@users.noreply.github.com | 12 | 216 | 11 | 0 | 0 | 205
+reda.ramzi0104@hotmail.com | 50 | 601132 | 2904 | 569744 | 28465 | 19
+mammeriamir4@gmail.com | 20 | 508263 | 6153 | 67722 | 1568 | 432820
+119413560+redarmz@users.noreply.github.com | 8 | 231265 | 45 | 230265 | 469 | 486
+113892426+WassimH94@users.noreply.github.com | 5 | 10 | 10 | 0 | 0 | 0
+----
+<<<
+
+=== MatriceFeatures
+[image,png]
+image::MatriceFeatures.png[]
+
+=== Agilite - Page 1
+[image,png]
+image::Agilite_page_1.png[]
+
+=== Agilite - Page 2
+[image,png]
+image::Agilite_page_2.png[]
+
+=== Agilite - Page 3
+[image,png]
+image::Agilite_page_3.png[]
 
