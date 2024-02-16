@@ -4,7 +4,13 @@ module.exports = {
       "id": 0,
       "name": "Fast Food :  Pitaya",
       "capacity": 50,
-      "reservations": [],
+      "reservations": [
+        {
+          "numberOfPeople": 15,
+          "day": "Mercredi",
+          "nom": "Reda"
+        }
+      ],
       "days": [
         "Lundi",
         "Mardi",
@@ -34,7 +40,13 @@ module.exports = {
       "id": 2,
       "name": "Fast Food : BurgerKing",
       "capacity": 10,
-      "reservations": [],
+      "reservations": [
+        {
+          "numberOfPeople": 5,
+          "day": "Samedi",
+          "nom": "Sara"
+        }
+      ],
       "days": [
         "Lundi",
         "Mardi",
@@ -51,9 +63,9 @@ module.exports = {
       "capacity": 30,
       "reservations": [
         {
-          "numberOfPeople": 3,
-          "day": "Mardi",
-          "nom": "BAB"
+          "numberOfPeople": 12,
+          "day": "Lundi",
+          "nom": "Seb"
         }
       ],
       "days": [
@@ -70,13 +82,7 @@ module.exports = {
       "id": 4,
       "name": "Restaurant : Ciel de Paris",
       "capacity": 20,
-      "reservations": [
-        {
-          "numberOfPeople": 3,
-          "day": "Dimanche",
-          "nom": "Mollet"
-        }
-      ],
+      "reservations": [],
       "days": [
         "Lundi",
         "Mardi",
@@ -91,299 +97,165 @@ module.exports = {
   "events": [
     {
       "id": 1,
-      "userName": "Patrick",
+      "userName": "Reda",
       "eventName": "Saint Patrick",
       "guestList": [
-        "Reda",
-        "Sonia"
+        "Wassim",
+        "Amir",
+        "Patrick",
+        "Seb",
+        "Léa",
+        "Ayoub"
       ],
-      "description": "Avec modération",
-      "numeroEvent": 9093,
+      "description": "Venez on vas s'amuser !!",
+      "numeroMax": 15,
+      "numeroEvent": 8310,
       "restoReserver": "Fast Food :  Pitaya"
     },
     {
       "id": 2,
-      "userName": "Patricia",
-      "eventName": "Pot de départ",
+      "userName": "Amir",
+      "eventName": "Blessure",
       "guestList": [
-        "Amir",
-        "Pascal"
+        "Reda",
+        "Sara",
+        "Paul",
+        "Seb"
       ],
-      "description": "Pot de départ pour théo",
-      "numeroEvent": 3356,
-      "restoReserver": "Restaurant : Ciel de Paris"
+      "description": "On vas se blesser le ventre",
+      "numeroMax": 10,
+      "numeroEvent": 8482
     },
     {
       "id": 3,
-      "userName": "Laura",
-      "eventName": "Fete des pere",
+      "userName": "Wassim",
+      "eventName": "Anniversaire",
       "guestList": [
-        "Reda"
+        "Reda",
+        "Marwane",
+        "Amir",
+        "Sara",
+        "Léa",
+        "Camille",
+        "Seb"
       ],
-      "description": "on aime nos pères",
-      "numeroEvent": 4549
+      "description": "Venez fêter mon anniversaire",
+      "numeroMax": 20,
+      "numeroEvent": 1228
     },
     {
       "id": 4,
-      "userName": "test",
-      "eventName": "test",
-      "guestList": [],
-      "description": "test1",
-      "numeroEvent": 7904
+      "userName": "Paul",
+      "eventName": "After Foot",
+      "guestList": [
+        "Seb",
+        "Reda",
+        "Pascal",
+        "Amir",
+        "Wassim"
+      ],
+      "description": "On vas critiquer l'Olympique de Marseille VENEZ !!",
+      "numeroMax": 12,
+      "numeroEvent": 4335,
+      "restoReserver": "Restaurant : Le Fouquet's"
     },
     {
       "id": 5,
-      "userName": "Reda",
-      "eventName": "Five",
-      "guestList": [],
-      "description": "Foot",
-      "numeroEvent": 2743
-    },
-    {
-      "id": 6,
-      "userName": "f",
-      "eventName": "f",
-      "guestList": [],
-      "description": "f",
-      "numeroEvent": 6456
-    },
-    {
-      "id": 7,
-      "userName": "la feve",
-      "eventName": "24 alb",
-      "guestList": [],
-      "description": "ERRRRRRRRTX",
-      "numeroEvent": 9566
-    },
-    {
-      "id": 8,
-      "userName": "test",
-      "eventName": "V04",
-      "guestList": [],
-      "description": "V04 vidéo",
-      "numeroEvent": 8191
-    },
-    {
-      "id": 9,
-      "userName": "Window",
-      "eventName": "test window",
-      "guestList": [],
-      "description": "iohzd",
-      "numeroEvent": 3669
-    },
-    {
-      "id": 10,
-      "userName": "tst",
-      "eventName": "ee",
+      "userName": "Sara",
+      "eventName": "After Work",
       "guestList": [
-        "Reeda"
+        "Wassim",
+        "Paul",
+        "Seb"
       ],
-      "description": "ee",
-      "numeroEvent": 3032
-    },
-    {
-      "id": 11,
-      "userName": "Event avec max part",
-      "eventName": "avec 10 participants",
-      "guestList": [
-        "E3",
-        "dfefzeefeferfrgrvg",
-        "DDDDD"
-      ],
-      "description": "avec 10",
-      "numeroMax": 10,
-      "numeroEvent": 3827
-    },
-    {
-      "id": 12,
-      "userName": "Redaaa",
-      "eventName": "test nb max",
-      "guestList": [
-        "1",
-        "Yef",
-        "T",
-        "G"
-      ],
-      "description": "test",
-      "numeroMax": 3,
-      "numeroEvent": 1795
-    },
-    {
-      "id": 13,
-      "userName": "Zz",
-      "eventName": "zd",
-      "guestList": [
-        "rezda",
-        "as",
-        "zizou",
-        "NON",
-        "asads"
-      ],
-      "description": "dz",
-      "numeroMax": 3,
-      "numeroEvent": 2455
-    },
-    {
-      "id": 14,
-      "userName": "fef",
-      "eventName": "fe",
-      "guestList": [
-        "asa"
-      ],
-      "description": "ff",
-      "numeroMax": 3,
-      "numeroEvent": 9101
-    },
-    {
-      "id": 15,
-      "userName": "ddd",
-      "eventName": "ddd",
-      "guestList": [],
-      "description": "dd",
-      "numeroMax": 344,
-      "numeroEvent": 2526
+      "description": "Venez vous détendre après une dur journée de travail",
+      "numeroMax": 5,
+      "numeroEvent": 3939
     }
   ],
   "tirelire": [
     {
       "id": 1,
-      "participants": "Toto, Titi",
-      "type": "debit",
-      "numeroEvent": 3356,
-      "amount": 29
+      "emprunteur": "Léa",
+      "preteur": "Wassim",
+      "numeroEvent": 8310,
+      "amount": 25
     },
     {
       "id": 2,
-      "emprunteur": "Wassim",
-      "preteur": "Amir",
-      "numeroEvent": 4549,
-      "amount": 65
+      "emprunteur": "Patrick",
+      "preteur": "Seb",
+      "numeroEvent": 8310,
+      "amount": 15
     },
     {
       "id": 3,
-      "emprunteur": "Paul",
-      "preteur": "Sara",
-      "numeroEvent": 45,
-      "amount": 125
+      "emprunteur": "Wassim",
+      "preteur": "Amir",
+      "numeroEvent": 8310,
+      "amount": 10
     },
     {
       "id": 4,
-      "emprunteur": "Reda",
-      "preteur": "Wassim",
-      "numeroEvent": 78,
-      "amount": 70
+      "emprunteur": "Camille",
+      "preteur": "Reda",
+      "numeroEvent": 1228,
+      "amount": 10
     },
     {
       "id": 5,
-      "emprunteur": "Mohamed",
-      "preteur": "Wassim",
-      "numeroEvent": 93,
-      "amount": 120
+      "emprunteur": "Amir",
+      "preteur": "Reda",
+      "numeroEvent": 1228,
+      "amount": 56
     },
     {
       "id": 6,
-      "emprunteur": "Charles",
-      "preteur": "Wassim",
-      "numeroEvent": 12,
-      "amount": 6
-    },
-    {
-      "id": 7,
-      "emprunteur": "Reda",
-      "preteur": "Mohamed",
-      "numeroEvent": 56,
-      "amount": 69
-    },
-    {
-      "id": 8,
-      "emprunteur": "mamok",
-      "preteur": "amir",
-      "numeroEvent": 3356,
-      "amount": 9999
-    },
-    {
-      "id": 9,
-      "emprunteur": "Reda",
-      "preteur": "Wassim",
-      "numeroEvent": 8087,
-      "amount": 45
+      "emprunteur": "Léa",
+      "preteur": "Amir",
+      "numeroEvent": 1228,
+      "amount": 11
     }
   ],
   "salon": [
     {
       "id": 1,
-      "messages": [],
-      "EventId": "41"
+      "messages": [
+        "Reda: Bienvenue tout le monde !!!",
+        "Patrick: Salut !!",
+        "Léa: J'ai hâte !!"
+      ],
+      "EventId": "8310"
     },
     {
       "id": 2,
-      "messages": [
-        "Reda: test"
-      ],
-      "EventId": "0"
+      "messages": [],
+      "EventId": "8310"
     },
     {
       "id": 3,
-      "messages": [
-        "Amir: je suis nouveau ici",
-        "Reda: Bienvenu !!",
-        "rayan: yo"
-      ],
-      "EventId": "4549"
+      "messages": [],
+      "EventId": "8310"
     },
     {
       "id": 4,
       "messages": [
-        "reda: test"
+        "Sara: Sa sera chill",
+        "Paul: Y en a marre du travail"
       ],
-      "EventId": "3032"
+      "EventId": "3939"
+    },
+    {
+      "id": 5,
+      "messages": [],
+      "EventId": "3939"
     }
   ],
   "user": [
     {
       "id": 0,
-      "username": "John",
-      "password": "test"
-    },
-    {
-      "id": 1,
       "username": "Reda",
       "password": "test"
-    },
-    {
-      "id": 2,
-      "username": "Paul",
-      "password": "123"
-    },
-    {
-      "id": 3,
-      "username": "Niro",
-      "password": "future"
-    },
-    {
-      "id": 4,
-      "username": "Wassim",
-      "password": "test"
-    },
-    {
-      "id": 5,
-      "username": "amir",
-      "password": "amirm12345"
-    },
-    {
-      "id": 6,
-      "username": "Pascal",
-      "password": "miage"
-    },
-    {
-      "id": 7,
-      "username": "Fil",
-      "password": "filo"
-    },
-    {
-      "id": 8,
-      "username": "a",
-      "password": "a"
     }
   ]
 };
