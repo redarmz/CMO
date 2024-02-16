@@ -8,6 +8,7 @@ class EventData {
   guestList: string[] = [];
   description: string = '';
   numeroEvent: number | undefined; // Modifiez pour accepter undefined si aucun numéro n'est saisi
+  numeroMax: number | undefined;
 }
 
 @Component({
@@ -27,7 +28,7 @@ export class CreatEventComponent {
   }
 
   createEvent() {
-    if (this.eventData.userName && this.eventData.eventName && this.eventData.description) {
+    if (this.eventData.userName && this.eventData.eventName && this.eventData.description && this.eventData.numeroMax) {
       if (!this.eventData.numeroEvent) {
         this.generateEventCode();
       }
@@ -46,9 +47,6 @@ export class CreatEventComponent {
       alert('Formulaire invalide. Veuillez remplir tous les champs.');
     }
   }
-  
-  
-  
   
 
   redirectToCodeInvit() {

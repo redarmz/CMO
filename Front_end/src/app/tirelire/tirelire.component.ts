@@ -19,7 +19,8 @@ export class TirelireComponent {
 
   tirelireData: TirelireData = new TirelireData();
   searchResults: any[] = [];
-  searchPersonInput: string = '';
+  searchPersonInput1: string = '';
+  searchPersonInput2: string = '';
 
   
 
@@ -46,9 +47,19 @@ export class TirelireComponent {
     }
   }
 
-  searchPerson() {
-    if (this.searchPersonInput) {
-      this.tirelireService.searchTransactions(this.searchPersonInput).subscribe(
+  searchTransactions() {
+    if (this.searchPersonInput1 && this.searchPersonInput2) {
+      this.tirelireService.searchTransactionsByPersons(this.searchPersonInput1, this.searchPersonInput2).subscribe(
+        (results) => {
+          this.searchResults = results;
+        },
+        (error) => {
+          console.error('Erreur lors de la recherche des transactions', error);
+        }
+      );
+    } else if (this.searchPersonInput1) {
+      // Si seulement un nom est saisi, vous pouvez choisir de rechercher seulement pour cette personne
+      this.tirelireService.searchTransactions(this.searchPersonInput1).subscribe(
         (results) => {
           this.searchResults = results;
         },
@@ -58,6 +69,10 @@ export class TirelireComponent {
       );
     }
   }
+  
+  
+
+  
 
 
 }  
