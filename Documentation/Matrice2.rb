@@ -2,7 +2,7 @@ require 'rugged'
 require 'pathname'
 require 'set'
 
-repo_path = Pathname.new(Dir.pwd)
+repo_path = Pathname.new(Dir.pwd).parent
 
 repo = Rugged::Repository.new(repo_path)
 
