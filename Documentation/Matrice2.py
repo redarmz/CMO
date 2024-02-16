@@ -1,7 +1,7 @@
 import os
 import git
 
-repo_path = os.getcwd()
+repo_path = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
 
 repo = git.Repo(repo_path)
 
