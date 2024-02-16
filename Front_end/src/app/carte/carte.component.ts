@@ -52,7 +52,7 @@ export class CarteComponent implements OnInit{
 });
 
 
-  // Ajouter les  fonds de tuiles à un groupe de couches
+
   const baseMaps = {
     'Clair': lightTiles,
     'Sombre': darkTiles,

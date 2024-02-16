@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; // Importez FormsModule depuis @angular/forms
 
 import { CreatEventComponent } from './creat-event.component';
 
@@ -8,7 +10,8 @@ describe('CreatEventComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CreatEventComponent]
+      declarations: [CreatEventComponent],
+      imports: [HttpClientModule,FormsModule]
     });
     fixture = TestBed.createComponent(CreatEventComponent);
     component = fixture.componentInstance;

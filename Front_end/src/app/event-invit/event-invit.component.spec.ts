@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { EventInvitComponent } from './event-invit.component';
 
@@ -8,7 +9,9 @@ describe('EventInvitComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [EventInvitComponent]
+      declarations: [EventInvitComponent],
+      imports: [HttpClientModule]
+
     });
     fixture = TestBed.createComponent(EventInvitComponent);
     component = fixture.componentInstance;
