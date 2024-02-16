@@ -4,7 +4,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
   }
-  
+
   /* component-specific styles */
   .events-container {
     display: flex;
@@ -16,12 +16,12 @@ body {
     color: white;
     text-align: center;
   }
-  
+
   .events-heading {
     font-size: 24px;
     margin-bottom: 20px;
   }
-  
+
   .event-card {
     margin: 20px;
     padding: 15px;
@@ -29,17 +29,17 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
   .event-name {
     font-size: 18px;
     margin-bottom: 10px;
   }
-  
+
   .host-info {
     font-size: 14px;
     margin-bottom: 10px;
   }
-  
+
   .join-button {
     padding: 10px 20px;
     font-size: 16px;
@@ -50,12 +50,12 @@ body {
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-  
+
     &:hover {
       background-color: #27ae60; /* Couleur du bouton au survol */
     }
   }
-  
+
   .back-button {
     padding: 10px 20px;
     font-size: 16px;
@@ -66,7 +66,7 @@ body {
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-  
+
     &:hover {
       background-color: #2980b9; /* Couleur du bouton de retour au survol */
     }
@@ -100,4 +100,3 @@ input[type="text"] {
     background-color: #2980b9;
   }
 }
-  

@@ -1,31 +1,56 @@
-button {
 
-  margin: 160px;
-  padding: 15px 30px;
-  width: 300px; // Largeur du bouton
-  height: 100px; // Hauteur du bouton
-  font-size: 24px;
-  cursor: pointer;
-  background-color: gray;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  opacity: 1;
-  color: white;
-  background-position: 100% 50%;
-
-  &:hover {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0% 100%; // Commencez par afficher seulement la moitié gauche de l'image
-    transition: background-position 0.5s ease; // Ajoutez une transition pour le mouvement de l'image
-
-    transform: translateY(-5px); // Déplacer légèrement vers le haut lors du survol
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ajouter une ombre subtile
+.header {
+  background: linear-gradient(to right, #2d3941, #b31503);
+  padding: 20px 0;
+  text-align: center;
+  h1 {
+    font-size: 48px;
+    margin: 0;
+    color: white; // Assurez-vous que le texte est lisible sur le dégradé
   }
 }
 
-body{
-  background-color: black;
+.footer {
+  background: linear-gradient(to right, #b31503, #2d3941); // Exemple de dégradé de bleu foncé à orange
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  p {
+    color: white; // Assurez-vous que le texte est lisible sur le dégradé
+  }
 }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Assure que la hauteur du corps couvre tout l'écran */
+  margin: 0; /* Supprime la marge par défaut du corps */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container button {
+  margin: 80px 0; /* Ajoute de l'espace entre les boutons */
+  padding: 15px 30px;
+  width: 250px;
+  height: 100px;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #2d3941;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-container button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+

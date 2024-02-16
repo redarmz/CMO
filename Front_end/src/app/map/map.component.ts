@@ -19,4 +19,7 @@ export class MapComponent  {
     this.router.navigate(['/Cartes']);
   }
 
+  redirectToItineraire(){
+    this.router.navigate(['/carte']);
+  }
 }

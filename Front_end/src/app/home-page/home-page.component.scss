@@ -9,11 +9,12 @@ body {
   margin: 0;
   padding: 0;
   background-color: $primary-color;
+
   color: white;
 }
 
 .header {
-  background: linear-gradient(to right, #2d3941, #b31503); 
+  background: linear-gradient(to right, #2d3941, #b31503);
   padding: 20px 0;
   text-align: center;
   h1 {
@@ -53,7 +54,7 @@ body {
     padding: 15px 30px;
     width: 200px; // Largeur du bouton
     height: 60px; // Hauteur du bouton
-    font-size: 24px; 
+    font-size: 24px;
     cursor: pointer;
     background-color: $accent-color;
     color: white;
@@ -61,7 +62,7 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     opacity: 1;
-    color: white; 
+    color: white;
     background-position: 100% 50%;
 
     &:hover {
@@ -118,4 +119,3 @@ body {
 
 
 
-  
