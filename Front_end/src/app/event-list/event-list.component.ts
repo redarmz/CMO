@@ -5,7 +5,6 @@ import { EventService } from '../event.service';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
-
 @Component({
   selector: 'app-event-list',
   templateUrl: './event-list.component.html',
@@ -16,7 +15,7 @@ export class EventListComponent implements OnInit {
   events: any[] = [];
   searchControl = new FormControl('');
   suggestions: string[] = [];
-  searchedEvent: any; // Ajoutez cette propriété pour stocker l'événement recherché
+  searchedEvent: any;
 
   constructor(private router: Router, private eventService: EventService) {}
 
@@ -28,18 +27,17 @@ export class EventListComponent implements OnInit {
         if (term) {
           return this.eventService.searchEvents(term);
         } else {
-          return of([]); // ou une autre valeur par défaut si vous le souhaitez
+          return of([]);
         }
       })
     ).subscribe(results => {
       this.suggestions = results;
     });
-  
+
     this.eventService.getEvents().subscribe((data: any) => {
       this.events = data;
     });
   }
-  
 
   redirectToCodeInvit() {
     this.router.navigate(['/event-invit']);
@@ -47,7 +45,7 @@ export class EventListComponent implements OnInit {
 
   searchEvent() {
     const term = this.searchControl.value?.trim();
-  
+
     if (term) {
       this.searchedEvent = this.events.find(event => event.eventName.toLowerCase().includes(term.toLowerCase()));
       this.events = this.searchedEvent ? [this.searchedEvent] : [];
@@ -59,11 +57,13 @@ export class EventListComponent implements OnInit {
   }
 
   showAllEvents() {
-  this.eventService.getEvents().subscribe((data: any) => {
-    this.events = data;
-    this.searchedEvent = null; // Réinitialisez l'événement recherché
-  });
-}
+    this.eventService.getEvents().subscribe((data: any) => {
+      this.events = data;
+      this.searchedEvent = null;
+    });
+  }
 
-
+  joinEvent(eventId: number) {
+    this.router.navigate(['/join-event'], { queryParams: { numeroEvent: eventId } });
+  }
 }

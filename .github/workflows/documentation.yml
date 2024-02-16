@@ -15,13 +15,24 @@ jobs:
 
       - name: Install Asciidoctor
         run: |
-          gem install asciidoctor
+          sudo apt-get update && sudo apt-get install -y asciidoctor
 
       - name: Get README content
         run: |
           README_CONTENT=$(cat README.md)
           echo "${README_CONTENT}" >> documentation.adoc
+          
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
 
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
+      - name: Install dependencies
+        run: npm install
+        
       - name: Build Documentation
         run: |
           asciidoctor documentation.adoc -o output.html
