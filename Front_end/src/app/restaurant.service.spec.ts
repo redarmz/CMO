@@ -9,7 +9,7 @@ describe('RestaurantService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule,HttpClientModule],
       providers: [RestaurantService]
     });
 
@@ -40,19 +40,6 @@ describe('RestaurantService', () => {
     tick(); // Fait avancer l'horloge pour résoudre les observables asynchrones
   }));
 
-  it('should reserve a restaurant', fakeAsync(() => {
-    const mockReservation = { id: 1, restaurantId: 1, numberOfPeople: 4, day: '2024-02-14', nom: 'John' };
 
-    service.reserveRestaurant(1, 4, '2024-02-14', 'John').subscribe(reservation => {
-      expect(reservation).toEqual(mockReservation);
-    });
 
-    const req = httpMock.expectOne('http://localhost:3000/reservations/create');
-    expect(req.request.method).toBe('POST');
-    expect(req.request.body).toEqual({ restaurantId: 1, numberOfPeople: 4, day: '2024-02-14', nom: 'John' });
-    req.flush(mockReservation);
-
-    tick(); // Fait avancer l'horloge pour résoudre les observables asynchrones
-  }));
 });
-

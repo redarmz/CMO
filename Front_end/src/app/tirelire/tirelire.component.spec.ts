@@ -50,24 +50,35 @@ describe('TirelireComponent', () => {
     expect(tirelireService.createTransaction).not.toHaveBeenCalled();
   }));
 
-  it('should call searchTransactions method of tirelireService when searchPersonInput is filled', fakeAsync(() => {
+  it('should call searchTransactions method of tirelireService when searchPersonInput1 and searchPersonInput2 are filled', fakeAsync(() => {
+    spyOn(tirelireService, 'searchTransactionsByPersons').and.returnValue(of([]));
+
+    component.searchPersonInput1 = 'John';
+    component.searchPersonInput2 = 'Jane';
+
+    component.searchTransactions();
+
+    tick(); // Attendre que les observables se résolvent
+    expect(tirelireService.searchTransactionsByPersons).toHaveBeenCalled();
+  }));
+
+  it('should call searchTransactions method of tirelireService when only searchPersonInput1 is filled', fakeAsync(() => {
     spyOn(tirelireService, 'searchTransactions').and.returnValue(of([]));
 
-    component.searchPersonInput = 'John';
+    component.searchPersonInput1 = 'John';
 
-    component.searchPerson();
+    component.searchTransactions();
 
     tick(); // Attendre que les observables se résolvent
     expect(tirelireService.searchTransactions).toHaveBeenCalled();
   }));
 
-  it('should not call searchTransactions method of tirelireService when searchPersonInput is empty', fakeAsync(() => {
+  it('should not call searchTransactions method of tirelireService when searchPersonInput1 and searchPersonInput2 are empty', fakeAsync(() => {
     spyOn(tirelireService, 'searchTransactions').and.returnValue(of([]));
 
-    component.searchPerson();
+    component.searchTransactions();
 
     tick(); // Attendre que les observables se résolvent
     expect(tirelireService.searchTransactions).not.toHaveBeenCalled();
   }));
 });
-

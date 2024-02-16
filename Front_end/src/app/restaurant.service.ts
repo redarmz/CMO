@@ -14,15 +14,11 @@ export class RestaurantService {
     return this.http.get<any[]>(`${this.apiUrl}/restaurants`);
   }
 
-  /*reserveRestaurant(restaurantId: number, numberOfPeople: number, day: string, nom: string, numEvent: number): Observable<any> {
-    console.log('Reserving restaurant with ID:', restaurantId);
-    return this.http.post(`${this.apiUrl}/reservations/create`, { restaurantId, numberOfPeople, day, nom, numEvent });
-  }*/
   reserveRestaurant(restaurantId: number, numberOfPeople: number, day: string, nom: string, numeroEvent: number): Observable<any> {
     return this.http.post(`${this.apiUrl}/reservations/create`, { restaurantId, numberOfPeople, day, nom, numeroEvent }, { responseType: 'text' });
   }
-  
-  
+
+
 }
 
 

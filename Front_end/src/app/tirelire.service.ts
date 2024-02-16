@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TirelireService {
-  private backendURL = 'http://localhost:3000'; // Remplacez ceci par l'URL de votre backend
+  private backendURL = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
@@ -27,7 +27,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TirelireService {
-  private backendURL = 'http://localhost:3000'; // Remplacez ceci par l'URL de votre backend
+  private backendURL = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
