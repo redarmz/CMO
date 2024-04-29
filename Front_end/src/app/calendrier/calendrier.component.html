@@ -5,6 +5,26 @@
     </head>
 
     <body>
-        
+        <div class="card">
+            <h2>Réservation via Google Calendar</h2>
+            <form [formGroup]="appointmentForm" (ngSubmit)="scheduleMeeting()">
+              <div class="form-group">
+                <label for="appointmentTime">Meeting Time</label>
+                <input type="datetime-local" id="appointmentTime" formControlName="appointmentTime"/>
+              </div>
+          
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" formControlName="email"/>
+              </div>
+              <br/>
+              <button type="submit" id="schedule-button">Schedule Appointment</button>
+            </form>
+          </div>
+
+          <div class="retour">
+            <h3>Retour à la page de réservation</h3>
+            <button (click)="redirectToReserveResto()" class="bretour">Retour</button>
+          </div>
     </body>
 </html>
