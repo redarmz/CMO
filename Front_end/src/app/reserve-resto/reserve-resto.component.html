@@ -1,40 +1,3 @@
-<!--<h2>Liste des Restaurants pour une réservation</h2>
-
-<div class="princ">
-  <div *ngFor="let restaurant of restaurants">
-    <div>
-      <h4>{{ restaurant.name }}</h4>
-      <p>Capacité pour la semaine : {{ restaurant.capacity }} couverts  / Ouvert le : {{ restaurant.days.join(', ') }}</p>
-      <button (click)="selectRestaurant(restaurant)">Sélectionner</button>
-    </div>
-  </div>
-
-  <div *ngIf="selectedRestaurant">
-    <h3>Réservation pour {{ selectedRestaurant.name }}</h3>
-    <label for="nom">Nom:</label>
-    <input type="text" id="nom" name="nom" [(ngModel)]="nom" required>
-
-
-    <label for="numberOfPeople">Nombre de personnes:</label>
-    <input type="number" id="numberOfPeople" name="numberOfPeople" [(ngModel)]="numberOfPeople" required>
-
-    <label for="selectedDay">Jour de la réservation:</label>
-    <div id="selectedDayButtons">
-
-      <button *ngFor="let day of joursSemaine" (click)="selectDay(day)">{{ day }}</button>
-    </div>
-
-  <p  id="selectedDayDisplay" *ngIf="selectedDay">Jour sélectionné : {{ selectedDay }}</p>
-
-    <br>
-    <button (click)="reserve()">Réserver</button>
-  </div>
-</div>
-
-<div class="retour">
-  <h3>Retour à la page d'accueil événement</h3>
-  <button (click)="redirectToEventPage()" class="bretour">Retour</button>
-</div>-->
 <h2>Liste des Restaurants pour une réservation</h2>
 
 <div class="princ">
@@ -73,3 +36,30 @@
   <h3>Retour à la page d'accueil événement</h3>
   <button (click)="redirectToEventPage()" class="bretour">Retour</button>
 </div>
+
+<div class="reservation-container">
+  <button (click)="redirectToCalendrier()" class="calendrier">Calendrier</button>
+  <h3>Calendrier : </h3>
+</div>
+
+
+
+
+<div class="card">
+  <p id="title">Book Apointment</p>
+  <form [formGroup]="appointmentForm" (ngSubmit)="scheduleMeeting()">
+    <div class="form-group">
+      <label for="appointmentTime">Meeting Time</label>
+      <input type="datetime-local" id="appointmentTime" formControlName="appointmentTime"/>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" class="form-control" formControlName="email"/>
+    </div>
+    <br/>
+    <button type="submit" id="schedule-button">Schedule Appointment</button>
+  </form>
+</div>
+
+
