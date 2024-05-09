@@ -18,7 +18,7 @@ div {
   padding-right: 20px;
   background-color: #e0e0e0; /* Couleur de fond de la boîte principale (gris) */
   border-radius: 12px; /* Bords arrondis */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Légère ombre */
+
 }
 
 h1 {
@@ -106,4 +106,28 @@ p {
 
   font-weight: bold;
 
+}
+.participer-button {
+  margin: 10px;
+  padding: 10px;
+  text-align: center; /* Pour centrer le contenu du div */
+  margin-top: 20px; /* Ajoute de l'espace au-dessus du bouton */
+}
+
+.participer-button button {
+  padding: 18px 40px; /* Ajuste le rembourrage du bouton pour le rendre plus grand */
+  font-size: 20px; /* Taille de police plus grande */
+  border: none; /* Retire la bordure */
+  background-color: #ff6f61; /* Couleur de fond rouge orangé */
+  color: #fff; /* Couleur du texte blanc */
+  border-radius: 50px; /* Bords arrondis pour créer une forme de bouton circulaire */
+  font-family: 'Montserrat', sans-serif; /* Police de caractère */
+  cursor: pointer; /* Curseur au survol */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Effet de transition sur la couleur de fond et la couleur du texte */
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3); /* Ombre légère pour créer une impression de profondeur */
+}
+
+.participer-button button:hover {
+  background-color: #fc6500; /* Couleur de fond plus foncée au survol */
+  transform: scale(1.25);
 }

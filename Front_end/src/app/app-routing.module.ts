@@ -15,6 +15,7 @@ import { MapComponent } from './map/map.component';
 import { ToutesLesCartesComponent } from './toutes-les-cartes/toutes-les-cartes.component';
 import { CalendrierComponent } from './calendrier/calendrier.component';
 import { AuthGuard } from './auth.guard';
+import { APIVoteComponent } from './apivote/apivote.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,8 @@ const routes: Routes = [
   { path: 'map', component: MapComponent, canActivate: [AuthGuard] },
   { path: 'Cartes', component: ToutesLesCartesComponent, canActivate: [AuthGuard] },
   { path : 'calendrier', component: CalendrierComponent, canActivate: [AuthGuard] },
+  { path: 'apivote', component: APIVoteComponent },
+  { path: 'apivote/:id', component: APIVoteComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

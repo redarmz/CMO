@@ -28,6 +28,10 @@ export class SalonDiscussionComponent  {
   redirectToEventJoinPage() {
     this.router.navigate(['/join-event']);
   }
+  redirectToAPIVote(): void {
+    this.router.navigate(['/apivote']);
+  }
+
 
   ngOnInit(): void {
 

@@ -23,6 +23,7 @@ import { ToutesLesCartesComponent } from './toutes-les-cartes/toutes-les-cartes.
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CalendrierComponent } from './calendrier/calendrier.component';
+import { APIVoteComponent } from './apivote/apivote.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { CalendrierComponent } from './calendrier/calendrier.component';
     MapComponent,
     ToutesLesCartesComponent,
     CalendrierComponent,
+    APIVoteComponent,
   ],
   imports: [
     BrowserModule,
