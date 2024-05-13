@@ -22,9 +22,6 @@ export class CalendrierComponent {
   }
 
   scheduleMeeting(){
-    /*const eventDetails= this.appointmentForm.value
-    console.log(eventDetails);
-    createGoogleEvent(eventDetails)*/
     let appointmentTime = new Date(this.appointmentForm.value.appointmentTime);
     const startTime = appointmentTime.toISOString().slice(0, 18) + '+01:00';
     const endTime = this.getEndTime(appointmentTime);

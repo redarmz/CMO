@@ -28,6 +28,24 @@
     <p id="selectedDayDisplay" *ngIf="selectedDay">Jour sélectionné : {{ selectedDay }}</p>
 
     <br>
+    <div class="card">
+      <h2>Réservation via Google Calendar</h2>
+      <form [formGroup]="appointmentForm" (ngSubmit)="scheduleMeeting()">
+        <div class="form-group">
+          <label for="appointmentTime">Date et heure sélectionnées pour l'événement : </label>
+          <input type="datetime-local" id="appointmentTime" formControlName="appointmentTime"/>
+        </div>
+    
+        <div class="form-group">
+          <label for="email">Personnes que vous souhaitez inviter (adresses e-mail) : </label>
+          <input type="email" id="email" class="form-control" formControlName="email"/>
+        </div>
+        <br/>
+        <button type="submit" id="schedule-button">Envoyer l'invitation</button>
+      </form>
+    </div>
+
+    <br>
     <button (click)="reserve()">Réserver</button>
   </div>
 </div>
@@ -37,10 +55,7 @@
   <button (click)="redirectToEventPage()" class="bretour">Retour</button>
 </div>
 
-<div class="reservation-container">
-  <button (click)="redirectToCalendrier()" class="calendrier">Calendrier</button>
-  <h3>Calendrier : </h3>
-</div>
+
 
 
 

@@ -82,7 +82,13 @@ module.exports = {
       "id": 4,
       "name": "Restaurant : Ciel de Paris",
       "capacity": 20,
-      "reservations": [],
+      "reservations": [
+        {
+          "numberOfPeople": 2,
+          "day": "Mardi",
+          "nom": "Reda"
+        }
+      ],
       "days": [
         "Lundi",
         "Mardi",
