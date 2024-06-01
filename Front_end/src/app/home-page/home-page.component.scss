@@ -2,6 +2,7 @@
 $primary-color: #333333;
 $secondary-color: #666666;
 $accent-color: #2d3941;
+$hover-color: #4a5a65; // Nouvelle couleur pour le survol
 
 // Styles généraux
 body {
@@ -9,12 +10,11 @@ body {
   margin: 0;
   padding: 0;
   background-color: $primary-color;
-
   color: white;
 }
 
 .header {
-  background: linear-gradient(to right, #2d3941, #b31503);
+  background: linear-gradient(to right, $accent-color, #b31503);
   padding: 20px 0;
   text-align: center;
   h1 {
@@ -60,17 +60,11 @@ body {
     color: white;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 1;
-    color: white;
-    background-position: 100% 50%;
 
     &:hover {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 0% 50%; // Commencez par afficher seulement la moitié gauche de l'image
-      transition: background-position 0.5s ease; // Ajoutez une transition pour le mouvement de l'image
-
+      background-color: $hover-color; // Couleur de fond au survol
       transform: translateY(-5px); // Déplacer légèrement vers le haut lors du survol
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ajouter une ombre subtile
     }
@@ -78,7 +72,7 @@ body {
 }
 
 .footer {
-  background: linear-gradient(to right, #b31503, #2d3941); // Exemple de dégradé de bleu foncé à orange
+  background: linear-gradient(to right, #b31503, $accent-color); // Exemple de dégradé de bleu foncé à orange
   text-align: center;
   padding: 15px 0;
   position: fixed;
@@ -88,7 +82,6 @@ body {
     color: white; // Assurez-vous que le texte est lisible sur le dégradé
   }
 }
-
 
 .button-container {
   display: flex;
@@ -105,17 +98,14 @@ body {
   button {
     padding: 15px 30px;       // Augmentez la taille du bouton
     font-size: 20px;          // Augmentez la taille de la police
-    background-color: #333333; // Couleur de fond du bouton (rouge foncé)
+    background-color: $secondary-color; // Couleur de fond du bouton (gris foncé)
     border: none;
     border-radius: 5px;
     color: white;             // Couleur du texte du bouton
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #666666;; // Couleur du bouton au survol (rouge légèrement plus clair)
+      background-color: lighten($secondary-color, 10%); // Couleur du bouton au survol (gris légèrement plus clair)
     }
   }
 }
-
-
-
