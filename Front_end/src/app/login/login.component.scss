@@ -21,11 +21,12 @@ body {
   background-color: #326982; /* Couleur de fond bleu ciel pour la bannière */
   padding: 20px 0; /* Espacement intérieur de la bannière */
   margin-bottom: 30px; /* Espacement vers le bas pour le contenu */
+  border-radius: 10px 10px 0 0; /* Coins arrondis en haut seulement */
 }
 
 .banner h1 {
   font-size: 36px;
-  color: #333; /* Couleur du texte */
+  color: #fff; /* Couleur du texte en blanc */
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Effet d'ombre sur le texte */
 }
 
@@ -76,11 +77,16 @@ body {
   cursor: pointer;
   font-size: 18px;
   text-transform: uppercase;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .container form button:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.container form button:active {
+  transform: scale(1);
 }
 
 .container form button[disabled] {
@@ -88,18 +94,18 @@ body {
   cursor: not-allowed;
 }
 
-div:last-child {
+.footer {
   margin-top: 30px;
   text-align: center;
 }
 
-div:last-child h4 {
+.footer h4 {
   margin-bottom: 20px;
   color: #555;
   font-size: 20px;
 }
 
-div:last-child button {
+.footer button {
   padding: 12px 25px;
   border: 2px solid #007bff;
   border-radius: 8px;
@@ -108,12 +114,10 @@ div:last-child button {
   cursor: pointer;
   font-size: 18px;
   text-transform: uppercase;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-div:last-child button:hover {
+.footer button:hover {
   background-color: #007bff;
   color: #fff;
 }
-
-
