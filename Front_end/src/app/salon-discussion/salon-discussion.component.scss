@@ -1,133 +1,94 @@
-/* Reset some default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f5f5f5; /* Couleur de fond principale */
-  color: #333; /* Couleur du texte */
-}
-
-div {
+.discussion-container {
+  padding: 20px;
   max-width: 800px;
-  margin: 20px auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: #e0e0e0; /* Couleur de fond de la boîte principale (gris) */
-  border-radius: 12px; /* Bords arrondis */
-
+  margin: 0 auto;
+  background-color: #f7f9fc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  font-size: 24px;
+  text-align: center;
+  color: #333;
   margin-bottom: 20px;
-  color: #3498db; /* Couleur du titre */
 }
 
 .info-box {
-  margin-bottom: 15px;
-  background-color: #4CAF50; /* Couleur de fond de la boîte d'information (vert) */
-  color: #fff; /* Couleur du texte de la boîte d'information */
-  padding: 10px;
-  border-radius: 8px;
+  margin: 10px 0;
+  text-align: center;
 }
 
 label {
-  font-weight: bold;
   display: block;
   margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
 }
 
-input,
+input[type="text"],
 textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc; /* Couleur de la bordure */
-  border-radius: 6px;
-  box-sizing: border-box;
-  background-color: #fff; /* Couleur de fond des champs de texte */
-  color: #333; /* Couleur du texte */
+  border: 1px solid #ced4da;
+  border-radius: 4px;
 }
 
-button {
-  background-color: #3498db; /* Couleur du bouton (bleu) */
-  color: #fff; /* Couleur du texte du bouton */
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #2980b9; /* Couleur du bouton au survol */
-}
-
-h3 {
-  font-size: 18px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  color: #4CAF50; /* Couleur du sous-titre (vert) */
-}
-
-p {
-  margin-bottom: 10px;
-}
-
-/* Media query for responsiveness */
-@media (max-width: 600px) {
-  div {
-    padding: 10px;
-  }
+textarea.textarea-message {
+  height: 100px;
 }
 
 .message-section {
-  max-height: 370px;
-  overflow-y: auto;
-  border: 1px solid #ccc; /* Couleur de la bordure de la section des messages */
+  margin: 20px 0;
+  background-color: #e9ecef;
+  padding: 10px;
   border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 20px;
-  background-color: #fceded; /* Couleur de fond de la section des messages (bleu clair) */
-  transition: background-color 0.5s ease;
 }
 
-.message-section.new-messages {
-  background-color: #d6eaf8; /* Couleur de fond de la section des messages avec de nouveaux messages (bleu clair plus clair) */
-}
-.test{
-  background-color: #b9d3b4;
-  padding: 10px;
-  margin : 0;
-
-  font-weight: bold;
-
-}
-.participer-button {
-  margin: 10px;
-  padding: 10px;
-  text-align: center; /* Pour centrer le contenu du div */
-  margin-top: 20px; /* Ajoute de l'espace au-dessus du bouton */
+.old-message {
+  color: #6c757d;
 }
 
-.participer-button button {
-  padding: 18px 40px; /* Ajuste le rembourrage du bouton pour le rendre plus grand */
-  font-size: 20px; /* Taille de police plus grande */
-  border: none; /* Retire la bordure */
-  background-color: #ff6f61; /* Couleur de fond rouge orangé */
-  color: #fff; /* Couleur du texte blanc */
-  border-radius: 50px; /* Bords arrondis pour créer une forme de bouton circulaire */
-  font-family: 'Montserrat', sans-serif; /* Police de caractère */
-  cursor: pointer; /* Curseur au survol */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Effet de transition sur la couleur de fond et la couleur du texte */
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3); /* Ombre légère pour créer une impression de profondeur */
+.new-message {
+  color: #495057;
 }
 
-.participer-button button:hover {
-  background-color: #fc6500; /* Couleur de fond plus foncée au survol */
-  transform: scale(1.25);
+.btn-send,
+.btn-participate,
+.btn-back {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 1.2em;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+}
+
+.btn-send:hover,
+.btn-participate:hover,
+.btn-back:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.message-input {
+  margin: 20px 0;
+}
+
+.participer-button,
+.back-button {
+  text-align: center;
 }

@@ -1,53 +1,45 @@
-
-<div>
-  <h1>Discussion du Salon de l'evenement n°{{ EventId }}</h1>
+<div class="discussion-container">
+  <h1>Discussion du Salon de l'événement n°{{ EventId }}</h1>
 
   <div class="info-box">
-
     <label for="pseudonyme">Pseudonyme:</label>
-    <input type="text" id="pseudonyme" [(ngModel)]="pseudonyme" readonly>
+    <input type="text" id="pseudonyme" [(ngModel)]="pseudonyme" readonly class="info-input">
   </div>
 
   <div class="info-box">
     <label for="EventId">ID de l'événement:</label>
-    <input type="text" id="EventId" [(ngModel)]="EventId" readonly>
+    <input type="text" id="EventId" [(ngModel)]="EventId" readonly class="info-input">
   </div>
-
-
 
   <div *ngIf="salons.length > 0" class="message-section">
     <h3>Anciens messages de la discussion</h3>
     <div *ngFor="let salon of salons">
-      <ng-container *ngIf="salon.EventId === EventId ">
-        <p *ngFor="let message of salon.messages">
+      <ng-container *ngIf="salon.EventId === EventId">
+        <p *ngFor="let message of salon.messages" class="old-message">
           <strong>{{ message.split(':')[0] }}:</strong> {{ message.split(':')[1] }}<br>
         </p>
       </ng-container>
     </div>
   </div>
-<h3>Nouveaux messages :</h3>
-<div *ngFor="let message of messagesAffiches" class="message-section">
-  <p class="test">{{ message }}</p>
-</div>
 
-<div>
-  <label for="message">Message:</label>
-  <textarea id="message" [(ngModel)]="message"></textarea>
-</div>
-
-<button (click)="ecrireMessageSalon()">Envoyer Message</button>
-
-<div class="participer-button">
-  <button  (click)="redirectToAPIVote()">Participez au sondage </button>
-
-</div>
-
-
-  <div>
-    <h3>Retour à la page rejoindre un événement</h3>
-    <button (click)="redirectToEventJoinPage()">Retour</button>
-
+  <h3>Nouveaux messages :</h3>
+  <div *ngFor="let message of messagesAffiches" class="message-section">
+    <p class="new-message">{{ message }}</p>
   </div>
 
-</div>
+  <div class="message-input">
+    <label for="message">Message:</label>
+    <textarea id="message" [(ngModel)]="message" class="textarea-message"></textarea>
+  </div>
 
+  <button (click)="ecrireMessageSalon()" class="btn-send">Envoyer Message</button>
+
+  <div class="participer-button">
+    <button (click)="redirectToAPIVote()" class="btn-participate">Participez au sondage</button>
+  </div>
+
+  <div class="back-button">
+    <h3>Retour à la page rejoindre un événement</h3>
+    <button (click)="redirectToEventJoinPage()" class="btn-back">Retour</button>
+  </div>
+</div>

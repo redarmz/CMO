@@ -1,270 +1,137 @@
-.reservation-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* Ajoutez cette ligne pour centrer verticalement */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.page-title {
+  font-size: 24px;
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-h3 {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-input {
-  width: 30%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #bdc3c7;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #2ecc71;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #27ae60;
-}
-
-.retour {
+.restaurant-list {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  width: 30%;
 }
 
-.bretour {
-  width: 25%;
-  background-color: #3498db;
-  align-self: flex-start;
-}
-
-.princ{
+.restaurant-card {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 16px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#selectedDayButtons {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
+.restaurant-info {
+  text-align: center;
 }
 
-#selectedDayButtons button {
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  margin-right: 15px;
-}
-
-#selectedDayButtons button:last-child {
-  margin-right: 0;
-}
-
-
-#selectedDayDisplay {
-  display: inline-block;
-  padding: 10px;
-  background-color: #ecf0f1;
-  border: 1px solid #bdc3c7;
-  border-radius: 5px;
+.restaurant-name {
   font-size: 18px;
-  color: #2c3e50;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.reservation-container {
-  width: 20%;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  top: 0px;
+.restaurant-details {
+  font-size: 14px;
+  color: #6c757d;
 }
 
-.calendrier {
-  position: absolute;
-  top: 0%;
-  right: 0px;
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
+.btn-select {
+  background-color: #007bff;
+  color: white;
   border: none;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 15px;
+.btn-select:hover {
+  background-color: #0056b3;
 }
 
-
-.reservation-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* Ajoutez cette ligne pour centrer verticalement */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.reservation-form {
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
   margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h3 {
+.form-title {
   font-size: 20px;
-  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
   margin-bottom: 15px;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-input {
-  width: 30%;
+.form-control {
+  width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #bdc3c7;
-  border-radius: 5px;
-  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #2ecc71;
-  color: #fff;
+.day-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-day {
+  background-color: #17a2b8;
+  color: white;
   border: none;
+  padding: 10px 15px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-day:hover {
+  background-color: #117a8b;
+}
+
+.reservation-calendar {
   margin-top: 20px;
 }
 
-button:hover {
-  background-color: #27ae60;
+.btn-submit {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #218838;
+}
+
+.btn-reserve {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.btn-reserve:hover {
+  background-color: #e0a800;
 }
 
 .retour {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 30%;
-}
-
-.bretour {
-  width: 25%;
-  background-color: #3498db;
-  align-self: flex-start;
-}
-
-.princ{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#selectedDayButtons {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-
-#selectedDayButtons button {
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  margin-right: 15px;
-}
-
-#selectedDayButtons button:last-child {
-  margin-right: 0;
-}
-
-
-#selectedDayDisplay {
-  display: inline-block;
-  padding: 10px;
-  background-color: #ecf0f1;
-  border: 1px solid #bdc3c7;
-  border-radius: 5px;
-  font-size: 18px;
-  color: #2c3e50;
-  margin-top: 10px;
-}
-
-.reservation-container {
-  width: 20%;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  top: 0px;
+  margin-top: 30px;
 }
-
-.calendrier {
-  position: absolute;
-  top: 0%;
-  right: 0px;
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-

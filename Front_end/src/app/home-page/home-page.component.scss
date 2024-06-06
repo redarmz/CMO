@@ -1,111 +1,97 @@
-// Variables
-$primary-color: #333333;
-$secondary-color: #666666;
-$accent-color: #2d3941;
-$hover-color: #4a5a65; // Nouvelle couleur pour le survol
-
-// Styles généraux
-body {
-  font-family: 'Arial', sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: $primary-color;
-  color: white;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 .header {
-  background: linear-gradient(to right, $accent-color, #b31503);
-  padding: 20px 0;
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
   text-align: center;
-  h1 {
-    font-size: 48px;
-    margin: 0;
-    color: white; // Assurez-vous que le texte est lisible sur le dégradé
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 2em;
+}
+
+.deconexion {
+  margin-right: 20px;
+}
+
+.btn-logout {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-logout:hover {
+  background-color: #c82333;
 }
 
 .content {
-  padding: 40px;
+  padding: 20px;
   text-align: center;
-  position: relative;
-
-  .interactive-image {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-
-  h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 20px;
-    margin-bottom: 30px;
-  }
-
-  button {
-    margin-top: 30px;
-    padding: 15px 30px;
-    width: 200px; // Largeur du bouton
-    height: 60px; // Hauteur du bouton
-    font-size: 24px;
-    cursor: pointer;
-    background-color: $accent-color;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 1;
-
-    &:hover {
-      background-color: $hover-color; // Couleur de fond au survol
-      transform: translateY(-5px); // Déplacer légèrement vers le haut lors du survol
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ajouter une ombre subtile
-    }
-  }
 }
 
-.footer {
-  background: linear-gradient(to right, #b31503, $accent-color); // Exemple de dégradé de bleu foncé à orange
-  text-align: center;
-  padding: 15px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  p {
-    color: white; // Assurez-vous que le texte est lisible sur le dégradé
-  }
+.interactive-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #555;
 }
 
 .button-container {
   display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
   justify-content: center;
-  gap: 20px; // Espace entre les boutons
-  margin-top: 40px; // Espace supplémentaire pour les boutons
 }
 
-.deconexion {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.btn-action {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  button {
-    padding: 15px 30px;       // Augmentez la taille du bouton
-    font-size: 20px;          // Augmentez la taille de la police
-    background-color: $secondary-color; // Couleur de fond du bouton (gris foncé)
-    border: none;
-    border-radius: 5px;
-    color: white;             // Couleur du texte du bouton
-    transition: background-color 0.3s ease;
+.btn-action:hover {
+  background-color: #218838;
+}
 
-    &:hover {
-      background-color: lighten($secondary-color, 10%); // Couleur du bouton au survol (gris légèrement plus clair)
-    }
-  }
+.btn-large {
+  padding: 20px 40px;
+  font-size: 1.2em;
+}
+
+.footer {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
