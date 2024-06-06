@@ -1,7 +1,7 @@
 Contributeur | Commits | Lignes ajoutées | Lignes supprimées | Back-end | Front-end | Principal
+wassim.hendali2@gmail.com | 20 | 78036 | 967 | 2777 | -31 | 74323
 146457330+amiirmmr@users.noreply.github.com | 19 | 8032 | 298 | 92 | 859 | 6783
 mammeriamir4@gmail.com | 27 | 509314 | 6400 | 67740 | 2341 | 432833
-wassim.hendali2@gmail.com | 19 | 77595 | 248 | 2777 | 247 | 74323
 reda.ramzi0104@hotmail.com | 64 | 609712 | 3876 | 569758 | 29523 | 6555
 113892426+WassimH94@users.noreply.github.com | 7 | 12 | 12 | 0 | 0 | 0
 119413560+redarmz@users.noreply.github.com | 10 | 238357 | 246 | 230334 | 755 | 7022

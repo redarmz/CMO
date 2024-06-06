@@ -1,8 +1,11 @@
+
+
 <div class="header">
   <h1>Ça mange où ?</h1>
   <div class="deconexion">
-    <button (click)="redirectToLogin()" class="btn-logout">Se déconnecter</button>
+    <button (click)="redirectToLogin()">Se déconnecter</button>
   </div>
+
 </div>
 
 <div class="content">
@@ -11,13 +14,16 @@
   <p>{{ description }}</p>
 
   <div class="button-container">
-    <button (click)="redirectToEventPage()" class="btn-action btn-large">Événement</button>
-    <button (click)="redirectToTirelirePage()" class="btn-action btn-large">Tirelire</button>
-    <button (click)="redirectToReservation()" class="btn-action btn-large">Réserver</button>
-    <button (click)="redirectToToutesLesCartes()" class="btn-action btn-large">Cartes</button>
-  </div>
+      <button (click)="redirectToEventPage()">Événement</button>
+      <button (click)="redirectToTirelirePage()">Tirelire</button>
+      <button (click)="redirectToReservation()">Réserver</button>
+      <button (click)="redirectToToutesLesCartes()">Cartes </button>
+    </div>
+
 </div>
 
 <div class="footer">
   <p>&copy; 2024 CMO. Tous droits réservés.</p>
 </div>
+
+
